@@ -7,7 +7,7 @@ public class player : MonoBehaviour {
 	Transform my;
 	Rigidbody2D body;
 
-	private float Speed = 0.1f;
+	private float Speed = 0.2f;
 	
 	void Awake ()
 	{
@@ -19,6 +19,8 @@ public class player : MonoBehaviour {
 	
 	void Update ()
 	{
+		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+
 		if(Input.GetKey(KeyCode.W))
 		{
 			transform.Translate(Vector3.up * Speed);
@@ -27,6 +29,11 @@ public class player : MonoBehaviour {
 		{
 			transform.Translate(Vector3.down * Speed);
 		}
+		if (Input.GetKey(KeyCode.Space))
+		{
+			Speed = 0.5f;
+		}
+		else Speed = 0.2f;
 
 		// Distance from camera to object.  We need this to get the proper calculation.
 		float camDis = cam.transform.position.x - my.position.x;
