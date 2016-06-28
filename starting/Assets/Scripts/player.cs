@@ -73,8 +73,10 @@ public class player : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.name.Equals("enemy"))
-			Debug.Log("gameover");
-
+		if (other.gameObject.name.Equals ("enemy"))
+		{
+			Debug.Log ("gameover");
+			Application.LoadLevel (0);
+		}
 	}
 }
