@@ -18,10 +18,7 @@ public class Campodevisao : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "jogador") {
-
-			viu = true; 
-			Debug.Log ("viu");
-		}
+		if (other.gameObject.tag == "jogador")
+			viu = true;
 	}
 }

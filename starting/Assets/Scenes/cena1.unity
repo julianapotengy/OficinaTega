@@ -201,7 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39649750d5d4a7419c3caf53fdbdb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 967957241}
   locais: []
 --- !u!58 &204748723
 CircleCollider2D:
@@ -243,7 +242,6 @@ GameObject:
   - 92: {fileID: 555651283}
   - 124: {fileID: 555651282}
   - 81: {fileID: 555651281}
-  - 114: {fileID: 555651286}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 555651280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -108.860001, y: -44.7000008, z: -10}
+  m_LocalPosition: {x: 120, y: -52, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 788202187}
@@ -320,17 +318,6 @@ Transform:
   - {fileID: 51954973}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &555651286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 555651280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77efba8a8593c3042b5085ae373cf278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &562285919
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +427,7 @@ GameObject:
   - 50: {fileID: 967957246}
   - 61: {fileID: 967957247}
   m_Layer: 0
-  m_Name: Soldadinho_0
+  m_Name: Player
   m_TagString: jogador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,7 +494,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 967957241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.7999992, y: 18.8999996, z: 0}
+  m_LocalPosition: {x: 120, y: -52, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
