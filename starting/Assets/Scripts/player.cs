@@ -13,6 +13,9 @@ public class player : MonoBehaviour
 	private float activeZoom;
 	private bool zoomOut = true;
 
+	private float stamina, staminaconta ;
+	public GameObject staminabar;
+
 	void Awake ()
 	{
 		cam = Camera.main;
@@ -22,21 +25,22 @@ public class player : MonoBehaviour
 
 	void Start()
 	{
+		stamina = 100; 
 		campo = GameObject.Find ("enemy").GetComponentInChildren<Campodevisao> ();
-		Speed = 0.2f;
+		Speed = 15;
 	}
 
 	void FixedUpdate()
 	{
-		if (Input.GetKey(KeyCode.Space) && zoomOut)
+		if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0)
 		{
-			Speed = 0.5f;
+			Speed = 30;
 			activeZoom = Time.time;
 			zoomOut = false;
 		}
 		else if(!Input.GetKey(KeyCode.Space) && !zoomOut)
 		{
-			Speed = 0.2f;
+			Speed = 15;
 			activeZoom = Time.time;
 			zoomOut = true;
 		}
@@ -46,29 +50,75 @@ public class player : MonoBehaviour
 	{
 		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 
+		if (stamina <= 0)
+		{
+			zoomOut = true;
+			Speed = 15; 		
+		}
+		staminaconta = (stamina/100f) * 2.45f;
+		staminabar.transform.localScale = new Vector3(staminaconta,staminabar.transform.localScale.y,staminabar.transform.localScale.z);
+
 		if (campo.viu)
 			GetComponent<SpriteRenderer> ().color = Color.cyan;
 		else
 			GetComponent<SpriteRenderer> ().color = Color.white;
 
-		if(Input.GetKey(KeyCode.W))
-			transform.Translate(Vector3.up * Speed);
-		if(Input.GetKey(KeyCode.S))
-			transform.Translate(Vector3.down * Speed);
+		body.velocity = new Vector3 (0, 0, 0);
+
+
+		 if (Input.GetKey ("up"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,0));
+			body.velocity = Vector3.up * Speed;
+		}
+		 if (Input.GetKey ("left"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,90));
+			body.velocity = Vector3.left * Speed;
+		}
+		 if (Input.GetKey ("down"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,180));
+			body.velocity = Vector3.down * Speed;
+		}
+		 if (Input.GetKey ("right"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,270));
+			body.velocity = Vector3.right * Speed;
+		}
+		if (Input.GetKey ("up") && Input.GetKey ("left"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,45));
+			body.velocity = new Vector3(-1,1,0) * Speed;
+		}
+		if (Input.GetKey ("up") && Input.GetKey ("right"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,315));
+			body.velocity = new Vector3(1,1,0) * Speed;
+		}
+		if (Input.GetKey ("down") && Input.GetKey ("left"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,135));
+			body.velocity = new Vector3(-1,-1,0) * Speed;
+		}
+		if (Input.GetKey ("down") && Input.GetKey ("right"))
+		{
+			transform.rotation = Quaternion.Euler(new Vector3 (0,0,225));
+			body.velocity = new Vector3(1,-1,0) * Speed; 
+		}
 
 		if (zoomOut)
-			Camera.main.orthographicSize = Mathf.Lerp(7, 12, 5f * (Time.time - activeZoom));
+		{
+			Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
+			if (stamina < 100 && !Input.GetKey(KeyCode.Space))
+				stamina +=10*Time.deltaTime;
+		} 
 		else
-			Camera.main.orthographicSize = Mathf.Lerp(12, 7, 5f * (Time.time - activeZoom));
-
-		float camDis = cam.transform.position.x - my.position.x;
-
-		Vector3 mouse = cam.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, camDis));
-		
-		float AngleRad = Mathf.Atan2 (-mouse.x - -my.position.x, mouse.y - my.position.y);
-		float angle = (180 / Mathf.PI) * AngleRad;
-		
-		body.rotation = angle;
+		{
+			Camera.main.orthographicSize = Mathf.Lerp (12, 7, 5f * (Time.time - activeZoom));
+			if (stamina > 0)
+				stamina -= 10 * Time.deltaTime;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

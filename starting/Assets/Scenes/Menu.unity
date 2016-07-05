@@ -183,8 +183,8 @@ RectTransform:
   m_Children:
   - {fileID: 861737348}
   - {fileID: 1877185691}
-  - {fileID: 1858632001}
   - {fileID: 878246839}
+  - {fileID: 1858632001}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -505,8 +505,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 1, y: -2}
+  m_AnchoredPosition: {x: 0, y: .500003576}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &861737349
 MonoBehaviour:
@@ -547,7 +547,7 @@ GameObject:
   - 114: {fileID: 878246841}
   - 114: {fileID: 878246840}
   m_Layer: 5
-  m_Name: credits 1
+  m_Name: history
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +565,7 @@ RectTransform:
   m_Children:
   - {fileID: 78823424}
   m_Father: {fileID: 533127840}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: .460000008, y: .35938096}
   m_AnchorMax: {x: .590150774, y: .4341667}
   m_AnchoredPosition: {x: 0, y: -2.5}
@@ -617,7 +617,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -754,7 +754,7 @@ RectTransform:
   m_Children:
   - {fileID: 850735943}
   m_Father: {fileID: 533127840}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .460000008, y: .258643001}
   m_AnchorMax: {x: .590150774, y: .338547647}
   m_AnchoredPosition: {x: .5, y: 1.5}
@@ -806,7 +806,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
