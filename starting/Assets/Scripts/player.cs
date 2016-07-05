@@ -7,8 +7,10 @@ public class player : MonoBehaviour
 	private Camera cam;
 	private Transform my;
 	private Rigidbody2D body;
-
+	public Sprite[] lados;
 	private float Speed;
+
+	SpriteRenderer sp;
 
 	private float activeZoom;
 	private bool zoomOut = true;
@@ -25,6 +27,7 @@ public class player : MonoBehaviour
 
 	void Start()
 	{
+		sp = GetComponent<SpriteRenderer> ();
 		stamina = 100; 
 		campo = GameObject.Find ("enemy").GetComponentInChildren<Campodevisao> ();
 		Speed = 15;
@@ -68,42 +71,37 @@ public class player : MonoBehaviour
 
 		 if (Input.GetKey ("up"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,0));
 			body.velocity = Vector3.up * Speed;
 		}
 		 if (Input.GetKey ("left"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,90));
+			sp.sprite= lados[2];
 			body.velocity = Vector3.left * Speed;
 		}
 		 if (Input.GetKey ("down"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,180));
+			sp.sprite = lados[0];
 			body.velocity = Vector3.down * Speed;
 		}
 		 if (Input.GetKey ("right"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,270));
+			sp.sprite= lados[1];
 			body.velocity = Vector3.right * Speed;
 		}
 		if (Input.GetKey ("up") && Input.GetKey ("left"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,45));
 			body.velocity = new Vector3(-1,1,0) * Speed;
 		}
 		if (Input.GetKey ("up") && Input.GetKey ("right"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,315));
 			body.velocity = new Vector3(1,1,0) * Speed;
 		}
 		if (Input.GetKey ("down") && Input.GetKey ("left"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,135));
 			body.velocity = new Vector3(-1,-1,0) * Speed;
 		}
 		if (Input.GetKey ("down") && Input.GetKey ("right"))
 		{
-			transform.rotation = Quaternion.Euler(new Vector3 (0,0,225));
 			body.velocity = new Vector3(1,-1,0) * Speed; 
 		}
 

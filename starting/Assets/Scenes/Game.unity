@@ -1080,6 +1080,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b41cfac4d95cf48980a7db9a1f9758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lados:
+  - {fileID: 21300002, guid: 0f8676e020bc7694cbb6ef24c8af854a, type: 3}
+  - {fileID: 21300000, guid: 0f8676e020bc7694cbb6ef24c8af854a, type: 3}
+  - {fileID: 21300000, guid: 3c52ac58070124942b60a4be2b5fe5e7, type: 3}
   staminabar: {fileID: 1216708341}
 --- !u!95 &967957243
 Animator:
@@ -1088,7 +1092,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 967957241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 178f6159d85cd8b4098bd40e74ce0b32, type: 2}
   m_CullingMode: 0
@@ -1122,7 +1126,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 266612329
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1019fcc541b136449b9507bf36a86186, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 0f8676e020bc7694cbb6ef24c8af854a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &967957245
 Transform:
