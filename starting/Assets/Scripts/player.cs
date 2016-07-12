@@ -126,5 +126,8 @@ public class player : MonoBehaviour
 			Debug.Log ("gameover");
 			Application.LoadLevel (0);
 		}
+		if (other.gameObject.tag == "casaouro") {
+			Application.LoadLevel(1);
+		}
 	}
 }

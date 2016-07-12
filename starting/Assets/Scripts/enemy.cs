@@ -79,7 +79,6 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false;
 				}
 				int rand = Random.Range(0,GoTo.Length);
-				Debug.Log (rand);
 				GoTo[rand] = true;
 			}
 			else if (transform.position == locais [3].position)
@@ -89,7 +88,6 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				int rand = Random.Range(0,GoTo.Length);
-				Debug.Log (rand);
 				GoTo[rand] = true;
 			}
 			else if (transform.position == locais [4].position)
@@ -99,7 +97,6 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				int rand = Random.Range(0,GoTo.Length);
-				Debug.Log (rand);
 				GoTo[rand] = true;
 			}
 			else if (transform.position == locais [5].position)
@@ -109,7 +106,6 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				int rand = Random.Range(0,GoTo.Length);
-				Debug.Log (rand);
 				GoTo[rand] = true;
 			}
 			
