@@ -17,7 +17,6 @@ public class RandomHouse : MonoBehaviour
 		for (int i = 0; i < locais.Length; i++)
 		{
 			int rand = Random.Range (0, casas.Length);
-			Debug.Log (rand);
 			if (rand == casaouro && !casaespecial)
 			{ 
 				locais [i].GetComponent<SpriteRenderer> ().sprite = casas [rand];

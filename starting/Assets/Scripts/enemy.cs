@@ -160,10 +160,10 @@ public class enemy : MonoBehaviour
 				GoTo[0] = true; 
 				transform.position = Vector3.MoveTowards (transform.position, locais [2].position, 0.2f);
 
-				Vector2 posiplayer = locais[2].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
+					Vector2 posiplayer = locais[2].position;
+					float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
+					float angle = (180 / Mathf.PI) * AngleRad;
+					body.rotation = angle;
 			}
 		}
 	}

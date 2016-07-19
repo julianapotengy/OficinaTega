@@ -15,7 +15,7 @@ public class player : MonoBehaviour
 	private float activeZoom;
 	private bool zoomOut = true;
 
-	private float stamina, staminaconta ;
+	[HideInInspector] public float stamina, staminaconta ;
 	public GameObject staminabar;
 
 	void Awake ()
