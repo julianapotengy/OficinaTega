@@ -3,14 +3,14 @@ using System.Collections;
 
 public class Campodevisao : MonoBehaviour
 {
-	public bool viu = false;
+	[HideInInspector] public bool viu;
+	[HideInInspector] public bool saiu;
 	private GameObject player;
-	public bool Saiu ; 
 	
 	void Start ()
 	{
 		viu = false;
-		Saiu = false; 
+		saiu = false; 
 
 	}
 
@@ -23,20 +23,20 @@ public class Campodevisao : MonoBehaviour
 	{
 		if (other.gameObject.tag == "jogador")
 			viu = true;
-			Saiu = true; 
+			saiu = true; 
 	}
 	void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "jogador") {
-			Saiu = true ; 
+		if (other.gameObject.tag == "jogador")
+		{
+			saiu = true ; 
 		}
-
 	}
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "jogador") {
-			Saiu = false ; 
+		if (other.gameObject.tag == "jogador")
+		{
+			saiu = false ; 
 		}
-		
 	}
 }

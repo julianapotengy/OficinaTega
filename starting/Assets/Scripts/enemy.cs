@@ -13,8 +13,9 @@ public class enemy : MonoBehaviour
 	private Vector3 posicasaR;
 
 	public Transform[] locais;
-	private bool Goto2,Goto3,Goto4,Goto5;
+	private bool Goto2, Goto3, Goto4, Goto5;
 	private bool[] GoTo = new bool[4];
+
 	private float Speed;
 	private float timer;
 
@@ -65,7 +66,7 @@ public class enemy : MonoBehaviour
 
 			if (timer > 1)
 			{
-				transform.position = new Vector3(transform.position.x,transform.position.y,-9.2f);
+				transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
 				transform.Translate(Vector3.up * Speed);
 			}
 		}
@@ -125,7 +126,7 @@ public class enemy : MonoBehaviour
 			}
 			else if (GoTo[2])
 			{
-				for (int i = 0; i<GoTo.Length; i++)
+				for (int i = 0; i < GoTo.Length; i++)
 				{
 					GoTo[i] = false; 
 				}
@@ -139,7 +140,7 @@ public class enemy : MonoBehaviour
 			}
 			else if (GoTo[3])
 			{
-				for (int i = 0; i<GoTo.Length; i++)
+				for (int i = 0; i < GoTo.Length; i++)
 				{
 					GoTo[i] = false; 
 				}
@@ -153,17 +154,17 @@ public class enemy : MonoBehaviour
 			}
 			else if (GoTo[0])
 			{
-				for (int i = 0; i<GoTo.Length; i++)
+				for (int i = 0; i < GoTo.Length; i++)
 				{
 					GoTo[i] = false; 
 				}
 				GoTo[0] = true; 
 				transform.position = Vector3.MoveTowards (transform.position, locais [2].position, 0.2f);
 
-					Vector2 posiplayer = locais[2].position;
-					float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
-					float angle = (180 / Mathf.PI) * AngleRad;
-					body.rotation = angle;
+				Vector2 posiplayer = locais[2].position;
+				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
+				float angle = (180 / Mathf.PI) * AngleRad;
+				body.rotation = angle;
 			}
 		}
 	}

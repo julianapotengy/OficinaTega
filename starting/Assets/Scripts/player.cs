@@ -58,6 +58,7 @@ public class player : MonoBehaviour
 			zoomOut = true;
 			Speed = 15; 		
 		}
+
 		staminaconta = (stamina/100f) * 2.45f;
 		staminabar.transform.localScale = new Vector3(staminaconta,staminabar.transform.localScale.y,staminabar.transform.localScale.z);
 
@@ -69,21 +70,21 @@ public class player : MonoBehaviour
 		body.velocity = new Vector3 (0, 0, 0);
 
 
-		 if (Input.GetKey ("up"))
+		if (Input.GetKey ("up"))
 		{
 			body.velocity = Vector3.up * Speed;
 		}
-		 if (Input.GetKey ("left"))
+		if (Input.GetKey ("left"))
 		{
 			sp.sprite= lados[2];
 			body.velocity = Vector3.left * Speed;
 		}
-		 if (Input.GetKey ("down"))
+		if (Input.GetKey ("down"))
 		{
 			sp.sprite = lados[0];
 			body.velocity = Vector3.down * Speed;
 		}
-		 if (Input.GetKey ("right"))
+		if (Input.GetKey ("right"))
 		{
 			sp.sprite= lados[1];
 			body.velocity = Vector3.right * Speed;
