@@ -6,7 +6,7 @@ public class RandomHouse : MonoBehaviour
 	GameObject[] locais;
 	public Sprite[] casas;
 	bool casaespecial; 
-	public static float casaouro;
+	public static int casaouro;
 
 	void Start ()
 	{

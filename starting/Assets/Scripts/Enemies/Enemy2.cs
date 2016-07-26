@@ -20,8 +20,13 @@ public class Enemy2 : MonoBehaviour
 
 	private float Speed;
 
+	private bool fadein;
+	private float fadenum;
+
 	void Start ()
 	{
+		fadenum = 0;
+		fadein = false; 
 		field = GetComponentInChildren<FieldOfVision> ();
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
@@ -44,6 +49,44 @@ public class Enemy2 : MonoBehaviour
 
 	void Update ()
 	{
+		if (fadein)
+		{
+			fadenum += 5;
+			GameObject.Find("fadein").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.r,
+			                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.g,
+			                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.b,
+			                                                                           fadenum/255);
+			player.SetActive(false);
+			GetComponent<SpriteRenderer>().enabled = false;
+
+			GameObject.Find("stamina").GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find("staminalaranja").GetComponent<SpriteRenderer>().enabled = false;
+			
+			if(fadenum > 255)
+			{
+				int rand = Random.Range(0, playerGoTo.Length);
+				playerGoTo[rand] = true;
+				player.transform.position = lugares[rand].transform.position;
+				
+				transform.position = posicasa;
+				transform.rotation = Quaternion.Euler(posicasaR);
+				field.saw = false;
+				fadein = false;
+				fadenum = 0;
+
+				player.SetActive(true);
+				GameObject.Find("stamina").GetComponent<SpriteRenderer>().enabled = true;
+				GameObject.Find("staminalaranja").GetComponent<SpriteRenderer>().enabled = true;
+
+				GetComponent<SpriteRenderer>().enabled = true ; 
+				GameObject.Find("fadein").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.r,
+				                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.g,
+				                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.b,
+				                                                                           fadenum / 255);
+			}
+
+		
+		}
 		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
@@ -112,30 +155,7 @@ public class Enemy2 : MonoBehaviour
 		{
 			if (other.gameObject.name.Equals ("Player"))
 			{
-				int rand = Random.Range(0, playerGoTo.Length);
-				playerGoTo[rand] = true;
-				
-				if (playerGoTo[0])
-				{
-					player.transform.position = lugares[0].transform.position;
-				}
-				else if (playerGoTo[1])
-				{
-					player.transform.position = lugares[1].transform.position;
-				}
-				else if (playerGoTo[2])
-				{
-					player.transform.position = lugares[2].transform.position;
-				}
-				else if (playerGoTo[3])
-				{
-					player.transform.position = lugares[3].transform.position;
-				}
-
-				transform.position = posicasa;
-				transform.rotation =Quaternion.Euler(posicasaR);
-				field.saw = false;
-				
+				fadein = true;
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}

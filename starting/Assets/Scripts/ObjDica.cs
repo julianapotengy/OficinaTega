@@ -1,21 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+public class ObjDica : MonoBehaviour
+{
+	string[] dica = new string[3]{"Casa vermelha","Casa amarela","Casa dourada"};
+	Text clueTx;
 
-public class ObjDica : MonoBehaviour {
+	void Start ()
+	{
+		clueTx = GameObject.Find ("CLUE").GetComponent<Text> ();
+	}
 
-	// Use this for initialization
-	void Start () {
+	void Update ()
+	{
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "player") {
-			Debug.Log ("obadica");
+		if (coll.gameObject.tag == "player")
+		{
+			clueTx.text = dica[RandomHouse.casaouro].ToString();
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D coll)
+	{
+		if (coll.gameObject.tag == "player")
+		{
+			clueTx.text = "";
 		}
 	}
 }

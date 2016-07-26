@@ -8,6 +8,8 @@ TagManager:
   - player
   - goldenHouse
   - enemy
+  - localcasa
+  - limite
   layers:
   - Default
   - TransparentFX
@@ -47,4 +49,7 @@ TagManager:
     locked: 0
   - name: Personagens
     uniqueID: 266612329
+    locked: 0
+  - name: fadein
+    uniqueID: 1540409871
     locked: 0
