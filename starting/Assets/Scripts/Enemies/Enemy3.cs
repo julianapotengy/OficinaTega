@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemy3 : MonoBehaviour
+public class Enemy3 : MonoBehaviour
 {
-	Campodevisao campo;
+	FieldOfVision field;
 	private GameObject player;
-	bool Umavez; 
+	bool once; 
 	Transform my; 
 	Rigidbody2D body;
+
 	void Start ()
 	{
-		Umavez = false; 
-		campo = GetComponentInChildren<Campodevisao> ();
-		player = GameObject.FindGameObjectWithTag ("jogador");
+		once = false; 
+		field = GetComponentInChildren<FieldOfVision> ();
+		player = GameObject.FindGameObjectWithTag ("player");
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
 	}
@@ -24,21 +25,24 @@ public class enemy3 : MonoBehaviour
 
 	void WalkAndRun()
 	{
-		if (campo.viu && campo.saiu&& !Umavez)
+		if (field.saw && field.leaved && !once)
 		{
-			player.GetComponent<player>().stamina /= 2;
-			Umavez = true ; 
+			player.GetComponent<Player>().stamina /= 2;
+			once = true; 
+		}
 
-
-		}if (campo.viu && campo.saiu) {
+		if (field.saw && field.leaved)
+		{
 			Vector2 posiplayer = player.transform.position;
 			float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
 		}
-		if (!campo.saiu) {
-			campo.viu = false ; 
-			Umavez=false; 
+
+		if (!field.leaved)
+		{
+			field.saw = false ; 
+			once = false; 
 		}
 	}
 }

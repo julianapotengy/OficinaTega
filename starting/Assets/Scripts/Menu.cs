@@ -3,16 +3,7 @@ using System.Collections;
 
 public class Menu : MonoBehaviour
 {
-
-	void Start () {
-	
-	}
-
-	void Update () {
-	
-	}
-
-	public void trocacena(int i)
+	public void changeScene(int i)
 	{
 		Application.LoadLevel (i);
 	}

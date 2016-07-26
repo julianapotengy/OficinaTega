@@ -6,7 +6,7 @@ public class RandomHouse : MonoBehaviour
 	GameObject[] locais;
 	public Sprite[] casas;
 	bool casaespecial; 
-	float casaouro;
+	public static float casaouro;
 
 	void Start ()
 	{
@@ -20,7 +20,7 @@ public class RandomHouse : MonoBehaviour
 			if (rand == casaouro && !casaespecial)
 			{ 
 				locais [i].GetComponent<SpriteRenderer> ().sprite = casas [rand];
-				locais[i].tag = "casaouro";
+				locais[i].tag = "goldenHouse";
 				casaespecial = true ; 
 			}
 			else if (rand ==casaouro) 

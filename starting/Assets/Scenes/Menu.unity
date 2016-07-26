@@ -547,7 +547,7 @@ GameObject:
   - 114: {fileID: 878246841}
   - 114: {fileID: 878246840}
   m_Layer: 5
-  m_Name: history
+  m_Name: History
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 756954326}
-        m_MethodName: trocacena
+        m_MethodName: changeScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   - 114: {fileID: 1858632003}
   - 114: {fileID: 1858632002}
   m_Layer: 5
-  m_Name: credits
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 756954326}
-        m_MethodName: trocacena
+        m_MethodName: changeScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   - 114: {fileID: 1877185689}
   - 114: {fileID: 1877185688}
   m_Layer: 5
-  m_Name: play
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -898,7 +898,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 756954326}
-        m_MethodName: trocacena
+        m_MethodName: changeScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemy2 : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
-	Campodevisao campo;
+	FieldOfVision field;
 	private Transform my;
 	private Rigidbody2D body;
 	private GameObject player;
@@ -11,7 +11,7 @@ public class enemy2 : MonoBehaviour
 	private Vector3 posicasa;
 	private Vector3 posicasaR;
 
-	public Transform[] locaisAndar;
+	public Transform[] places2Walk;
 	private bool Goto1, Goto2;
 	private bool[] GoTo = new bool[2];
 
@@ -22,29 +22,29 @@ public class enemy2 : MonoBehaviour
 
 	void Start ()
 	{
-		campo = GetComponentInChildren<Campodevisao> ();
+		field = GetComponentInChildren<FieldOfVision> ();
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
-		player = GameObject.FindGameObjectWithTag ("jogador");
+		player = GameObject.FindGameObjectWithTag ("player");
 
 		posicasa = transform.position;
 		posicasaR = transform.eulerAngles;
 
-		locaisAndar = GetComponentsInChildren<Transform> ();
+		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < GoTo.Length; i++)
 		{
 			GoTo[i] = false; 
 		}
 		
 		transform.DetachChildren ();
-		locaisAndar [1].gameObject.transform.SetParent (transform);
+		places2Walk [1].gameObject.transform.SetParent (transform);
 
 		Speed = 0.4f;
 	}
 
 	void Update ()
 	{
-		if (campo.viu)
+		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
 			Vector2 posiplayer = player.transform.position;
@@ -56,9 +56,9 @@ public class enemy2 : MonoBehaviour
 			transform.Translate(Vector3.up * Speed);
 		}
 
-		if (!campo.viu)
+		if (!field.saw)
 		{
-			if (transform.position == locaisAndar[2].position)
+			if (transform.position == places2Walk[2].position)
 			{
 				for (int i = 0; i < GoTo.Length; i++)
 				{
@@ -66,7 +66,7 @@ public class enemy2 : MonoBehaviour
 				}
 				GoTo[1] = true;
 			}
-			else if (transform.position == locaisAndar[3].position)
+			else if (transform.position == places2Walk[3].position)
 			{
 				for (int i = 0; i < GoTo.Length; i++)
 				{
@@ -82,9 +82,9 @@ public class enemy2 : MonoBehaviour
 					GoTo[i] = false;
 				}
 				GoTo[0]= true;
-				transform.position = Vector3.MoveTowards (transform.position, locaisAndar[2].position, 0.2f);
+				transform.position = Vector3.MoveTowards (transform.position, places2Walk[2].position, 0.2f);
 				
-				Vector2 posiplayer = locaisAndar[2].position;
+				Vector2 posiplayer = places2Walk[2].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
@@ -96,9 +96,9 @@ public class enemy2 : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				GoTo[1] = true;
-				transform.position = Vector3.MoveTowards (transform.position, locaisAndar[3].position, 0.2f);
+				transform.position = Vector3.MoveTowards (transform.position, places2Walk[3].position, 0.2f);
 				
-				Vector2 posiplayer = locaisAndar[3].position;
+				Vector2 posiplayer = places2Walk[3].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
@@ -108,7 +108,7 @@ public class enemy2 : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (campo.viu)
+		if (field.saw)
 		{
 			if (other.gameObject.name.Equals ("Player"))
 			{
@@ -134,7 +134,7 @@ public class enemy2 : MonoBehaviour
 
 				transform.position = posicasa;
 				transform.rotation =Quaternion.Euler(posicasaR);
-				campo.viu = false;
+				field.saw = false;
 				
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
@@ -143,13 +143,13 @@ public class enemy2 : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (campo.viu)
+		if (field.saw)
 		{
-			if (other.gameObject.tag == "limite")
+			if (other.gameObject.tag == "limit")
 			{
 				transform.position = posicasa;
 				transform.rotation =Quaternion.Euler(posicasaR);
-				campo.viu = false;
+				field.saw = false;
 				
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}

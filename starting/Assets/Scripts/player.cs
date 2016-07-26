@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
-	Campodevisao campo;
+	FieldOfVision field;
 	private Camera cam;
 	private Transform my;
 	private Rigidbody2D body;
@@ -29,7 +29,7 @@ public class player : MonoBehaviour
 	{
 		sp = GetComponent<SpriteRenderer> ();
 		stamina = 100; 
-		campo = GameObject.Find ("enemy").GetComponentInChildren<Campodevisao> ();
+		field = GameObject.Find ("Enemy").GetComponentInChildren<FieldOfVision> ();
 		Speed = 15;
 	}
 
@@ -62,13 +62,12 @@ public class player : MonoBehaviour
 		staminaconta = (stamina/100f) * 2.45f;
 		staminabar.transform.localScale = new Vector3(staminaconta,staminabar.transform.localScale.y,staminabar.transform.localScale.z);
 
-		if (campo.viu)
+		if (field.saw)
 			GetComponent<SpriteRenderer> ().color = Color.cyan;
 		else
 			GetComponent<SpriteRenderer> ().color = Color.white;
 
 		body.velocity = new Vector3 (0, 0, 0);
-
 
 		if (Input.GetKey ("up"))
 		{
@@ -76,7 +75,7 @@ public class player : MonoBehaviour
 		}
 		if (Input.GetKey ("left"))
 		{
-			sp.sprite= lados[2];
+			sp.sprite = lados[2];
 			body.velocity = Vector3.left * Speed;
 		}
 		if (Input.GetKey ("down"))
@@ -86,7 +85,7 @@ public class player : MonoBehaviour
 		}
 		if (Input.GetKey ("right"))
 		{
-			sp.sprite= lados[1];
+			sp.sprite = lados[1];
 			body.velocity = Vector3.right * Speed;
 		}
 		if (Input.GetKey ("up") && Input.GetKey ("left"))
@@ -110,7 +109,7 @@ public class player : MonoBehaviour
 		{
 			Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
 			if (stamina < 100 && !Input.GetKey(KeyCode.Space))
-				stamina +=10*Time.deltaTime;
+				stamina +=10 * Time.deltaTime;
 		} 
 		else
 		{
@@ -122,13 +121,13 @@ public class player : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.name.Equals ("enemy"))
+		if (other.gameObject.name.Equals ("Enemy"))
 		{
-			Debug.Log ("gameover");
-			Application.LoadLevel (0);
+			Application.LoadLevel(5);
 		}
-		if (other.gameObject.tag == "casaouro") {
-			Application.LoadLevel(1);
+		if (other.gameObject.tag == "goldenHouse")
+		{
+			Application.LoadLevel(4);
 		}
 	}
 }

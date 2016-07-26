@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemy : MonoBehaviour
+public class Enemy1 : MonoBehaviour
 {
-	Campodevisao campo;
+	FieldOfVision field;
 	private Camera cam;
 	private Transform my;
 	private Rigidbody2D body;
@@ -12,7 +12,7 @@ public class enemy : MonoBehaviour
 	private Vector3 posicasa;
 	private Vector3 posicasaR;
 
-	public Transform[] locais;
+	public Transform[] places2Walk;
 	private bool Goto2, Goto3, Goto4, Goto5;
 	private bool[] GoTo = new bool[4];
 
@@ -21,7 +21,7 @@ public class enemy : MonoBehaviour
 
 	void Start ()
 	{
-		campo = GetComponentInChildren<Campodevisao> ();
+		field = GetComponentInChildren<FieldOfVision> ();
 		cam = Camera.main;
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
@@ -30,14 +30,14 @@ public class enemy : MonoBehaviour
 		posicasa = transform.position;
 		posicasaR = transform.eulerAngles;
 
-		locais = GetComponentsInChildren<Transform> ();
+		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < GoTo.Length; i++)
 		{
 			GoTo[i] = false; 
 		}
 
 		transform.DetachChildren ();
-		locais [1].gameObject.transform.SetParent (transform);
+		places2Walk[1].gameObject.transform.SetParent (transform);
 
 		Speed = 0.4f;
 		timer = 0;
@@ -50,7 +50,7 @@ public class enemy : MonoBehaviour
 
 	void WalkAndRun()
 	{
-		if (campo.viu)
+		if (field.saw)
 		{
 			for (int i = 0; i < GoTo.Length; i++)
 			{
@@ -71,9 +71,9 @@ public class enemy : MonoBehaviour
 			}
 		}
 		
-		if (!campo.viu)
+		if (!field.saw)
 		{
-			if (transform.position == locais [2].position)
+			if (transform.position == places2Walk[2].position)
 			{
 				for (int i = 0; i < GoTo.Length; i++)
 				{
@@ -82,7 +82,7 @@ public class enemy : MonoBehaviour
 				int rand = Random.Range(0,GoTo.Length);
 				GoTo[rand] = true;
 			}
-			else if (transform.position == locais [3].position)
+			else if (transform.position == places2Walk[3].position)
 			{
 				for (int i = 0; i < GoTo.Length; i++)
 				{
@@ -91,7 +91,7 @@ public class enemy : MonoBehaviour
 				int rand = Random.Range(0,GoTo.Length);
 				GoTo[rand] = true;
 			}
-			else if (transform.position == locais [4].position)
+			else if (transform.position == places2Walk[4].position)
 			{
 				for (int i = 0; i < GoTo.Length; i++)
 				{
@@ -100,7 +100,7 @@ public class enemy : MonoBehaviour
 				int rand = Random.Range(0,GoTo.Length);
 				GoTo[rand] = true;
 			}
-			else if (transform.position == locais [5].position)
+			else if (transform.position == places2Walk[5].position)
 			{
 				for (int i = 0; i < GoTo.Length; i++)
 				{
@@ -117,9 +117,9 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false;
 				}
 				GoTo[1]= true;
-				transform.position = Vector3.MoveTowards (transform.position, locais [3].position, 0.2f);
+				transform.position = Vector3.MoveTowards (transform.position, places2Walk[3].position, 0.2f);
 
-				Vector2 posiplayer = locais [3].position;
+				Vector2 posiplayer = places2Walk[3].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
@@ -131,9 +131,9 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				GoTo[2] = true;
-				transform.position = Vector3.MoveTowards (transform.position, locais [4].position, 0.2f);
+				transform.position = Vector3.MoveTowards (transform.position, places2Walk[4].position, 0.2f);
 
-				Vector2 posiplayer = locais [4].position;
+				Vector2 posiplayer = places2Walk[4].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
@@ -145,9 +145,9 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				GoTo[3]= true;
-				transform.position = Vector3.MoveTowards (transform.position, locais [5].position, 0.2f);
+				transform.position = Vector3.MoveTowards (transform.position, places2Walk[5].position, 0.2f);
 
-				Vector2 posiplayer = locais [5].position;
+				Vector2 posiplayer = places2Walk[5].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
@@ -159,9 +159,9 @@ public class enemy : MonoBehaviour
 					GoTo[i] = false; 
 				}
 				GoTo[0] = true; 
-				transform.position = Vector3.MoveTowards (transform.position, locais [2].position, 0.2f);
+				transform.position = Vector3.MoveTowards (transform.position, places2Walk[2].position, 0.2f);
 
-				Vector2 posiplayer = locais[2].position;
+				Vector2 posiplayer = places2Walk[2].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
@@ -171,13 +171,13 @@ public class enemy : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (campo.viu)
+		if (field.saw)
 		{
-			if (other.gameObject.tag == "limite")
+			if (other.gameObject.tag == "limit")
 				{
 					transform.position = posicasa;
 					transform.rotation =Quaternion.Euler(posicasaR);
-					campo.viu = false;
+					field.saw = false;
 					
 					timer = 0;
 					GetComponent<SpriteRenderer>().color = Color.white;

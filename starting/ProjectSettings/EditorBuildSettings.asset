@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/History.unity
   - enabled: 1
     path: Assets/Scenes/Credits.unity
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
