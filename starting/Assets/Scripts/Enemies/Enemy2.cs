@@ -59,7 +59,7 @@ public class Enemy2 : MonoBehaviour
 			player.SetActive(false);
 			GetComponent<SpriteRenderer>().enabled = false;
 
-			GameObject.Find("stamina").GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.Find("staminalaranja").GetComponent<SpriteRenderer>().enabled = false;
 			
 			if(fadenum > 255)
@@ -75,7 +75,7 @@ public class Enemy2 : MonoBehaviour
 				fadenum = 0;
 
 				player.SetActive(true);
-				GameObject.Find("stamina").GetComponent<SpriteRenderer>().enabled = true;
+				GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = true;
 				GameObject.Find("staminalaranja").GetComponent<SpriteRenderer>().enabled = true;
 
 				GetComponent<SpriteRenderer>().enabled = true ; 

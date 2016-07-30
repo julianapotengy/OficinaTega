@@ -53,3 +53,6 @@ TagManager:
   - name: fadein
     uniqueID: 1540409871
     locked: 0
+  - name: Canvas
+    uniqueID: 556125551
+    locked: 0
