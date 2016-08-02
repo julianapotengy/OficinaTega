@@ -8,8 +8,9 @@ TagManager:
   - player
   - goldenHouse
   - enemy
-  - localcasa
-  - limite
+  - housePremises
+  - camLimit
+  - ShowOnPause
   layers:
   - Default
   - TransparentFX
@@ -50,7 +51,7 @@ TagManager:
   - name: Personagens
     uniqueID: 266612329
     locked: 0
-  - name: fadein
+  - name: FadeIn
     uniqueID: 1540409871
     locked: 0
   - name: Canvas

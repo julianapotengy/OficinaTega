@@ -1,26 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class ObjDica : MonoBehaviour
+
+public class ClueObj : MonoBehaviour
 {
-	string[] dica = new string[3]{"Casa vermelha","Casa amarela","Casa dourada"};
-	Text clueTx;
+	private string[] clue = new string[3]{"Casa vermelha","Casa amarela","Casa dourada"};
+	private Text clueTx;
 
 	void Start ()
 	{
-		clueTx = GameObject.Find ("CLUE").GetComponent<Text> ();
-	}
-
-	void Update ()
-	{
-	
+		clueTx = GameObject.Find ("Clue").GetComponent<Text> ();
 	}
 
 	void OnTriggerStay2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "player")
 		{
-			clueTx.text = dica[RandomHouse.casaouro].ToString();
+			clueTx.text = clue[RandomHouse.goldenHouse].ToString();
 		}
 	}
 

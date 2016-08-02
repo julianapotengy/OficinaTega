@@ -46,15 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Clues.cs" />
+     <Compile Include="Assets\Scripts\Clues\ClueObj.cs" />
+     <Compile Include="Assets\Scripts\Clues\Clues.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy1.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy2.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy3.cs" />
      <Compile Include="Assets\Scripts\Enemies\FieldOfVision.cs" />
-     <Compile Include="Assets\Scripts\Menu.cs" />
-     <Compile Include="Assets\Scripts\ObjDica.cs" />
+     <Compile Include="Assets\Scripts\Manager\Menu.cs" />
+     <Compile Include="Assets\Scripts\Manager\PauseGame.cs" />
+     <Compile Include="Assets\Scripts\Manager\RandomHouse.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\RandomHouse.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

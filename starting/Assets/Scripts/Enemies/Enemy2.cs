@@ -3,86 +3,86 @@ using System.Collections;
 
 public class Enemy2 : MonoBehaviour
 {
-	FieldOfVision field;
+	private FieldOfVision field;
 	private Transform my;
 	private Rigidbody2D body;
 	private GameObject player;
 
-	private Vector3 posicasa;
-	private Vector3 posicasaR;
+	private Vector3 originalPosition;
+	private Vector3 originalPositionR;
 
 	public Transform[] places2Walk;
-	private bool Goto1, Goto2;
-	private bool[] GoTo = new bool[2];
+	private bool goTo1, GoTo2;
+	private bool[] goTo = new bool[2];
 
-	public Transform[] lugares = new Transform[4];
+	public Transform[] places = new Transform[4];
 	private bool[] playerGoTo = new bool[4];
 
-	private float Speed;
+	private float speed;
 
-	private bool fadein;
-	private float fadenum;
+	private bool fadeIn;
+	private float fadeNum;
 
 	void Start ()
 	{
-		fadenum = 0;
-		fadein = false; 
+		fadeNum = 0;
+		fadeIn = false; 
 		field = GetComponentInChildren<FieldOfVision> ();
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("player");
 
-		posicasa = transform.position;
-		posicasaR = transform.eulerAngles;
+		originalPosition = transform.position;
+		originalPositionR = transform.eulerAngles;
 
 		places2Walk = GetComponentsInChildren<Transform> ();
-		for (int i = 0; i < GoTo.Length; i++)
+		for (int i = 0; i < goTo.Length; i++)
 		{
-			GoTo[i] = false; 
+			goTo[i] = false; 
 		}
 		
 		transform.DetachChildren ();
 		places2Walk [1].gameObject.transform.SetParent (transform);
 
-		Speed = 0.4f;
+		speed = 0.4f;
 	}
 
 	void Update ()
 	{
-		if (fadein)
+		if (fadeIn)
 		{
-			fadenum += 5;
-			GameObject.Find("fadein").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.r,
-			                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.g,
-			                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.b,
-			                                                                           fadenum/255);
+			fadeNum += 5;
+			GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
+			                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
+			                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
+			                                                                           fadeNum/255);
 			player.SetActive(false);
 			GetComponent<SpriteRenderer>().enabled = false;
 
 			GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = false;
-			GameObject.Find("staminalaranja").GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = false;
 			
-			if(fadenum > 255)
+			if(fadeNum > 255)
 			{
 				int rand = Random.Range(0, playerGoTo.Length);
 				playerGoTo[rand] = true;
-				player.transform.position = lugares[rand].transform.position;
+				player.transform.position = places[rand].transform.position;
 				
-				transform.position = posicasa;
-				transform.rotation = Quaternion.Euler(posicasaR);
+				transform.position = originalPosition;
+				transform.rotation = Quaternion.Euler(originalPositionR);
 				field.saw = false;
-				fadein = false;
-				fadenum = 0;
+				fadeIn = false;
+				fadeNum = 0;
 
 				player.SetActive(true);
 				GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = true;
-				GameObject.Find("staminalaranja").GetComponent<SpriteRenderer>().enabled = true;
+				GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = true;
 
 				GetComponent<SpriteRenderer>().enabled = true ; 
-				GameObject.Find("fadein").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.r,
-				                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.g,
-				                                                                           GameObject.Find("fadein").GetComponent<SpriteRenderer>().color.b,
-				                                                                           fadenum / 255);
+				GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
+				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
+				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
+				                                                                           fadeNum / 255);
 			}
 
 		
@@ -96,50 +96,50 @@ public class Enemy2 : MonoBehaviour
 			body.rotation = angle;
 
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
-			transform.Translate(Vector3.up * Speed);
+			transform.Translate(Vector3.up * speed);
 		}
 
 		if (!field.saw)
 		{
 			if (transform.position == places2Walk[2].position)
 			{
-				for (int i = 0; i < GoTo.Length; i++)
+				for (int i = 0; i < goTo.Length; i++)
 				{
-					GoTo[i] = false;
+					goTo[i] = false;
 				}
-				GoTo[1] = true;
+				goTo[1] = true;
 			}
 			else if (transform.position == places2Walk[3].position)
 			{
-				for (int i = 0; i < GoTo.Length; i++)
+				for (int i = 0; i < goTo.Length; i++)
 				{
-					GoTo[i] = false; 
+					goTo[i] = false; 
 				}
-				GoTo[0] = true;
+				goTo[0] = true;
 			}
 
-			if (GoTo[0])
+			if (goTo[0])
 			{
-				for (int i = 0; i < GoTo.Length; i++)
+				for (int i = 0; i < goTo.Length; i++)
 				{
-					GoTo[i] = false;
+					goTo[i] = false;
 				}
-				GoTo[0]= true;
+				goTo[0]= true;
 				transform.position = Vector3.MoveTowards (transform.position, places2Walk[2].position, 0.2f);
 				
-				Vector2 posiplayer = places2Walk[2].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
+				Vector2 playerPosition = places2Walk[2].position;
+				float AngleRad = Mathf.Atan2 (-playerPosition.x + my.position.x, playerPosition.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
 			}
-			else if (GoTo[1])
+			else if (goTo[1])
 			{
-				for (int i = 0; i < GoTo.Length; i++)
+				for (int i = 0; i < goTo.Length; i++)
 				{
-					GoTo[i] = false; 
+					goTo[i] = false; 
 				}
-				GoTo[1] = true;
-				transform.position = Vector3.MoveTowards (transform.position, places2Walk[3].position, 0.2f);
+				goTo[1] = true;
+				transform.position = Vector3.MoveTowards(transform.position, places2Walk[3].position, 0.2f);
 				
 				Vector2 posiplayer = places2Walk[3].position;
 				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
@@ -155,7 +155,7 @@ public class Enemy2 : MonoBehaviour
 		{
 			if (other.gameObject.name.Equals ("Player"))
 			{
-				fadein = true;
+				fadeIn = true;
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
@@ -165,10 +165,10 @@ public class Enemy2 : MonoBehaviour
 	{
 		if (field.saw)
 		{
-			if (other.gameObject.tag == "limit")
+			if (other.gameObject.tag == "camLimit")
 			{
-				transform.position = posicasa;
-				transform.rotation =Quaternion.Euler(posicasaR);
+				transform.position = originalPosition;
+				transform.rotation = Quaternion.Euler(originalPositionR);
 				field.saw = false;
 				
 				GetComponent<SpriteRenderer>().color = Color.white;

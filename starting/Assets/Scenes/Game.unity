@@ -140,7 +140,7 @@ GameObject:
   - 61: {fileID: 13688963}
   m_Layer: 0
   m_Name: casas_14
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +249,7 @@ GameObject:
   - 61: {fileID: 33035259}
   m_Layer: 0
   m_Name: casas_41
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - 61: {fileID: 51954974}
   m_Layer: 0
   m_Name: Down
-  m_TagString: limite
+  m_TagString: camLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,6 +406,122 @@ BoxCollider2D:
   m_Offset: {x: -.549476624, y: .583999634}
   serializedVersion: 2
   m_Size: {x: 73.0857697, y: 2.16799927}
+--- !u!1 &54756240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 54756241}
+  - 222: {fileID: 54756244}
+  - 114: {fileID: 54756243}
+  - 114: {fileID: 54756242}
+  m_Layer: 5
+  m_Name: MenuButton
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &54756241
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54756240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 208072128}
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .207000017, y: .675239801}
+  m_AnchorMax: {x: .798000038, y: .799647987}
+  m_AnchoredPosition: {x: -.5, y: .0999984741}
+  m_SizeDelta: {x: 2.30000305, y: .399997711}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &54756242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54756240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 54756243}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 555651288}
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &54756243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54756240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &54756244
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54756240}
 --- !u!1 &79396531
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +594,7 @@ GameObject:
   - 61: {fileID: 97575110}
   m_Layer: 0
   m_Name: casas_27
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +662,7 @@ GameObject:
   - 61: {fileID: 102956040}
   m_Layer: 0
   m_Name: casas_21
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,7 +730,7 @@ GameObject:
   - 61: {fileID: 112086828}
   m_Layer: 0
   m_Name: casas_33
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -803,7 +919,7 @@ GameObject:
   - 61: {fileID: 136565155}
   m_Layer: 0
   m_Name: casas_18
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1116,6 +1232,72 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!1 &208072127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 208072128}
+  - 222: {fileID: 208072130}
+  - 114: {fileID: 208072129}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &208072128
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208072127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 54756241}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &208072129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208072127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 6
+    m_MaxSize: 24
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Menu
+--- !u!222 &208072130
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208072127}
 --- !u!1 &234541702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1393,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1196073160}
   m_RootOrder: 1
+--- !u!1 &285195827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 285195828}
+  - 222: {fileID: 285195830}
+  - 114: {fileID: 285195829}
+  m_Layer: 5
+  m_Name: PausedArrowKeysImage
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &285195828
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 285195827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .606000006, y: .0456479676}
+  m_AnchorMax: {x: .949583769, y: .316352069}
+  m_AnchoredPosition: {x: -.400001526, y: 0}
+  m_SizeDelta: {x: .448997498, y: -.700000763}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &285195829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 285195827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 78b62779ca17f4941b1a70e86f1f9f4b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &285195830
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 285195827}
 --- !u!1 &340200521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1751,7 @@ GameObject:
   - 61: {fileID: 447618177}
   m_Layer: 0
   m_Name: casas_40
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1603,7 +1846,7 @@ GameObject:
   - 61: {fileID: 453183520}
   m_Layer: 0
   m_Name: casas_16
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1827,7 +2070,7 @@ GameObject:
   - 61: {fileID: 503869175}
   m_Layer: 0
   m_Name: casas_8
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1968,7 +2211,7 @@ GameObject:
   - 61: {fileID: 535048302}
   m_Layer: 0
   m_Name: casas_43
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2033,7 +2276,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 550429468}
   m_Layer: 0
-  m_Name: lugar1
+  m_Name: Place1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2063,7 +2306,7 @@ GameObject:
   - 61: {fileID: 552918173}
   m_Layer: 0
   m_Name: casas_1
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2133,6 +2376,7 @@ GameObject:
   - 81: {fileID: 555651281}
   - 114: {fileID: 555651286}
   - 114: {fileID: 555651287}
+  - 114: {fileID: 555651288}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2222,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8206685b4ad95c54b866cc67c4a65643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  casas:
+  spHouses:
   - {fileID: 21300000, guid: 8b98d40b4e1a7b041a5202762cc678db, type: 3}
   - {fileID: 21300002, guid: 8b98d40b4e1a7b041a5202762cc678db, type: 3}
   - {fileID: 21300000, guid: 8e19bf6fefff7d549b2903e09cc91dcb, type: 3}
@@ -2237,7 +2481,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95f660a37b9be8419edc9a4637a18e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dicaobj: {fileID: 137248, guid: 95c0a57cb0fd0d94db6f943ea5c3f8ca, type: 2}
+  clueObj: {fileID: 137248, guid: 95c0a57cb0fd0d94db6f943ea5c3f8ca, type: 2}
+--- !u!114 &555651288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555651280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf2c19eb351e6b45805d5612c1cd373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseObjects: []
 --- !u!1 &562285919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,6 +2717,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1244951890}
   m_RootOrder: 2
+--- !u!1 &660445808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 660445809}
+  - 222: {fileID: 660445811}
+  - 114: {fileID: 660445810}
+  m_Layer: 5
+  m_Name: PausedText
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &660445809
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660445808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .338204026, y: .827352107}
+  m_AnchorMax: {x: .661424518, y: .952000022}
+  m_AnchoredPosition: {x: 4.57763672e-05, y: -.300003052}
+  m_SizeDelta: {x: -.5, y: -.0999984741}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &660445810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660445808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Paused
+--- !u!222 &660445811
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660445808}
 --- !u!1 &671020496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,7 +2896,7 @@ GameObject:
   - 61: {fileID: 687825364}
   m_Layer: 0
   m_Name: casas_7
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2731,6 +3053,76 @@ BoxCollider2D:
   m_Offset: {x: 14.9118195, y: 34.4184875}
   serializedVersion: 2
   m_Size: {x: 103.873413, y: 135.540283}
+--- !u!1 &749005533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 749005534}
+  - 222: {fileID: 749005536}
+  - 114: {fileID: 749005535}
+  m_Layer: 5
+  m_Name: PausedPanel
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &749005534
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749005533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 660445809}
+  - {fileID: 54756241}
+  - {fileID: 885918267}
+  - {fileID: 285195828}
+  - {fileID: 1490132272}
+  - {fileID: 890704381}
+  - {fileID: 903301026}
+  - {fileID: 1172529882}
+  - {fileID: 1822776035}
+  m_Father: {fileID: 2098530554}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .293597519, y: .162690043}
+  m_AnchorMax: {x: .704178274, y: .830789566}
+  m_AnchoredPosition: {x: .499969482, y: 1.00001144}
+  m_SizeDelta: {x: 0, y: -4}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &749005535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749005533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &749005536
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749005533}
 --- !u!1 &750127366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +3176,7 @@ GameObject:
   - 61: {fileID: 764337621}
   m_Layer: 0
   m_Name: casas_2
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2911,7 +3303,7 @@ GameObject:
   - 61: {fileID: 788202188}
   m_Layer: 0
   m_Name: Left
-  m_TagString: limite
+  m_TagString: camLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2950,7 +3342,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 811487594}
   m_Layer: 0
-  m_Name: lugar4
+  m_Name: Place4
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2979,7 +3371,7 @@ GameObject:
   - 222: {fileID: 825435052}
   - 114: {fileID: 825435051}
   m_Layer: 5
-  m_Name: CLUE
+  m_Name: Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3129,7 +3521,7 @@ GameObject:
   - 61: {fileID: 871038369}
   m_Layer: 0
   m_Name: casas_5
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3185,6 +3577,249 @@ BoxCollider2D:
   m_Offset: {x: 4.76837158e-07, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.76999998, y: 1.75999987}
+--- !u!1 &885918266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 885918267}
+  - 222: {fileID: 885918270}
+  - 114: {fileID: 885918269}
+  - 114: {fileID: 885918268}
+  m_Layer: 5
+  m_Name: RestartButton
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &885918267
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 885918266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1331882768}
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .207000017, y: .534000039}
+  m_AnchorMax: {x: .798000038, y: .658295929}
+  m_AnchoredPosition: {x: -.5, y: -.200000763}
+  m_SizeDelta: {x: 2.30000305, y: .399997711}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &885918268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 885918266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 885918269}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 555651288}
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &885918269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 885918266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &885918270
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 885918266}
+--- !u!1 &890704380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 890704381}
+  - 222: {fileID: 890704383}
+  - 114: {fileID: 890704382}
+  m_Layer: 5
+  m_Name: PausedSpacebarImage
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &890704381
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890704380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .166575551, y: .073816292}
+  m_AnchorMax: {x: .424203932, y: .203295916}
+  m_AnchoredPosition: {x: .0999984741, y: -.0999984741}
+  m_SizeDelta: {x: .5, y: -1.20000076}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &890704382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890704380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0a51424ae4794cf42862c9a6a010e4e3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &890704383
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890704380}
+--- !u!1 &903301025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 903301026}
+  - 222: {fileID: 903301028}
+  - 114: {fileID: 903301027}
+  m_Layer: 5
+  m_Name: PausedSpacebarText
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &903301026
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903301025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 6
+  m_AnchorMin: {x: .232150972, y: .214647964}
+  m_AnchorMax: {x: .358681619, y: .299576551}
+  m_AnchoredPosition: {x: .11700058, y: .200000763}
+  m_SizeDelta: {x: .255996704, y: 1.10000038}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &903301027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903301025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 12
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Run
+--- !u!222 &903301028
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903301025}
 --- !u!1 &935421837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,7 +3832,7 @@ GameObject:
   - 61: {fileID: 935421839}
   m_Layer: 0
   m_Name: casas_15
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3385,13 +4020,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b41cfac4d95cf48980a7db9a1f9758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lados:
+  faces:
   - {fileID: 21300002, guid: 0f8676e020bc7694cbb6ef24c8af854a, type: 3}
   - {fileID: 21300000, guid: 0f8676e020bc7694cbb6ef24c8af854a, type: 3}
   - {fileID: 21300000, guid: 3c52ac58070124942b60a4be2b5fe5e7, type: 3}
   stamina: 0
-  staminaconta: 0
-  staminabar: {fileID: 1216708341}
+  staminaCount: 0
+  staminaBar: {fileID: 1216708341}
 --- !u!95 &967957243
 Animator:
   serializedVersion: 3
@@ -3541,7 +4176,7 @@ GameObject:
   - 61: {fileID: 990241252}
   m_Layer: 0
   m_Name: casas_29
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3772,7 +4407,7 @@ GameObject:
   - 61: {fileID: 1040126106}
   m_Layer: 0
   m_Name: casas_4
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3881,7 +4516,7 @@ GameObject:
   - 61: {fileID: 1040860655}
   m_Layer: 0
   m_Name: casas_11
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3949,7 +4584,7 @@ GameObject:
   - 61: {fileID: 1059787045}
   m_Layer: 0
   m_Name: casas_25
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4017,7 +4652,7 @@ GameObject:
   - 61: {fileID: 1079469179}
   m_Layer: 0
   m_Name: casas_36
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4407,7 +5042,7 @@ GameObject:
   - 61: {fileID: 1166255622}
   m_Layer: 0
   m_Name: Right
-  m_TagString: limite
+  m_TagString: camLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4491,6 +5126,67 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 79019a4dd3c6a4e45a7171e53d3d5bb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1172529879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1172529882}
+  - 222: {fileID: 1172529881}
+  - 114: {fileID: 1172529880}
+  m_Layer: 5
+  m_Name: PausedPImage
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1172529880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172529879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 802d37af85fd81048904853c017fa32e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1172529881
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172529879}
+--- !u!224 &1172529882
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172529879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 7
+  m_AnchorMin: {x: .207000017, y: .378647983}
+  m_AnchorMax: {x: .313000023, y: .5}
+  m_AnchoredPosition: {x: -.685001373, y: -.399999619}
+  m_SizeDelta: {x: 1.90000153, y: .799999237}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1179837505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,7 +5349,7 @@ GameObject:
   - 61: {fileID: 1199853794}
   m_Layer: 0
   m_Name: casas_35
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4719,7 +5415,7 @@ GameObject:
   - 4: {fileID: 1216708343}
   - 212: {fileID: 1216708342}
   m_Layer: 0
-  m_Name: staminalaranja
+  m_Name: OrangeStamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4941,7 +5637,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1247468329}
   m_Layer: 0
-  m_Name: lugar3
+  m_Name: Place3
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5053,7 +5749,7 @@ GameObject:
   - 61: {fileID: 1277001568}
   m_Layer: 0
   m_Name: casas_0
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5175,7 +5871,7 @@ GameObject:
   - 61: {fileID: 1278849567}
   m_Layer: 0
   m_Name: casas_37
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5270,7 +5966,7 @@ GameObject:
   - 61: {fileID: 1310774302}
   m_Layer: 0
   m_Name: casas_6
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5357,6 +6053,72 @@ Transform:
   - {fileID: 811487594}
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!1 &1331882767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1331882768}
+  - 222: {fileID: 1331882770}
+  - 114: {fileID: 1331882769}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1331882768
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331882767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885918267}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1331882769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331882767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 6
+    m_MaxSize: 24
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Restart
+--- !u!222 &1331882770
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331882767}
 --- !u!1 &1334693767
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,7 +6219,7 @@ GameObject:
   - 61: {fileID: 1370882672}
   m_Layer: 0
   m_Name: casas_23
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5682,7 +6444,7 @@ GameObject:
   - 61: {fileID: 1406048124}
   m_Layer: 0
   m_Name: casas_38
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6081,6 +6843,72 @@ BoxCollider2D:
   m_Offset: {x: .0440979004, y: .143783569}
   serializedVersion: 2
   m_Size: {x: 72.2987671, y: 72.0878601}
+--- !u!1 &1490132271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1490132272}
+  - 222: {fileID: 1490132274}
+  - 114: {fileID: 1490132273}
+  m_Layer: 5
+  m_Name: PausedArrowKeysText
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1490132272
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1490132271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .535371363, y: .203295916}
+  m_AnchorMax: {x: .702000022, y: .288280636}
+  m_AnchoredPosition: {x: .5, y: -.207000732}
+  m_SizeDelta: {x: .0999984741, y: 1.09999847}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1490132273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1490132271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 12
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Move
+--- !u!222 &1490132274
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1490132271}
 --- !u!1 &1499052739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6290,7 +7118,7 @@ GameObject:
   - 61: {fileID: 1565573032}
   m_Layer: 0
   m_Name: casas_39
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6358,7 +7186,7 @@ GameObject:
   - 61: {fileID: 1570528397}
   m_Layer: 0
   m_Name: casas_19
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6744,7 +7572,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1663037119}
   m_Layer: 0
-  m_Name: lugar2
+  m_Name: Place2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6774,7 +7602,7 @@ GameObject:
   - 61: {fileID: 1665497103}
   m_Layer: 0
   m_Name: casas_17
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6840,7 +7668,7 @@ GameObject:
   - 4: {fileID: 1705802952}
   - 212: {fileID: 1705802953}
   m_Layer: 0
-  m_Name: fadein
+  m_Name: FadeIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6978,7 +7806,7 @@ GameObject:
   - 61: {fileID: 1734223089}
   m_Layer: 0
   m_Name: casas_10
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7046,7 +7874,7 @@ GameObject:
   - 61: {fileID: 1747664686}
   m_Layer: 0
   m_Name: casas_34
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7168,7 +7996,7 @@ GameObject:
   - 61: {fileID: 1758579998}
   m_Layer: 0
   m_Name: casas_3
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7236,7 +8064,7 @@ GameObject:
   - 61: {fileID: 1797681105}
   m_Layer: 0
   m_Name: casas_28
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7304,7 +8132,7 @@ GameObject:
   - 61: {fileID: 1802209705}
   m_Layer: 0
   m_Name: casas_42
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7372,7 +8200,7 @@ GameObject:
   - 61: {fileID: 1820976742}
   m_Layer: 0
   m_Name: casas_12
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7428,6 +8256,72 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1822776034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1822776035}
+  - 222: {fileID: 1822776037}
+  - 114: {fileID: 1822776036}
+  m_Layer: 5
+  m_Name: PausedPText
+  m_TagString: ShowOnPause
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1822776035
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1822776034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 749005534}
+  m_RootOrder: 8
+  m_AnchorMin: {x: .313000023, y: .390000015}
+  m_AnchorMax: {x: .762628555, y: .48300001}
+  m_AnchoredPosition: {x: 1.86507797, y: .548411608}
+  m_SizeDelta: {x: 1.30003357, y: .14180851}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1822776036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1822776034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 12
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Pause/Unpause
+--- !u!222 &1822776037
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1822776034}
 --- !u!1 &1824842059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7441,7 +8335,7 @@ GameObject:
   - 61: {fileID: 1824842061}
   m_Layer: 0
   m_Name: casas_9
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7523,7 +8417,7 @@ GameObject:
   - 61: {fileID: 1833275323}
   m_Layer: 0
   m_Name: casas_24
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7745,7 +8639,7 @@ GameObject:
   - 61: {fileID: 1856071164}
   m_Layer: 0
   m_Name: casas_26
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7813,7 +8707,7 @@ GameObject:
   - 61: {fileID: 1872806733}
   m_Layer: 0
   m_Name: casas_31
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7969,7 +8863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   places2Walk: []
-  lugares:
+  places:
   - {fileID: 550429468}
   - {fileID: 1663037119}
   - {fileID: 1247468329}
@@ -8101,7 +8995,7 @@ GameObject:
   - 61: {fileID: 1940654194}
   m_Layer: 0
   m_Name: casas_13
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8169,7 +9063,7 @@ GameObject:
   - 61: {fileID: 1963928768}
   m_Layer: 0
   m_Name: casas_20
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8487,7 +9381,7 @@ GameObject:
   - 61: {fileID: 2054982014}
   m_Layer: 0
   m_Name: casas_30
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8608,7 +9502,7 @@ GameObject:
   - 61: {fileID: 2068462450}
   m_Layer: 0
   m_Name: Up
-  m_TagString: limite
+  m_TagString: camLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8691,7 +9585,7 @@ GameObject:
   - 61: {fileID: 2081857267}
   m_Layer: 0
   m_Name: casas_22
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8871,6 +9765,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 825435050}
+  - {fileID: 749005534}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -8950,7 +9845,7 @@ GameObject:
   - 61: {fileID: 2142804781}
   m_Layer: 0
   m_Name: casas_32
-  m_TagString: localcasa
+  m_TagString: housePremises
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3,25 +3,21 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-	FieldOfVision field;
-	private Camera cam;
-	private Transform my;
+	private FieldOfVision field;
 	private Rigidbody2D body;
-	public Sprite[] lados;
-	private float Speed;
+	public Sprite[] faces = new Sprite[3];
+	private float speed;
 
-	SpriteRenderer sp;
+	private SpriteRenderer sp;
 
 	private float activeZoom;
 	private bool zoomOut = true;
 
-	[HideInInspector] public float stamina, staminaconta ;
-	public GameObject staminabar;
+	[HideInInspector] public float stamina, staminaCount;
+	public GameObject staminaBar;
 
 	void Awake ()
 	{
-		cam = Camera.main;
-		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
 	}
 
@@ -30,20 +26,20 @@ public class Player : MonoBehaviour
 		sp = GetComponent<SpriteRenderer> ();
 		stamina = 100; 
 		field = GameObject.Find ("Enemy").GetComponentInChildren<FieldOfVision> ();
-		Speed = 15;
+		speed = 15;
 	}
 
 	void FixedUpdate()
 	{
 		if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0)
 		{
-			Speed = 30;
+			speed = 30;
 			activeZoom = Time.time;
 			zoomOut = false;
 		}
 		else if(!Input.GetKey(KeyCode.Space) && !zoomOut)
 		{
-			Speed = 15;
+			speed = 15;
 			activeZoom = Time.time;
 			zoomOut = true;
 		}
@@ -56,11 +52,11 @@ public class Player : MonoBehaviour
 		if (stamina <= 0)
 		{
 			zoomOut = true;
-			Speed = 15; 		
+			speed = 15; 		
 		}
 
-		staminaconta = (stamina/100f) * 2.45f;
-		staminabar.transform.localScale = new Vector3(staminaconta,staminabar.transform.localScale.y,staminabar.transform.localScale.z);
+		staminaCount = (stamina/100f) * 2.45f;
+		staminaBar.transform.localScale = new Vector3(staminaCount,staminaBar.transform.localScale.y,staminaBar.transform.localScale.z);
 
 		if (field.saw)
 			GetComponent<SpriteRenderer> ().color = Color.cyan;
@@ -71,38 +67,38 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKey ("up"))
 		{
-			body.velocity = Vector3.up * Speed;
+			body.velocity = Vector3.up * speed;
 		}
 		if (Input.GetKey ("left"))
 		{
-			sp.sprite = lados[2];
-			body.velocity = Vector3.left * Speed;
+			sp.sprite = faces[2];
+			body.velocity = Vector3.left * speed;
 		}
 		if (Input.GetKey ("down"))
 		{
-			sp.sprite = lados[0];
-			body.velocity = Vector3.down * Speed;
+			sp.sprite = faces[0];
+			body.velocity = Vector3.down * speed;
 		}
 		if (Input.GetKey ("right"))
 		{
-			sp.sprite = lados[1];
-			body.velocity = Vector3.right * Speed;
+			sp.sprite = faces[1];
+			body.velocity = Vector3.right * speed;
 		}
 		if (Input.GetKey ("up") && Input.GetKey ("left"))
 		{
-			body.velocity = new Vector3(-1,1,0) * Speed;
+			body.velocity = new Vector3(-1,1,0) * speed;
 		}
 		if (Input.GetKey ("up") && Input.GetKey ("right"))
 		{
-			body.velocity = new Vector3(1,1,0) * Speed;
+			body.velocity = new Vector3(1,1,0) * speed;
 		}
 		if (Input.GetKey ("down") && Input.GetKey ("left"))
 		{
-			body.velocity = new Vector3(-1,-1,0) * Speed;
+			body.velocity = new Vector3(-1,-1,0) * speed;
 		}
 		if (Input.GetKey ("down") && Input.GetKey ("right"))
 		{
-			body.velocity = new Vector3(1,-1,0) * Speed; 
+			body.velocity = new Vector3(1,-1,0) * speed; 
 		}
 
 		if (zoomOut)

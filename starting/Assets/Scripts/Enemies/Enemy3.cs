@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Enemy3 : MonoBehaviour
 {
-	FieldOfVision field;
+	private FieldOfVision field;
 	private GameObject player;
-	bool once; 
-	Transform my; 
-	Rigidbody2D body;
+	private bool once; 
+	private Transform my; 
+	private Rigidbody2D body;
 
 	void Start ()
 	{
@@ -33,15 +33,15 @@ public class Enemy3 : MonoBehaviour
 
 		if (field.saw && field.leaved)
 		{
-			Vector2 posiplayer = player.transform.position;
-			float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
+			Vector2 playerPosition = player.transform.position;
+			float AngleRad = Mathf.Atan2 (-playerPosition.x + my.position.x, playerPosition.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
 		}
 
 		if (!field.leaved)
 		{
-			field.saw = false ; 
+			field.saw = false; 
 			once = false; 
 		}
 	}
