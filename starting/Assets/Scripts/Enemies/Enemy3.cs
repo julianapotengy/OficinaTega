@@ -4,7 +4,9 @@ using System.Collections;
 public class Enemy3 : MonoBehaviour
 {
 	private FieldOfVision field;
-	[HideInInspector] public bool once; 
+	[HideInInspector] public bool once;
+	private PauseGame isPaused;
+
 	private Transform my; 
 	private Rigidbody2D body;
 	private GameObject player;
@@ -26,8 +28,10 @@ public class Enemy3 : MonoBehaviour
 
 	void Start ()
 	{
-		once = false; 
 		field = GetComponentInChildren<FieldOfVision> ();
+		once = false;
+		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
+
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("player");
@@ -54,18 +58,21 @@ public class Enemy3 : MonoBehaviour
 
 	void Update ()
 	{
-		WalkAndRun ();
-		camPosition = mainCamera.position;
-
-		if (shakeDuration > 0)
+		if (!isPaused.paused)
 		{
-			mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
-			shakeDuration -= Time.deltaTime * decreaseFactor;
-		}
-		else
-		{
-			shakeDuration = 0f;
-			mainCamera.localPosition = camPosition;
+			WalkAndRun ();
+			camPosition = mainCamera.position;
+			
+			if (shakeDuration > 0)
+			{
+				mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
+				shakeDuration -= Time.deltaTime * decreaseFactor;
+			}
+			else
+			{
+				shakeDuration = 0f;
+				mainCamera.localPosition = camPosition;
+			}
 		}
 	}
 

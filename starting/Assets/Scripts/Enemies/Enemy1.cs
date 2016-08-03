@@ -4,6 +4,8 @@ using System.Collections;
 public class Enemy1 : MonoBehaviour
 {
 	private FieldOfVision field;
+	private PauseGame isPaused;
+
 	private Transform my;
 	private Rigidbody2D body;
 	private GameObject player;
@@ -21,6 +23,8 @@ public class Enemy1 : MonoBehaviour
 	void Start ()
 	{
 		field = GetComponentInChildren<FieldOfVision> ();
+		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
+
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
 		player = GameObject.Find ("Player");
@@ -37,13 +41,16 @@ public class Enemy1 : MonoBehaviour
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent (transform);
 
-		speed = 0.4f;
+		speed = 0.6f;
 		timer = 0;
 	}
 
 	void Update ()
 	{
-		WalkAndRun();
+		if (!isPaused.paused)
+		{
+			WalkAndRun();
+		}
 	}
 
 	void WalkAndRun()

@@ -4,10 +4,12 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 	private FieldOfVision field;
+	private PauseGame isPaused;
+
 	private Rigidbody2D body;
-	public Sprite[] faces = new Sprite[3];
 	private float speed;
 
+	public Sprite[] faces = new Sprite[3];
 	private SpriteRenderer sp;
 
 	private float activeZoom;
@@ -23,10 +25,12 @@ public class Player : MonoBehaviour
 
 	void Start()
 	{
-		sp = GetComponent<SpriteRenderer> ();
-		stamina = 100; 
 		field = GameObject.Find ("Enemy").GetComponentInChildren<FieldOfVision> ();
+		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
+
 		speed = 15;
+		sp = GetComponent<SpriteRenderer> ();
+		stamina = 100;
 	}
 
 	void FixedUpdate()
@@ -49,22 +53,42 @@ public class Player : MonoBehaviour
 	{
 		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 
-		if (stamina <= 0)
+		if(!isPaused.paused)
 		{
-			zoomOut = true;
-			speed = 15; 		
+			WalkAndRun ();
+			if (stamina <= 0)
+			{
+				zoomOut = true;
+				speed = 15; 		
+			}
+			
+			staminaCount = (stamina/100f) * 2.45f;
+			staminaBar.transform.localScale = new Vector3(staminaCount,staminaBar.transform.localScale.y,staminaBar.transform.localScale.z);
+			
+			if (zoomOut)
+			{
+				Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
+				if (stamina < 100 && !Input.GetKey(KeyCode.Space))
+					stamina +=10 * Time.deltaTime;
+			} 
+			else
+			{
+				Camera.main.orthographicSize = Mathf.Lerp (12, 7, 5f * (Time.time - activeZoom));
+				if (stamina > 0)
+					stamina -= 10 * Time.deltaTime;
+			}
 		}
+	}
 
-		staminaCount = (stamina/100f) * 2.45f;
-		staminaBar.transform.localScale = new Vector3(staminaCount,staminaBar.transform.localScale.y,staminaBar.transform.localScale.z);
-
+	void WalkAndRun()
+	{
 		if (field.saw)
 			GetComponent<SpriteRenderer> ().color = Color.cyan;
 		else
 			GetComponent<SpriteRenderer> ().color = Color.white;
-
+		
 		body.velocity = new Vector3 (0, 0, 0);
-
+		
 		if (Input.GetKey ("up"))
 		{
 			body.velocity = Vector3.up * speed;
@@ -99,19 +123,6 @@ public class Player : MonoBehaviour
 		if (Input.GetKey ("down") && Input.GetKey ("right"))
 		{
 			body.velocity = new Vector3(1,-1,0) * speed; 
-		}
-
-		if (zoomOut)
-		{
-			Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
-			if (stamina < 100 && !Input.GetKey(KeyCode.Space))
-				stamina +=10 * Time.deltaTime;
-		} 
-		else
-		{
-			Camera.main.orthographicSize = Mathf.Lerp (12, 7, 5f * (Time.time - activeZoom));
-			if (stamina > 0)
-				stamina -= 10 * Time.deltaTime;
 		}
 	}
 

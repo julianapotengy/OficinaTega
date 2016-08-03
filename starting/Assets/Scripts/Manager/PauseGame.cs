@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PauseGame : MonoBehaviour
 {
 	public GameObject[] pauseObjects;
+	[HideInInspector] public bool paused;
 
 	public Text pressPToPause;
 	private float timer;
@@ -15,6 +16,7 @@ public class PauseGame : MonoBehaviour
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		hidePaused();
 
+		paused = false;
 		timer = 4;
 	}
 
@@ -25,11 +27,13 @@ public class PauseGame : MonoBehaviour
 			if(Time.timeScale == 1)
 			{
 				Time.timeScale = 0;
+				paused = true;
 				showPaused();
 			}
 			else if (Time.timeScale == 0)
 			{
 				Time.timeScale = 1;
+				paused = false;
 				hidePaused();
 			}
 		}
@@ -60,7 +64,7 @@ public class PauseGame : MonoBehaviour
 		}
 	}
 	
-	public void LoadLevel(string level)
+	public void LoadLevel(int level)
 	{
 		Application.LoadLevel(level);
 	}

@@ -4,6 +4,8 @@ using System.Collections;
 public class Enemy2 : MonoBehaviour
 {
 	private FieldOfVision field;
+	private PauseGame isPaused;
+
 	private Transform my;
 	private Rigidbody2D body;
 	private GameObject player;
@@ -26,6 +28,8 @@ public class Enemy2 : MonoBehaviour
 	void Start ()
 	{ 
 		field = GetComponentInChildren<FieldOfVision> ();
+		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
+
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("player");
@@ -50,6 +54,15 @@ public class Enemy2 : MonoBehaviour
 
 	void Update ()
 	{
+		if (!isPaused.paused)
+		{
+			FadeIn();
+			WalkAndRun();
+		}
+	}
+
+	void FadeIn()
+	{
 		if (fadeIn)
 		{
 			fadeNum += 5;
@@ -59,7 +72,7 @@ public class Enemy2 : MonoBehaviour
 			                                                                           fadeNum/255);
 			player.SetActive(false);
 			GetComponent<SpriteRenderer>().enabled = false;
-
+			
 			GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = false;
 			
@@ -74,32 +87,38 @@ public class Enemy2 : MonoBehaviour
 				field.saw = false;
 				fadeIn = false;
 				fadeNum = 0;
-
+				
 				player.SetActive(true);
 				GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = true;
 				GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = true;
-
+				
 				GetComponent<SpriteRenderer>().enabled = true ; 
 				GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
 				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
 				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
 				                                                                           fadeNum / 255);
 			}
-
-		
+			
+			
 		}
+	}
+
+	void WalkAndRun()
+	{
 		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
+			player.GetComponent<SpriteRenderer>().color = Color.cyan;
+			
 			Vector2 posiplayer = player.transform.position;
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
-
+			
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
 			transform.Translate(Vector3.up * speed);
 		}
-
+		
 		if (!field.saw)
 		{
 			if (transform.position == places2Walk[2].position)
@@ -118,7 +137,7 @@ public class Enemy2 : MonoBehaviour
 				}
 				goTo[0] = true;
 			}
-
+			
 			if (goTo[0])
 			{
 				for (int i = 0; i < goTo.Length; i++)
@@ -158,6 +177,7 @@ public class Enemy2 : MonoBehaviour
 			{
 				fadeIn = true;
 				GetComponent<SpriteRenderer>().color = Color.white;
+				player.GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
 	}

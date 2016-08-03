@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ClueObj : MonoBehaviour
 {
-	private string[] clue = new string[3]{"Casa vermelha","Casa amarela","Casa dourada"};
+	private string[] clue = new string[3]{"Casa marrom","Casa laranja","Casa dourada"};
 	private Text clueTx;
 
 	void Start ()
