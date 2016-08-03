@@ -24,9 +24,7 @@ public class Enemy2 : MonoBehaviour
 	private float fadeNum;
 
 	void Start ()
-	{
-		fadeNum = 0;
-		fadeIn = false; 
+	{ 
 		field = GetComponentInChildren<FieldOfVision> ();
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
@@ -42,9 +40,12 @@ public class Enemy2 : MonoBehaviour
 		}
 		
 		transform.DetachChildren ();
-		places2Walk [1].gameObject.transform.SetParent (transform);
+		places2Walk[1].gameObject.transform.SetParent(transform);
 
 		speed = 0.4f;
+
+		fadeNum = 0;
+		fadeIn = false;
 	}
 
 	void Update ()
@@ -62,7 +63,7 @@ public class Enemy2 : MonoBehaviour
 			GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = false;
 			
-			if(fadeNum > 255)
+			if(this.fadeNum > 255)
 			{
 				int rand = Random.Range(0, playerGoTo.Length);
 				playerGoTo[rand] = true;
@@ -91,7 +92,7 @@ public class Enemy2 : MonoBehaviour
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
 			Vector2 posiplayer = player.transform.position;
-			float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
+			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
 

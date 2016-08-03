@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Enemies\Enemy2.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy3.cs" />
      <Compile Include="Assets\Scripts\Enemies\FieldOfVision.cs" />
+     <Compile Include="Assets\Scripts\Manager\Lights.cs" />
      <Compile Include="Assets\Scripts\Manager\Menu.cs" />
      <Compile Include="Assets\Scripts\Manager\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Manager\RandomHouse.cs" />

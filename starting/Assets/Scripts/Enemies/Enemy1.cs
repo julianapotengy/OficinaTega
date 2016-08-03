@@ -58,9 +58,8 @@ public class Enemy1 : MonoBehaviour
 			timer += Time.deltaTime;
 			GetComponent<SpriteRenderer>().color = Color.red;
 
-			Vector2 playerPosition = player.transform.position;
-			float AngleRad = Mathf.Atan2 (-playerPosition.x + my.position.x, playerPosition.y - my.position.y);
-
+			Vector2 posiplayer = player.transform.position;
+			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
 

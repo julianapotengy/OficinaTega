@@ -11,6 +11,7 @@ TagManager:
   - housePremises
   - camLimit
   - ShowOnPause
+  - Light
   layers:
   - Default
   - TransparentFX
