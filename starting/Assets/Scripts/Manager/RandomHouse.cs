@@ -35,4 +35,8 @@ public class RandomHouse : MonoBehaviour
 			else places[i].GetComponent<SpriteRenderer> ().sprite = spHouses[rand];
 		}
 	}
+	void Update()
+	{
+		Debug.Log (goldenHouse);
+	}
 }

@@ -12,6 +12,7 @@ TagManager:
   - camLimit
   - ShowOnPause
   - Light
+  - map
   layers:
   - Default
   - TransparentFX

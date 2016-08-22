@@ -6,7 +6,7 @@ public class Enemy3 : MonoBehaviour
 	private FieldOfVision field;
 	[HideInInspector] public bool once;
 	private PauseGame isPaused;
-
+	private PolyNavAgent Pagent;
 	private Transform my; 
 	private Rigidbody2D body;
 	private GameObject player;
@@ -25,9 +25,22 @@ public class Enemy3 : MonoBehaviour
 	private float shakeAmount;
 	private float decreaseFactor;
 	private Vector3 camPosition;
-
+	bool mascara; 
+	private bool chegou ;
+	int rand ; 
+	float timer ; 
+	GameObject susto; 
+	AudioClip sustosnd; 
 	void Start ()
 	{
+		sustosnd = Resources.Load ("Game/Susto") as AudioClip;
+		mascara = false;
+		susto = GameObject.Find ("susto");
+		susto.SetActive (false);
+		timer = 0; 
+		chegou = false; 
+		rand = Random.Range (2, places2Walk.Length);
+		Pagent = GetComponent<PolyNavAgent> ();
 		field = GetComponentInChildren<FieldOfVision> ();
 		once = false;
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
@@ -47,7 +60,7 @@ public class Enemy3 : MonoBehaviour
 		
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
-
+		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
 		speed = 0.4f;
 
 		shakeDuration = 0;
@@ -62,9 +75,17 @@ public class Enemy3 : MonoBehaviour
 		{
 			WalkAndRun ();
 			camPosition = mainCamera.position;
-			
+			if (mascara)
+			{
+				timer+=Time.deltaTime;
+				if (timer <= 1f)susto.SetActive(true); 
+				else{ susto.SetActive(false);
+					timer = 0;
+					mascara = false ; }
+			}
 			if (shakeDuration > 0)
 			{
+
 				mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
 				shakeDuration -= Time.deltaTime * decreaseFactor;
 			}
@@ -80,18 +101,30 @@ public class Enemy3 : MonoBehaviour
 	{
 		if (field.saw)
 		{
-			GetComponent<SpriteRenderer>().color = Color.red;
-			Vector2 posiplayer = player.transform.position;
-			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
+			/*float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
-			
+			*/
+			GetComponent<SpriteRenderer>().color = Color.red;
+			Vector2 posiplayer = player.transform.position;
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
-			transform.Translate(Vector3.up * speed);
+			Pagent.SetDestination(posiplayer);
+			Pagent.maxSpeed = 20; 
+			//transform.Translate(Vector3.up * speed);
+
+			if (!field.leaved)
+			{
+				chegou = false ; 
+				Debug.Log("hey");
+				field.saw = false; 
+				once = false; 
+				GetComponent<SpriteRenderer>().color = Color.white;
+				rand = Random.Range (2, places2Walk.Length);
+			}
 		}
 
-		if (!field.saw)
-		{
+		if (!field.saw) {/*
+
 			if (transform.position == places2Walk[2].position)
 			{
 				for (int i = 0; i < goTo.Length; i++)
@@ -180,7 +213,20 @@ public class Enemy3 : MonoBehaviour
 				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
+			}*/
+			Pagent.maxSpeed = 10 ; 
+			if (!chegou) {
+			//	Debug.Log (rand);
+				Pagent.SetDestination (places2Walk [rand].position);
+				if (Pagent.remainingDistance <= 0.4f)
+					chegou = true; 
 			}
+			else{ 
+				rand = Random.Range (2, places2Walk.Length);
+				chegou = false ; 
+			
+			}
+		
 		}
 	}
 	
@@ -190,21 +236,18 @@ public class Enemy3 : MonoBehaviour
 		{
 			if(other.gameObject.name.Equals("Player"))
 			{
-				shakeDuration = 0.5f;
+				shakeDuration = 1.5f;
 				player.GetComponent<Player>().stamina /= 2;
 				once = true;
+				GameManager.Playsound(sustosnd);
 				field.saw = false;
-
+				mascara = true ; 
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
 
-		if (!field.leaved)
-		{
-			field.saw = false; 
-			once = false; 
-		}
+
 	}
 }

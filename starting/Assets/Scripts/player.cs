@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
 			speed = 15;
 			activeZoom = Time.time;
 			zoomOut = true;
+
 		}
 	}
 	
@@ -64,7 +65,8 @@ public class Player : MonoBehaviour
 			
 			staminaCount = (stamina/100f) * 2.45f;
 			staminaBar.transform.localScale = new Vector3(staminaCount,staminaBar.transform.localScale.y,staminaBar.transform.localScale.z);
-			
+			if (stamina<25)staminaBar.GetComponent<SpriteRenderer>().color = Color.red;
+			else staminaBar.GetComponent<SpriteRenderer>().color = Color.white;
 			if (zoomOut)
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
@@ -135,6 +137,22 @@ public class Player : MonoBehaviour
 		if (other.gameObject.tag == "goldenHouse")
 		{
 			Application.LoadLevel(4);
+		}
+	}
+	void OnTriggerStay2D(Collider2D coll)
+	{
+		if (coll.gameObject.tag == "map") {
+		
+			GameObject.Find("Mapcam"+coll.gameObject.name).GetComponent<Camera>().depth = 5;
+			coll.GetComponent<SpriteRenderer>().enabled = false ; 
+		}
+	}
+	void OnTriggerExit2D(Collider2D coll)
+	{
+		if (coll.gameObject.tag == "map") {
+			
+			GameObject.Find("Mapcam"+coll.gameObject.name).GetComponent<Camera>().depth = -12;
+			coll.GetComponent<SpriteRenderer>().enabled = true ; 
 		}
 	}
 }

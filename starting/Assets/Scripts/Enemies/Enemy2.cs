@@ -24,9 +24,14 @@ public class Enemy2 : MonoBehaviour
 
 	private bool fadeIn;
 	private float fadeNum;
-
+	private PolyNavAgent Pagent;
+	int rand ; 
+	bool chegou ; 
 	void Start ()
 	{ 
+		Pagent = GetComponent<PolyNavAgent> ();
+		rand = Random.Range (2, places2Walk.Length);
+		chegou = false; 
 		field = GetComponentInChildren<FieldOfVision> ();
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
@@ -45,7 +50,7 @@ public class Enemy2 : MonoBehaviour
 		
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
-
+		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
 		speed = 0.4f;
 
 		fadeNum = 0;
@@ -111,17 +116,30 @@ public class Enemy2 : MonoBehaviour
 			player.GetComponent<SpriteRenderer>().color = Color.cyan;
 			
 			Vector2 posiplayer = player.transform.position;
-			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
+			/*float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
-			
+
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
-			transform.Translate(Vector3.up * speed);
+			transform.Translate(Vector3.up * speed);*/
+			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
+			Pagent.SetDestination(posiplayer);
+			Pagent.maxSpeed = 20 ; 
+			if (!field.leaved)
+			{
+				
+				field.saw = false;
+				rand = Random.Range (2, places2Walk.Length);
+				chegou = false ; 
+				Debug.Log("saiuCampo");
+				GetComponent<SpriteRenderer>().color = Color.white;
+			}
 		}
 		
 		if (!field.saw)
 		{
-			if (transform.position == places2Walk[2].position)
+			Pagent.maxSpeed = 10 ; 
+			/*if (transform.position == places2Walk[2].position)
 			{
 				for (int i = 0; i < goTo.Length; i++)
 				{
@@ -165,6 +183,16 @@ public class Enemy2 : MonoBehaviour
 				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 				float angle = (180 / Mathf.PI) * AngleRad;
 				body.rotation = angle;
+			}*/
+			if (!chegou) {
+				//	Debug.Log (rand);
+				Pagent.SetDestination (places2Walk [rand].position);
+				if (Pagent.remainingDistance <= 0.4f)
+					chegou = true; 
+			}
+			else{ 
+				rand = Random.Range (2, places2Walk.Length);
+				chegou = false ; 
 			}
 		}
 	}
@@ -186,14 +214,16 @@ public class Enemy2 : MonoBehaviour
 	{
 		if (field.saw)
 		{
-			if (other.gameObject.tag == "camLimit")
+			/*if (other.gameObject.tag == "camLimit")
 			{
-				transform.position = originalPosition;
-				transform.rotation = Quaternion.Euler(originalPositionR);
+
+
 				field.saw = false;
-				
+				rand = Random.Range(2,4);
+				chegou = false ; 
+				Debug.Log("saiuCampo");
 				GetComponent<SpriteRenderer>().color = Color.white;
-			}
+			}*/
 		}
 	}
 }
