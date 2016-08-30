@@ -10,19 +10,16 @@ public class Enemy1 : MonoBehaviour
 	private Rigidbody2D body;
 	private GameObject player;
 
-	private Vector3 originalPosition;
-	private Vector3 originalPositionR;
-
 	public Transform[] places2Walk;
 	private bool goTo2, goTo3, goTo4, goTo5;
 	private bool[] goTo = new bool[4];
 
-	private float speed;
 	private float timer;
 
 	private PolyNavAgent Pagent;
-	int rand ; 
-	bool chegou ; 
+	int rand; 
+	bool chegou;
+
 	void Start ()
 	{
 		Pagent = GetComponent<PolyNavAgent> ();
@@ -36,9 +33,6 @@ public class Enemy1 : MonoBehaviour
 		body = GetComponent <Rigidbody2D> ();
 		player = GameObject.Find ("Player");
 
-		originalPosition = transform.position;
-		originalPositionR = transform.eulerAngles;
-
 		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < goTo.Length; i++)
 		{
@@ -48,7 +42,6 @@ public class Enemy1 : MonoBehaviour
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent (transform);
 		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
-		speed = 0.6f;
 		timer = 0;
 	}
 
@@ -64,11 +57,6 @@ public class Enemy1 : MonoBehaviour
 	{
 		if (field.saw)
 		{
-		/*	for (int i = 0; i < goTo.Length; i++)
-			{
-				goTo[i] = false; 
-			}
-*/
 			timer += Time.deltaTime;
 			GetComponent<SpriteRenderer>().color = Color.red;
 
@@ -81,116 +69,23 @@ public class Enemy1 : MonoBehaviour
 			{
 				transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
 				Pagent.SetDestination(posiplayer);
-				Pagent.maxSpeed = 25 ; 
+				Pagent.maxSpeed = 25; 
 			}
 		}
 		
 		if (!field.saw)
 		{
-		/*	if (transform.position == places2Walk[2].position)
+			Pagent.maxSpeed = 10; 
+			if (!chegou)
 			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false;
-				}
-				int rand = Random.Range(0,goTo.Length);
-				goTo[rand] = true;
-			}
-			else if (transform.position == places2Walk[3].position)
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				int rand = Random.Range(0,goTo.Length);
-				goTo[rand] = true;
-			}
-			else if (transform.position == places2Walk[4].position)
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				int rand = Random.Range(0,goTo.Length);
-				goTo[rand] = true;
-			}
-			else if (transform.position == places2Walk[5].position)
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				int rand = Random.Range(0,goTo.Length);
-				goTo[rand] = true;
-			}
-			
-			if (goTo[1])
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false;
-				}
-				goTo[1]= true;
-				transform.position = Vector3.MoveTowards (transform.position, places2Walk[3].position, 0.2f);
-
-				Vector2 posiplayer = places2Walk[3].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
-			}
-			else if (goTo[2])
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				goTo[2] = true;
-				transform.position = Vector3.MoveTowards (transform.position, places2Walk[4].position, 0.2f);
-
-				Vector2 posiplayer = places2Walk[4].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
-			}
-			else if (goTo[3])
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				goTo[3]= true;
-				transform.position = Vector3.MoveTowards (transform.position, places2Walk[5].position, 0.2f);
-
-				Vector2 posiplayer = places2Walk[5].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
-			}
-			else if (goTo[0])
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				goTo[0] = true; 
-				transform.position = Vector3.MoveTowards (transform.position, places2Walk[2].position, 0.2f);
-
-				Vector2 posiplayer = places2Walk[2].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x - -my.position.x, posiplayer.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
-			}*/
-			Pagent.maxSpeed = 10 ; 
-			if (!chegou) {
-					//Debug.Log ("enemy 1 rand "+rand);
 				Pagent.SetDestination (places2Walk [rand].position);
-				//Debug.Log(Pagent.remainingDistance);
 				if (Pagent.remainingDistance <= 0.45f)
 					chegou = true; 
 			}
-			else{ 
+			else
+			{ 
 				rand = Random.Range (2, places2Walk.Length);
-				chegou = false ; 
+				chegou = false; 
 			}
 		}
 	}
@@ -201,10 +96,9 @@ public class Enemy1 : MonoBehaviour
 		{
 			if (other.gameObject.tag == "camLimit")
 				{
-					
 					field.saw = false;
 					rand = Random.Range (2, places2Walk.Length);
-					chegou = false ; 
+					chegou = false; 
 					timer = 0;
 					GetComponent<SpriteRenderer>().color = Color.white;
 				}

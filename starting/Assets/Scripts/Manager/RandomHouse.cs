@@ -37,6 +37,6 @@ public class RandomHouse : MonoBehaviour
 	}
 	void Update()
 	{
-		Debug.Log (goldenHouse);
+
 	}
 }

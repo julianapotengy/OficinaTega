@@ -6,8 +6,6 @@ public class Enemy2 : MonoBehaviour
 	private FieldOfVision field;
 	private PauseGame isPaused;
 
-	private Transform my;
-	private Rigidbody2D body;
 	private GameObject player;
 
 	private Vector3 originalPosition;
@@ -20,13 +18,14 @@ public class Enemy2 : MonoBehaviour
 	public Transform[] places = new Transform[4];
 	private bool[] playerGoTo = new bool[4];
 
-	private float speed;
+	public AudioClip susto;
 
 	private bool fadeIn;
 	private float fadeNum;
 	private PolyNavAgent Pagent;
-	int rand ; 
-	bool chegou ; 
+	private int rand; 
+	private bool chegou;
+
 	void Start ()
 	{ 
 		Pagent = GetComponent<PolyNavAgent> ();
@@ -35,8 +34,6 @@ public class Enemy2 : MonoBehaviour
 		field = GetComponentInChildren<FieldOfVision> ();
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
-		my = GetComponent <Transform> ();
-		body = GetComponent <Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("player");
 
 		originalPosition = transform.position;
@@ -51,7 +48,6 @@ public class Enemy2 : MonoBehaviour
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
 		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
-		speed = 0.4f;
 
 		fadeNum = 0;
 		fadeIn = false;
@@ -116,18 +112,12 @@ public class Enemy2 : MonoBehaviour
 			player.GetComponent<SpriteRenderer>().color = Color.cyan;
 			
 			Vector2 posiplayer = player.transform.position;
-			/*float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
-			float angle = (180 / Mathf.PI) * AngleRad;
-			body.rotation = angle;
-
-			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
-			transform.Translate(Vector3.up * speed);*/
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
 			Pagent.SetDestination(posiplayer);
-			Pagent.maxSpeed = 20 ; 
+			Pagent.maxSpeed = 20;
+
 			if (!field.leaved)
 			{
-				
 				field.saw = false;
 				rand = Random.Range (2, places2Walk.Length);
 				chegou = false ; 
@@ -138,61 +128,18 @@ public class Enemy2 : MonoBehaviour
 		
 		if (!field.saw)
 		{
-			Pagent.maxSpeed = 10 ; 
-			/*if (transform.position == places2Walk[2].position)
+			Pagent.maxSpeed = 10; 
+
+			if (!chegou)
 			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false;
-				}
-				goTo[1] = true;
-			}
-			else if (transform.position == places2Walk[3].position)
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				goTo[0] = true;
-			}
-			
-			if (goTo[0])
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false;
-				}
-				goTo[0]= true;
-				transform.position = Vector3.MoveTowards (transform.position, places2Walk[2].position, 0.2f);
-				
-				Vector2 playerPosition = places2Walk[2].position;
-				float AngleRad = Mathf.Atan2 (-playerPosition.x + my.position.x, playerPosition.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
-			}
-			else if (goTo[1])
-			{
-				for (int i = 0; i < goTo.Length; i++)
-				{
-					goTo[i] = false; 
-				}
-				goTo[1] = true;
-				transform.position = Vector3.MoveTowards(transform.position, places2Walk[3].position, 0.2f);
-				
-				Vector2 posiplayer = places2Walk[3].position;
-				float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
-				float angle = (180 / Mathf.PI) * AngleRad;
-				body.rotation = angle;
-			}*/
-			if (!chegou) {
-				//	Debug.Log (rand);
 				Pagent.SetDestination (places2Walk [rand].position);
 				if (Pagent.remainingDistance <= 0.4f)
 					chegou = true; 
 			}
-			else{ 
+			else
+			{ 
 				rand = Random.Range (2, places2Walk.Length);
-				chegou = false ; 
+				chegou = false; 
 			}
 		}
 	}
@@ -204,6 +151,7 @@ public class Enemy2 : MonoBehaviour
 			if (other.gameObject.name.Equals ("Player"))
 			{
 				fadeIn = true;
+				GameManager.Playsound(susto);
 				GetComponent<SpriteRenderer>().color = Color.white;
 				player.GetComponent<SpriteRenderer>().color = Color.white;
 			}

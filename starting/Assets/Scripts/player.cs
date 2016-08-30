@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 	private PauseGame isPaused;
 
 	private Rigidbody2D body;
-	private float speed;
+	private float speed,axisx,axisy;
 
 	public Sprite[] faces = new Sprite[3];
 	private SpriteRenderer sp;
@@ -71,8 +71,14 @@ public class Player : MonoBehaviour
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
 				if (stamina < 100 && !Input.GetKey(KeyCode.Space))
-					stamina +=10 * Time.deltaTime;
-			} 
+				{
+					if (stamina<=50)
+						stamina +=4 * Time.deltaTime;
+					if (stamina>=50)
+						stamina +=8 * Time.deltaTime;
+				}
+			}
+
 			else
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (12, 7, 5f * (Time.time - activeZoom));
@@ -88,43 +94,22 @@ public class Player : MonoBehaviour
 			GetComponent<SpriteRenderer> ().color = Color.cyan;
 		else
 			GetComponent<SpriteRenderer> ().color = Color.white;
-		
-		body.velocity = new Vector3 (0, 0, 0);
-		
-		if (Input.GetKey ("up"))
+
+		axisx = Input.GetAxis ("Horizontal");
+		axisy = Input.GetAxis ("Vertical");
+		body.velocity= new Vector3( axisx * speed, axisy * speed, 0);
+
+		if (axisx < 0)
 		{
-			body.velocity = Vector3.up * speed;
+			sp.sprite = faces [2];
 		}
-		if (Input.GetKey ("left"))
+		if (axisx > 0)
 		{
-			sp.sprite = faces[2];
-			body.velocity = Vector3.left * speed;
+			sp.sprite = faces [1];
 		}
-		if (Input.GetKey ("down"))
+		if (axisy < 0)
 		{
-			sp.sprite = faces[0];
-			body.velocity = Vector3.down * speed;
-		}
-		if (Input.GetKey ("right"))
-		{
-			sp.sprite = faces[1];
-			body.velocity = Vector3.right * speed;
-		}
-		if (Input.GetKey ("up") && Input.GetKey ("left"))
-		{
-			body.velocity = new Vector3(-1,1,0) * speed;
-		}
-		if (Input.GetKey ("up") && Input.GetKey ("right"))
-		{
-			body.velocity = new Vector3(1,1,0) * speed;
-		}
-		if (Input.GetKey ("down") && Input.GetKey ("left"))
-		{
-			body.velocity = new Vector3(-1,-1,0) * speed;
-		}
-		if (Input.GetKey ("down") && Input.GetKey ("right"))
-		{
-			body.velocity = new Vector3(1,-1,0) * speed; 
+			sp.sprite= faces[0];
 		}
 	}
 
