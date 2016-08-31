@@ -138,7 +138,7 @@ public class Enemy3 : MonoBehaviour
 			if(other.gameObject.name.Equals("Player"))
 			{
 				shakeDuration = 1.5f;
-				player.GetComponent<Player>().stamina /= 2;
+				player.GetComponent<Player>().stamina =(player.GetComponent<Player>().stamina >25)? 25:10 ;
 				once = true;
 				GameManager.Playsound(sustosnd);
 				field.saw = false;
