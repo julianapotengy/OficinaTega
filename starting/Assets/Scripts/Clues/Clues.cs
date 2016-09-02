@@ -47,7 +47,7 @@ public class Clues : MonoBehaviour
 
 	IEnumerator WaitClue()
 	{
-		yield return new WaitForSeconds (1);
+		yield return new WaitForSeconds (0.001f);
 		for (int i = 0; i < 3; i++)
 		{
 			cluesTxt.Add(Instantiate (clueObj, GameObject.Find ("Player").transform.position + new Vector3(0,10*(i+1),0), Quaternion.identity) as GameObject);

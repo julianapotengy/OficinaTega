@@ -3,13 +3,18 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-	// Use this for initialization
+	public GameObject[] Enemies; 
+
 	void Start ()
 	{
-	
+		for (int i = 0; i<3; i++)
+			Instantiate (Enemies [0], new Vector3 (146, 18, -11), Quaternion.Euler (0, 0, 0));
+		for (int i =0; i<3; i++)
+			Instantiate (Enemies [1], new Vector3 (-40,-1,0), Quaternion.Euler (0, 0, 0));
+		for (int i =0; i<3; i++)
+			Instantiate (Enemies [2], new Vector3 (216,110 ,0), Quaternion.Euler (0, 0, 0));
 	}
-	
-	// Update is called once per frame
+
 	void Update ()
 	{
 	

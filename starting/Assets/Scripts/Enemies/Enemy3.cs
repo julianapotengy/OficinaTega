@@ -27,12 +27,27 @@ public class Enemy3 : MonoBehaviour
 	private bool arrived;
 	private int rand; 
 	private float timer; 
-	private GameObject shock; 
+	public static GameObject shock; 
 	private AudioClip shockSound;
+
+	public Vector3[] Places;
+	public GameObject[]temp;
+
+	void Awake()
+	{
+		field = GetComponentInChildren<FieldOfVision> ();
+	}
 
 	void Start ()
 	{
-		field = GetComponentInChildren<FieldOfVision> ();
+		mainCamera = Camera.main.transform;
+		temp = GameObject.FindGameObjectsWithTag ("MovE3");
+		Places=  new Vector3[temp.Length]; 
+		for (int i=0; i<temp.Length; i++)
+		{
+			Places[i] = temp[i].transform.position;
+		}
+
 		once = false;
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
@@ -47,10 +62,10 @@ public class Enemy3 : MonoBehaviour
 		{
 			goTo[i] = false; 
 		}
-		
+
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
-		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
+		transform.position = Places[Random.Range (0,Places.Length)];
 
 		shakeDuration = 0;
 		shakeAmount = 0.7f;
@@ -58,10 +73,10 @@ public class Enemy3 : MonoBehaviour
 
 		mask = false;
 		arrived = false; 
-		rand = Random.Range (2, places2Walk.Length);
+		rand = Random.Range (0,Places.Length);
 		timer = 0;
 		shock = GameObject.Find ("susto");
-		shock.SetActive (false);
+		StartCoroutine (wait ());
 		shockSound = Resources.Load ("Game/Susto") as AudioClip;
 	}
 
@@ -70,6 +85,10 @@ public class Enemy3 : MonoBehaviour
 		if (!isPaused.paused)
 		{
 			WalkAndRun ();
+			for (int i=0; i<temp.Length;i++)
+			{
+				Destroy(temp[i].gameObject);
+			}
 			camPosition = mainCamera.position;
 			if (mask)
 			{
@@ -112,7 +131,7 @@ public class Enemy3 : MonoBehaviour
 				field.saw = false; 
 				once = false; 
 				GetComponent<SpriteRenderer>().color = Color.white;
-				rand = Random.Range (2, places2Walk.Length);
+				rand = Random.Range (0, Places.Length);
 			}
 		}
 
@@ -121,19 +140,19 @@ public class Enemy3 : MonoBehaviour
 			pagent.maxSpeed = 10; 
 			if (!arrived)
 			{
-				pagent.SetDestination (places2Walk [rand].position);
+				pagent.SetDestination (Places [rand]);
 				if (pagent.remainingDistance <= 0.4f)
 					arrived = true; 
 			}
 			else
 			{ 
-				rand = Random.Range (2, places2Walk.Length);
+				rand = Random.Range (0, Places.Length);
 				arrived = false;
 			}
 		}
 	}
 	
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (field.saw && field.leaved && !once)
 		{
@@ -150,5 +169,11 @@ public class Enemy3 : MonoBehaviour
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
+	}
+
+	IEnumerator wait()
+	{
+		yield return new WaitForSeconds (0.001f);
+			shock.SetActive (false);
 	}
 }

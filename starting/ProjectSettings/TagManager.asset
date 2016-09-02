@@ -13,6 +13,10 @@ TagManager:
   - ShowOnPause
   - Light
   - map
+  - MovE1
+  - MovE2
+  - MovE3
+  - Places
   layers:
   - Default
   - TransparentFX

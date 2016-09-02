@@ -24,7 +24,7 @@ public class ClueObj : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "player")
 		{
-			clueTxt.text = "Aperte i para abrir o caderno";
+			clueTxt.text = "Pressione i para abrir o caderno";
 		}
 	}
 

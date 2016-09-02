@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
 	void Start()
 	{
-		field = GameObject.Find ("Enemy").GetComponentInChildren<FieldOfVision> ();
+		field = GameObject.Find ("Enemy(Clone)").GetComponentInChildren<FieldOfVision> ();
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		speed = 15;
@@ -137,13 +137,17 @@ public class Player : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.name.Equals ("Enemy"))
-		{
-			Application.LoadLevel(5);
-		}
 		if (other.gameObject.tag == "goldenHouse")
 		{
 			Application.LoadLevel(4);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.gameObject.name.Equals ("Enemy(Clone)"))
+		{
+			Application.LoadLevel(5);
 		}
 	}
 

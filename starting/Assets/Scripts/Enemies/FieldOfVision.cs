@@ -11,7 +11,7 @@ public class FieldOfVision : MonoBehaviour
 	{
 		saw = false;
 		leaved = false;
-		enemy3 = GameObject.Find ("Enemy3");
+		enemy3 = GameObject.Find ("Enemy3(Clone)");
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

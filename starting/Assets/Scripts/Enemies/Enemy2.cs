@@ -16,7 +16,7 @@ public class Enemy2 : MonoBehaviour
 	private bool goTo1, GoTo2;
 	private bool[] goTo = new bool[2];
 
-	public Transform[] places = new Transform[4];
+	public GameObject[] places = new GameObject[4];
 	private bool[] playerGoTo = new bool[4];
 
 	private bool fadeIn;
@@ -26,13 +26,27 @@ public class Enemy2 : MonoBehaviour
 	private int rand;
 	private bool arrived;
 
+	public Vector3[] Places;
+	public GameObject[]temp;
+
+	void Awake()
+	{
+		field = GetComponentInChildren<FieldOfVision> ();
+	}
+
 	void Start ()
 	{ 
+		temp = GameObject.FindGameObjectsWithTag ("MovE2");
+		Places=  new Vector3[temp.Length]; 
+		for (int i=0; i<temp.Length; i++)
+		{
+			Places[i] = temp[i].transform.position;
+		}
+		places = GameObject.FindGameObjectsWithTag ("Places") ;
 		pagent = GetComponent<PolyNavAgent> ();
-		rand = Random.Range (2, places2Walk.Length);
+		rand = Random.Range (0, Places.Length);
 		arrived = false;
 
-		field = GetComponentInChildren<FieldOfVision> ();
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		player = GameObject.FindGameObjectWithTag ("player");
@@ -45,10 +59,11 @@ public class Enemy2 : MonoBehaviour
 		{
 			goTo[i] = false; 
 		}
-		
+
+
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
-		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
+		transform.position = Places[Random.Range (0, Places.Length)];
 
 		fadeNum = 0;
 		fadeIn = false;
@@ -60,6 +75,10 @@ public class Enemy2 : MonoBehaviour
 		{
 			FadeIn();
 			WalkAndRun();
+			for (int i=0; i<temp.Length;i++)
+			{
+				Destroy(temp[i].gameObject);
+			}
 		}
 	}
 
@@ -120,7 +139,7 @@ public class Enemy2 : MonoBehaviour
 			if (!field.leaved)
 			{
 				field.saw = false;
-				rand = Random.Range (2, places2Walk.Length);
+				rand = Random.Range (0, Places.Length);
 				arrived = false;
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
@@ -132,19 +151,19 @@ public class Enemy2 : MonoBehaviour
 
 			if (!arrived)
 			{
-				pagent.SetDestination (places2Walk [rand].position);
+				pagent.SetDestination (Places[rand]);
 				if (pagent.remainingDistance <= 0.4f)
 					arrived = true; 
 			}
 			else
 			{ 
-				rand = Random.Range (2, places2Walk.Length);
+				rand = Random.Range (0, Places.Length);
 				arrived = false; 
 			}
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (field.saw)
 		{
@@ -155,23 +174,6 @@ public class Enemy2 : MonoBehaviour
 				GetComponent<SpriteRenderer>().color = Color.white;
 				player.GetComponent<SpriteRenderer>().color = Color.white;
 			}
-		}
-	}
-
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if (field.saw)
-		{
-			/*if (other.gameObject.tag == "camLimit")
-			{
-
-
-				field.saw = false;
-				rand = Random.Range(2,4);
-				chegou = false ; 
-				Debug.Log("saiuCampo");
-				GetComponent<SpriteRenderer>().color = Color.white;
-			}*/
 		}
 	}
 }

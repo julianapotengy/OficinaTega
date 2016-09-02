@@ -20,14 +20,26 @@ public class Enemy1 : MonoBehaviour
 	private PolyNavAgent pagent;
 	private int rand;
 	private bool arrived;
-
+	public Vector3[] Places;
+	public GameObject[]temp;
+	void Awake()
+	{
+		field = GetComponentInChildren<FieldOfVision> ();
+	}
 	void Start ()
 	{
+		temp = GameObject.FindGameObjectsWithTag ("MovE1");
+		Places=  new Vector3[temp.Length]; 
+		for (int i=0; i<temp.Length; i++)
+		{
+			Places[i] = temp[i].transform.position;
+		}
+
 		pagent = GetComponent<PolyNavAgent> ();
-		rand = Random.Range (2, places2Walk.Length);
+		rand = Random.Range (0, Places.Length);
 		arrived = false; 
 
-		field = GetComponentInChildren<FieldOfVision> ();
+
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		my = GetComponent <Transform> ();
@@ -40,9 +52,10 @@ public class Enemy1 : MonoBehaviour
 			goTo[i] = false; 
 		}
 
+
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent (transform);
-		transform.position = places2Walk [Random.Range (2, places2Walk.Length)].position;
+		transform.position = Places [Random.Range (0, Places.Length)];
 		timer = 0;
 	}
 
@@ -51,6 +64,10 @@ public class Enemy1 : MonoBehaviour
 		if (!isPaused.paused)
 		{
 			WalkAndRun();
+			for (int i=0; i<temp.Length;i++)
+			{
+				Destroy(temp[i].gameObject);
+			}
 		}
 	}
 
@@ -58,6 +75,7 @@ public class Enemy1 : MonoBehaviour
 	{
 		if (field.saw)
 		{
+			pagent.rotateTransform = false ; 
 			timer += Time.deltaTime;
 			GetComponent<SpriteRenderer>().color = Color.red;
 			GameManager.Playsound(heartBeating);
@@ -77,16 +95,17 @@ public class Enemy1 : MonoBehaviour
 		
 		if (!field.saw)
 		{
+			pagent.rotateTransform = true;
 			pagent.maxSpeed = 10; 
 			if (!arrived)
 			{
-				pagent.SetDestination (places2Walk [rand].position);
+				pagent.SetDestination (Places [rand]);
 				if (pagent.remainingDistance <= 0.45f)
 					arrived = true; 
 			}
 			else
 			{ 
-				rand = Random.Range (2, places2Walk.Length);
+				rand = Random.Range (0, Places.Length);
 				arrived = false; 
 			}
 		}
@@ -99,7 +118,7 @@ public class Enemy1 : MonoBehaviour
 			if (other.gameObject.tag == "camLimit")
 				{
 					field.saw = false;
-					rand = Random.Range (2, places2Walk.Length);
+					rand = Random.Range (0,Places.Length);
 					arrived = false; 
 					timer = 0;
 					GetComponent<SpriteRenderer>().color = Color.white;
