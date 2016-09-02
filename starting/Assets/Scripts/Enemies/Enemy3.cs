@@ -6,12 +6,13 @@ public class Enemy3 : MonoBehaviour
 	private FieldOfVision field;
 	[HideInInspector] public bool once;
 	private PauseGame isPaused;
-	private PolyNavAgent Pagent;
+	
 	private GameObject player;
 
 	private Vector3 originalPosition;
 	private Vector3 originalPositionR;
-	
+
+	private PolyNavAgent pagent;
 	public Transform[] places2Walk;
 	private bool goTo1, goTo2, goTo3, goTo4;
 	private bool[] goTo = new bool[4];
@@ -21,24 +22,16 @@ public class Enemy3 : MonoBehaviour
 	private float shakeAmount;
 	private float decreaseFactor;
 	private Vector3 camPosition;
-
-	private bool mascara; 
-	private bool chegou;
+	
+	private bool mask; 
+	private bool arrived;
 	private int rand; 
 	private float timer; 
-	private GameObject susto; 
-	private AudioClip sustosnd;
+	private GameObject shock; 
+	private AudioClip shockSound;
 
 	void Start ()
 	{
-		sustosnd = Resources.Load ("Game/Susto") as AudioClip;
-		mascara = false;
-		susto = GameObject.Find ("susto");
-		susto.SetActive (false);
-		timer = 0; 
-		chegou = false; 
-		rand = Random.Range (2, places2Walk.Length);
-		Pagent = GetComponent<PolyNavAgent> ();
 		field = GetComponentInChildren<FieldOfVision> ();
 		once = false;
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
@@ -48,6 +41,7 @@ public class Enemy3 : MonoBehaviour
 		originalPosition = transform.position;
 		originalPositionR = transform.eulerAngles;
 
+		pagent = GetComponent<PolyNavAgent> ();
 		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < goTo.Length; i++)
 		{
@@ -62,6 +56,13 @@ public class Enemy3 : MonoBehaviour
 		shakeAmount = 0.7f;
 		decreaseFactor = 1;
 
+		mask = false;
+		arrived = false; 
+		rand = Random.Range (2, places2Walk.Length);
+		timer = 0;
+		shock = GameObject.Find ("susto");
+		shock.SetActive (false);
+		shockSound = Resources.Load ("Game/Susto") as AudioClip;
 	}
 
 	void Update ()
@@ -70,17 +71,20 @@ public class Enemy3 : MonoBehaviour
 		{
 			WalkAndRun ();
 			camPosition = mainCamera.position;
-			if (mascara)
+			if (mask)
 			{
 				timer+=Time.deltaTime;
-				if (timer <= 1f)susto.SetActive(true); 
-				else{ susto.SetActive(false);
+				if (timer <= 1f)
+					shock.SetActive(true); 
+				else
+				{
+					shock.SetActive(false);
 					timer = 0;
-					mascara = false ; }
+					mask = false;
+				}
 			}
 			if (shakeDuration > 0)
 			{
-
 				mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
 				shakeDuration -= Time.deltaTime * decreaseFactor;
 			}
@@ -99,13 +103,12 @@ public class Enemy3 : MonoBehaviour
 			GetComponent<SpriteRenderer>().color = Color.red;
 			Vector2 posiplayer = player.transform.position;
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
-			Pagent.SetDestination(posiplayer);
-			Pagent.maxSpeed = 20; 
+			pagent.SetDestination(posiplayer);
+			pagent.maxSpeed = 20; 
 
 			if (!field.leaved)
 			{
-				chegou = false ; 
-				Debug.Log("hey");
+				arrived = false;
 				field.saw = false; 
 				once = false; 
 				GetComponent<SpriteRenderer>().color = Color.white;
@@ -115,19 +118,18 @@ public class Enemy3 : MonoBehaviour
 
 		if (!field.saw)
 		{
-			Pagent.maxSpeed = 10; 
-			if (!chegou)
+			pagent.maxSpeed = 10; 
+			if (!arrived)
 			{
-				Pagent.SetDestination (places2Walk [rand].position);
-				if (Pagent.remainingDistance <= 0.4f)
-					chegou = true; 
+				pagent.SetDestination (places2Walk [rand].position);
+				if (pagent.remainingDistance <= 0.4f)
+					arrived = true; 
 			}
 			else
 			{ 
 				rand = Random.Range (2, places2Walk.Length);
-				chegou = false;
+				arrived = false;
 			}
-		
 		}
 	}
 	
@@ -140,15 +142,13 @@ public class Enemy3 : MonoBehaviour
 				shakeDuration = 1.5f;
 				player.GetComponent<Player>().stamina =(player.GetComponent<Player>().stamina >25)? 25:10 ;
 				once = true;
-				GameManager.Playsound(sustosnd);
+				GameManager.Playsound(shockSound);
 				field.saw = false;
-				mascara = true; 
+				mask = true; 
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
-
-
 	}
 }

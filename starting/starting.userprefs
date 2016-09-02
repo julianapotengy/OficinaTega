@@ -1,15 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Clues\Clues.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemy1.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\Enemy2.cs" Line="50" Column="84" />
-      <File FileName="Assets\Scripts\Player.cs" Line="35" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="141" Column="92" />
-      <File FileName="Assets\Scripts\Enemies\Enemy1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Manager\RandomHouse.cs" Line="43" Column="1" />
-      <File FileName="Assets\Scripts\Clues\ClueObj.cs" Line="39" Column="12" />
-      <File FileName="Assets\Scripts\Clues\Clues.cs" Line="33" Column="36" />
-      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="145" Column="39" />
+      <File FileName="Assets\Scripts\Enemies\FieldOfVision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemy1.cs" Line="63" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

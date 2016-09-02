@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Enemies\Enemy3.cs" />
      <Compile Include="Assets\Scripts\Enemies\FieldOfVision.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\HistoryTexts.cs" />
      <Compile Include="Assets\Scripts\Manager\Lights.cs" />
      <Compile Include="Assets\Scripts\Manager\Menu.cs" />
      <Compile Include="Assets\Scripts\Manager\PauseGame.cs" />

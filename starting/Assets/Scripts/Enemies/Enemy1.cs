@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Enemy1 : MonoBehaviour
 {
+	public AudioClip heartBeating;
 	private FieldOfVision field;
 	private PauseGame isPaused;
 
@@ -16,15 +17,15 @@ public class Enemy1 : MonoBehaviour
 
 	private float timer;
 
-	private PolyNavAgent Pagent;
-	int rand; 
-	bool chegou;
+	private PolyNavAgent pagent;
+	private int rand;
+	private bool arrived;
 
 	void Start ()
 	{
-		Pagent = GetComponent<PolyNavAgent> ();
+		pagent = GetComponent<PolyNavAgent> ();
 		rand = Random.Range (2, places2Walk.Length);
-		chegou = false; 
+		arrived = false; 
 
 		field = GetComponentInChildren<FieldOfVision> ();
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
@@ -59,6 +60,7 @@ public class Enemy1 : MonoBehaviour
 		{
 			timer += Time.deltaTime;
 			GetComponent<SpriteRenderer>().color = Color.red;
+			GameManager.Playsound(heartBeating);
 
 			Vector2 posiplayer = player.transform.position;
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
@@ -68,24 +70,24 @@ public class Enemy1 : MonoBehaviour
 			if (timer > 1)
 			{
 				transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
-				Pagent.SetDestination(posiplayer);
-				Pagent.maxSpeed = 25; 
+				pagent.SetDestination(posiplayer);
+				pagent.maxSpeed = 25; 
 			}
 		}
 		
 		if (!field.saw)
 		{
-			Pagent.maxSpeed = 10; 
-			if (!chegou)
+			pagent.maxSpeed = 10; 
+			if (!arrived)
 			{
-				Pagent.SetDestination (places2Walk [rand].position);
-				if (Pagent.remainingDistance <= 0.45f)
-					chegou = true; 
+				pagent.SetDestination (places2Walk [rand].position);
+				if (pagent.remainingDistance <= 0.45f)
+					arrived = true; 
 			}
 			else
 			{ 
 				rand = Random.Range (2, places2Walk.Length);
-				chegou = false; 
+				arrived = false; 
 			}
 		}
 	}
@@ -98,7 +100,7 @@ public class Enemy1 : MonoBehaviour
 				{
 					field.saw = false;
 					rand = Random.Range (2, places2Walk.Length);
-					chegou = false; 
+					arrived = false; 
 					timer = 0;
 					GetComponent<SpriteRenderer>().color = Color.white;
 				}
