@@ -6,13 +6,17 @@ using System.Collections.Generic;
 public class Clues : MonoBehaviour
 {
 	public GameObject clueObj;
+	private GameObject alert;
+	[HideInInspector] public bool showAlert;
+
 	private PauseGame isPaused;
-	 public bool showClue;
+	[HideInInspector] public bool showClue;
 
 	string[] initialClues = new string[3]{"Fuja dos bate bolas","Procure mais dicas","Ache sua casa"};
 	string[,] array2d = new string[3,3]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"},
 						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta"},
 						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada"}};
+	Vector3[] InitialLocation = new Vector3[3]{new Vector3(10,0,0),new Vector3(-20,0,0),new Vector3(0,40,0)};
 
 	private List<GameObject> clueStart = new List<GameObject>();
 	private List<GameObject> cluesTxt = new List<GameObject>();
@@ -20,6 +24,11 @@ public class Clues : MonoBehaviour
 
 	public List<Text> notebookClues = new List<Text>();
 	public static List<string> cluesColected = new List<string>();
+
+	void Awake()
+	{
+		alert = GameObject.FindGameObjectWithTag ("Alert");
+	}
 
 	void Start ()
 	{
@@ -33,9 +42,10 @@ public class Clues : MonoBehaviour
 
 		for (int i = 0; i < initialClues.Length; i++)
 		{
-			clueStart.Add(Instantiate(clueObj, GameObject.Find ("Player").transform.position + new Vector3((i+Random.Range(-1,2))* 15,0,0),
+			clueStart.Add(Instantiate(clueObj, GameObject.Find ("Player").transform.position + InitialLocation[i],
 			                          Quaternion.identity) as GameObject);
 			clueStart[i].GetComponent<ClueObj>().stringClueTxt = initialClues[i];
+			clueStart[i].GetComponent<ClueObj>().alert = alert;
 		}
 	}
 
@@ -48,9 +58,17 @@ public class Clues : MonoBehaviour
 				if (cluesColected[i] != null)
 					notebookClues[i].text = i + 1 + ". " + cluesColected[i];
 			}
-			if (Input.GetKeyDown (KeyCode.I))
-				ShowClues();
 
+			if (Input.GetKeyDown (KeyCode.I))
+			{
+				ShowClues();
+				showAlert = false;
+			}
+			if (showAlert)
+				alert.SetActive(true);
+			else 
+				alert.SetActive(false);
+			
 			if(showClue)
 				notepad.SetActive(true);
 			else if(!showClue)
@@ -66,6 +84,7 @@ public class Clues : MonoBehaviour
 			cluesTxt.Add(Instantiate (clueObj, GameObject.Find ("Player").transform.position + new Vector3(0,10*(i+1),0),
 			                          Quaternion.identity) as GameObject);
 			cluesTxt[i].GetComponent<ClueObj>().stringClueTxt = array2d[RandomHouse.goldenHouse, i];
+			cluesTxt[i].GetComponent<ClueObj>().alert = alert;
 		}
 		getTexts();
 	}

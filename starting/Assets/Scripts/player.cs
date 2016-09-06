@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 	private Rigidbody2D body;
 	private float speed, axisX, axisY;
 
-	public Sprite[] faces = new Sprite[3];
+	public Sprite[] faces = new Sprite[4];
 	private SpriteRenderer sp;
 
 	private float activeZoom;
@@ -115,8 +115,13 @@ public class Player : MonoBehaviour
 		}
 		if (axisY < 0)
 		{
-			sp.sprite= faces[0];
+			sp.sprite = faces[0];
 			Destroy(tutorial); 
+		}
+		if (axisY > 0)
+		{
+			sp.sprite = faces[3];
+			Destroy(tutorial);
 		}
 	}
 

@@ -10,11 +10,6 @@ public class ClueObj : MonoBehaviour
 	private Clues deleteAlert;
 	public GameObject alert;
 
-	void Awake()
-	{
-		alert = GameObject.FindGameObjectWithTag ("Alert");
-	}
-
 	void Start ()
 	{
 		clueTxt = GameObject.Find ("Clue").GetComponent<Text> ();
@@ -33,17 +28,14 @@ public class ClueObj : MonoBehaviour
 		if (coll.gameObject.tag == "player")
 		{
 			Clues.cluesColected.Add(stringClueTxt);
-			if (!deleteAlert.showClue)
-				alert.SetActive(true);
+			deleteAlert.showAlert = true;
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "player")
-		{
 			clueTxt.text = "Pressione i para abrir o caderno";
-		}
 	}
 
 	void OnTriggerExit2D(Collider2D coll)
