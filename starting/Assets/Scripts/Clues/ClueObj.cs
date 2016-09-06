@@ -1,16 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ClueObj : MonoBehaviour
 {
-	//private string[] clue = new string[3]{"Casa marrom","Casa laranja","Casa dourada"};
 	private Text clueTxt;
 	public string stringClueTxt;
+	private Clues deleteAlert;
+	public GameObject alert;
+
+	void Awake()
+	{
+		alert = GameObject.FindGameObjectWithTag ("Alert");
+	}
 
 	void Start ()
 	{
 		clueTxt = GameObject.Find ("Clue").GetComponent<Text> ();
+		alert.SetActive (false);
+		deleteAlert = GameObject.Find ("GameManager").GetComponent<Clues> ();
+	}
+
+	void Update()
+	{
+		if (deleteAlert.showClue)
+			alert.SetActive(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)
@@ -18,8 +33,11 @@ public class ClueObj : MonoBehaviour
 		if (coll.gameObject.tag == "player")
 		{
 			Clues.cluesColected.Add(stringClueTxt);
+			if (!deleteAlert.showClue)
+				alert.SetActive(true);
 		}
 	}
+
 	void OnTriggerStay2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "player")

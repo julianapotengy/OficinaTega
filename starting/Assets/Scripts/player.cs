@@ -17,10 +17,8 @@ public class Player : MonoBehaviour
 
 	[HideInInspector] public float stamina, staminaCount;
 	public GameObject staminaBar;
-
-	private bool tutorialWalk, tutorialRun;
-	private GameObject tutoRun;
-	private GameObject tutoWalk;
+	
+	private GameObject tutorial;
 
 	void Awake ()
 	{
@@ -36,21 +34,16 @@ public class Player : MonoBehaviour
 		sp = GetComponent<SpriteRenderer> ();
 		stamina = 100;
 
-		tutorialWalk = false;
-		tutorialRun = false;
-		tutoRun = GameObject.Find ("tutorialRun");
-		tutoWalk = GameObject.Find ("tutorialWalk");
-		tutoRun.SetActive (false);
+		tutorial = GameObject.Find ("TutorialPanel");
 	}
 
 	void FixedUpdate()
 	{
-		if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0 && tutorialWalk)
+		if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0)
 		{
 			speed = 30;
 			activeZoom = Time.time;
 			zoomOut = false;
-			tutorialRun = true;
 		}
 		else if(!Input.GetKey(KeyCode.Space) && !zoomOut)
 		{
@@ -96,14 +89,6 @@ public class Player : MonoBehaviour
 				if (stamina > 0)
 					stamina -= 10 * Time.deltaTime;
 			}
-
-			if (tutorialRun && tutorialRun)
-				tutoRun.SetActive (false); 
-			else if (tutorialWalk && !tutorialRun)
-			{
-				tutoWalk.SetActive (false); 
-				tutoRun.SetActive(true);
-			}
 		}
 	}
 
@@ -121,17 +106,17 @@ public class Player : MonoBehaviour
 		if (axisX < 0)
 		{
 			sp.sprite = faces [2];
-			tutorialWalk = true; 
+			Destroy(tutorial); 
 		}
 		if (axisX > 0)
 		{
 			sp.sprite = faces [1];
-			tutorialWalk = true; 
+			Destroy(tutorial); 
 		}
 		if (axisY < 0)
 		{
 			sp.sprite= faces[0];
-			tutorialWalk = true; 
+			Destroy(tutorial); 
 		}
 	}
 

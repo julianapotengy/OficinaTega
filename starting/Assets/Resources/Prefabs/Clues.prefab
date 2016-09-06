@@ -54,6 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2dd7b00d8ec2004497d619c245a1408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringClueTxt: 
+  alertPrefab: {fileID: 151466, guid: dfcd2c18ece01974d8c5c8046f8c0210, type: 2}
+  alertList: []
+  mainCamera: {fileID: 0}
 --- !u!212 &21262670
 SpriteRenderer:
   m_ObjectHideFlags: 1

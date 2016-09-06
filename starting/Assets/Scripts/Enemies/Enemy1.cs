@@ -22,15 +22,17 @@ public class Enemy1 : MonoBehaviour
 	private bool arrived;
 	public Vector3[] Places;
 	public GameObject[]temp;
+
 	void Awake()
 	{
 		field = GetComponentInChildren<FieldOfVision> ();
 	}
+
 	void Start ()
 	{
 		temp = GameObject.FindGameObjectsWithTag ("MovE1");
-		Places=  new Vector3[temp.Length]; 
-		for (int i=0; i<temp.Length; i++)
+		Places =  new Vector3[temp.Length]; 
+		for (int i = 0; i < temp.Length; i++)
 		{
 			Places[i] = temp[i].transform.position;
 		}
@@ -38,8 +40,7 @@ public class Enemy1 : MonoBehaviour
 		pagent = GetComponent<PolyNavAgent> ();
 		rand = Random.Range (0, Places.Length);
 		arrived = false; 
-
-
+		
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		my = GetComponent <Transform> ();
@@ -51,7 +52,6 @@ public class Enemy1 : MonoBehaviour
 		{
 			goTo[i] = false; 
 		}
-
 
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent (transform);

@@ -17,6 +17,7 @@ TagManager:
   - MovE2
   - MovE3
   - Places
+  - Alert
   layers:
   - Default
   - TransparentFX
@@ -62,4 +63,7 @@ TagManager:
     locked: 0
   - name: Canvas
     uniqueID: 556125551
+    locked: 0
+  - name: Alert
+    uniqueID: 3400222511
     locked: 0

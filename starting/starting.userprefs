@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Clues\ClueObj.cs">
     <Files>
-      <File FileName="Assets\Scripts\Clues\Clues.cs" Line="50" Column="40" />
-      <File FileName="Assets\Scripts\Clues\ClueObj.cs" Line="40" Column="1" />
+      <File FileName="Assets\Scripts\Clues\Clues.cs" Line="10" Column="2" />
+      <File FileName="Assets\Scripts\Clues\ClueObj.cs" Line="28" Column="27" />
+      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="41" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

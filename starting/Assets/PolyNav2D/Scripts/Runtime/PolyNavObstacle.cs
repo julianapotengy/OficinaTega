@@ -24,7 +24,8 @@ public class PolyNavObstacle : MonoBehaviour {
 	private Transform _transform;
 	private Collider2D _collider;
 
-	new private Collider2D collider{
+	new private Collider2D collider
+	{
 		get
 		{
 			if (_collider == null)
@@ -34,7 +35,8 @@ public class PolyNavObstacle : MonoBehaviour {
 	}
 
 	///The polygon points of the obstacle
-	public Vector2[] points{
+	public Vector2[] points
+	{
 		get
 		{
 			if (collider is BoxCollider2D){
@@ -57,12 +59,13 @@ public class PolyNavObstacle : MonoBehaviour {
 		}
 	}
 
-	private PolyNav2D polyNav{
+	private PolyNav2D polyNav
+	{
 		get {return PolyNav2D.current;}
 	}
 
-	void Reset(){
-		
+	void Reset()
+	{	
 		if (collider == null)
 			gameObject.AddComponent<PolygonCollider2D>();
 		if (collider is PolygonCollider2D)
@@ -75,8 +78,8 @@ public class PolyNavObstacle : MonoBehaviour {
 			invertPolygon = true;
 	}
 
-	void OnEnable(){
-
+	void OnEnable()
+	{
 		if (polyNav)
 			polyNav.AddObstacle(this);
 		
@@ -86,14 +89,14 @@ public class PolyNavObstacle : MonoBehaviour {
 		_transform = transform;
 	}
 
-	void OnDisable(){
-
+	void OnDisable()
+	{
 		if (polyNav)
 			polyNav.RemoveObstacle(this);
 	}
 
-	void Update(){
-		
+	void Update()
+	{	
 		if (!Application.isPlaying || !polyNav || !polyNav.generateOnUpdate){
 			if (shapeType == ShapeType.Polygon && !(collider is PolygonCollider2D) ){
 				DestroyImmediate(collider);
