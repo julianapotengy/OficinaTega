@@ -4,7 +4,7 @@ using System.Collections;
 public class RandomHouse : MonoBehaviour
 {
 	private GameObject[] places;
-	public Sprite[] spHouses = new Sprite[3];
+	public Sprite[] spHouses = new Sprite[6];
 
 	private bool specialHouse; 
 	public static int goldenHouse;
@@ -22,7 +22,7 @@ public class RandomHouse : MonoBehaviour
 			{ 
 				places[i].GetComponent<SpriteRenderer> ().sprite = spHouses[rand];
 				places[i].tag = "goldenHouse";
-				specialHouse = true ; 
+				specialHouse = true; 
 			}
 			else if (rand == goldenHouse) 
 			{

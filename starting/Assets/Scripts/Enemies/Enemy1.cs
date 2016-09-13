@@ -45,7 +45,7 @@ public class Enemy1 : MonoBehaviour
 
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
-		player = GameObject.Find ("Player");
+		player = GameObject.FindGameObjectWithTag ("player");
 
 		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < goTo.Length; i++)

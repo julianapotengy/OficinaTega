@@ -37,7 +37,7 @@ public class Enemy2 : MonoBehaviour
 	void Start ()
 	{ 
 		temp = GameObject.FindGameObjectsWithTag ("MovE2");
-		Places=  new Vector3[temp.Length]; 
+		Places = new Vector3[temp.Length]; 
 		for (int i=0; i<temp.Length; i++)
 		{
 			Places[i] = temp[i].transform.position;
@@ -59,7 +59,6 @@ public class Enemy2 : MonoBehaviour
 		{
 			goTo[i] = false; 
 		}
-
 
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
@@ -129,7 +128,6 @@ public class Enemy2 : MonoBehaviour
 		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
-			player.GetComponent<SpriteRenderer>().color = Color.cyan;
 			
 			Vector2 posiplayer = player.transform.position;
 			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
@@ -172,7 +170,6 @@ public class Enemy2 : MonoBehaviour
 				fadeIn = true;
 				GameManager.Playsound(shock);
 				GetComponent<SpriteRenderer>().color = Color.white;
-				player.GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
 	}

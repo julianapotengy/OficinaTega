@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
-	
+		
 	}
 
 	public static void Playsound(AudioClip clip)

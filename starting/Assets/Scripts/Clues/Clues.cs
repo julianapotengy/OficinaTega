@@ -12,11 +12,14 @@ public class Clues : MonoBehaviour
 	private PauseGame isPaused;
 	[HideInInspector] public bool showClue;
 
-	string[] initialClues = new string[3]{"Fuja dos bate bolas","Procure mais dicas","Ache sua casa"};
-	string[,] array2d = new string[3,3]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"},
+	string[] initialClues = new string[4]{"Fuja dos bate bolas","Procure mais dicas","Ache sua casa","Existem cameras pela cidade"};
+	string[,] array2d = new string[6,3]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"},
 						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta"},
-						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada"}};
-	Vector3[] InitialLocation = new Vector3[3]{new Vector3(10,0,0),new Vector3(-20,0,0),new Vector3(0,40,0)};
+						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada"},
+						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar"},
+						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato"},
+						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"}};
+	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(-20,0,0),new Vector3(0,40,0),new Vector3(0,-40,0)};
 
 	private List<GameObject> clueStart = new List<GameObject>();
 	private List<GameObject> cluesTxt = new List<GameObject>();

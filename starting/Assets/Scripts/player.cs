@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-	private FieldOfVision field;
 	private PauseGame isPaused;
 
 	private Rigidbody2D body;
@@ -27,7 +26,6 @@ public class Player : MonoBehaviour
 
 	void Start()
 	{
-		field = GameObject.Find ("Enemy(Clone)").GetComponentInChildren<FieldOfVision> ();
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		speed = 15;
@@ -75,7 +73,7 @@ public class Player : MonoBehaviour
 				staminaBar.GetComponent<SpriteRenderer> ().color = Color.white;
 			if (zoomOut)
 			{
-				Camera.main.orthographicSize = Mathf.Lerp (7, 12, 5f * (Time.time - activeZoom));
+				Camera.main.orthographicSize = Mathf.Lerp (12, 20, 5f * (Time.time - activeZoom));
 				if (stamina < 100 && !Input.GetKey (KeyCode.Space) ) {
 					if (stamina <= 50)
 						stamina += 4 * Time.deltaTime;
@@ -85,7 +83,7 @@ public class Player : MonoBehaviour
 			}
 			else
 			{
-				Camera.main.orthographicSize = Mathf.Lerp (12, 7, 5f * (Time.time - activeZoom));
+				Camera.main.orthographicSize = Mathf.Lerp (20, 12, 5f * (Time.time - activeZoom));
 				if (stamina > 0)
 					stamina -= 10 * Time.deltaTime;
 			}
@@ -94,11 +92,6 @@ public class Player : MonoBehaviour
 
 	void WalkAndRun()
 	{
-		if (field.saw)
-			GetComponent<SpriteRenderer> ().color = Color.cyan;
-		else
-			GetComponent<SpriteRenderer> ().color = Color.white;
-
 		axisX = Input.GetAxis ("Horizontal");
 		axisY = Input.GetAxis ("Vertical");
 		body.velocity = new Vector3(axisX * speed, axisY * speed, 0);

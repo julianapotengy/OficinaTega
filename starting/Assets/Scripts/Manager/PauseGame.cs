@@ -6,18 +6,13 @@ public class PauseGame : MonoBehaviour
 {
 	public GameObject[] pauseObjects;
 	[HideInInspector] public bool paused;
-
-	public Text pressPToPause;
-	private float timer;
 	
 	void Start ()
 	{
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		hidePaused();
-
 		paused = false;
-		timer = 4;
 	}
 
 	void Update()
@@ -37,10 +32,6 @@ public class PauseGame : MonoBehaviour
 				hidePaused();
 			}
 		}
-
-		timer -= Time.deltaTime;
-		if (timer <= 0)
-			Text.Destroy (pressPToPause);
 	}
 	
 	public void Reload()
