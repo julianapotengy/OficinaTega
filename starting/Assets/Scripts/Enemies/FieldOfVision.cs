@@ -15,7 +15,12 @@ public class FieldOfVision : MonoBehaviour
 		enemy3 = GameObject.Find ("Enemy3(Clone)");
 		player = GameObject.FindGameObjectWithTag ("player");
 	}
-
+	void Update()
+	{
+		if (!saw && !leaved){
+			player.GetComponent<SpriteRenderer> ().color = Color.white;
+		}
+	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "player")
@@ -23,9 +28,8 @@ public class FieldOfVision : MonoBehaviour
 			saw = true;
 			leaved = true;
 			player.GetComponent<SpriteRenderer> ().color = Color.cyan;
-
 			AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
-			audio.pitch = 1.5f;
+			audio.pitch = 1f;
 		}
 	}
 

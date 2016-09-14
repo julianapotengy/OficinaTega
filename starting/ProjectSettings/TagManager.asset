@@ -18,6 +18,7 @@ TagManager:
   - MovE3
   - Places
   - Alert
+  - soundArround
   layers:
   - Default
   - TransparentFX

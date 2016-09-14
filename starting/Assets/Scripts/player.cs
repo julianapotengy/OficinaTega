@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour
+public class player : MonoBehaviour
 {
 	private PauseGame isPaused;
-
+	public static bool caught = false ;
+	
 	private Rigidbody2D body;
 	private float speed, axisX, axisY;
 
@@ -16,16 +17,23 @@ public class Player : MonoBehaviour
 
 	[HideInInspector] public float stamina, staminaCount;
 	public GameObject staminaBar;
-	
+	public AudioClip breathing;
+	public AudioClip SambaSound; 
 	private GameObject tutorial;
-
+	public bool startsamba;
+	bool Canbreath;
+	bool CanSamba;
 	void Awake ()
 	{
 		body = GetComponent <Rigidbody2D> ();
+		caught = false ;
 	}
 
 	void Start()
 	{
+		startsamba = false; 
+		CanSamba = true; 
+		Canbreath = true; 
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		speed = 15;
@@ -53,10 +61,15 @@ public class Player : MonoBehaviour
 	
 	void Update ()
 	{
+	
 		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 
 		if (!isPaused.paused)
 		{
+			if (startsamba)
+			{
+				StartCoroutine(Samba());
+			}
 			WalkAndRun ();
 			if (stamina <= 0)
 			{
@@ -67,8 +80,10 @@ public class Player : MonoBehaviour
 			staminaCount = (stamina / 100f) * 2.45f;
 			staminaBar.transform.localScale = new Vector3 (staminaCount, staminaBar.transform.localScale.y, staminaBar.transform.localScale.z);
 
-			if (stamina < 25)
+			if (stamina < 25){
+				StartCoroutine(respirar());
 				staminaBar.GetComponent<SpriteRenderer> ().color = Color.red;
+			}
 			else
 				staminaBar.GetComponent<SpriteRenderer> ().color = Color.white;
 			if (zoomOut)
@@ -84,7 +99,7 @@ public class Player : MonoBehaviour
 			else
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (20, 12, 5f * (Time.time - activeZoom));
-				if (stamina > 0)
+				if (stamina > 0 && (axisX !=0 || axisY !=0))
 					stamina -= 10 * Time.deltaTime;
 			}
 		}
@@ -130,7 +145,7 @@ public class Player : MonoBehaviour
 	{
 		if (coll.gameObject.name.Equals ("Enemy(Clone)"))
 		{
-			Application.LoadLevel(5);
+
 		}
 	}
 
@@ -151,4 +166,28 @@ public class Player : MonoBehaviour
 			coll.GetComponent<SpriteRenderer>().enabled = true; 
 		}
 	}
+	IEnumerator respirar()
+	{
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && Canbreath) {
+			GameManager.Playsound (breathing);
+			Canbreath = false ; 
+		} 
+		yield return new WaitForSeconds(breathing.length);
+		Canbreath = true; 
+	}
+	IEnumerator Samba()
+	{
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "sambasound" && CanSamba) {
+			GameManager.Playsound (SambaSound);
+			CanSamba = false ; 
+			startsamba = false ; 
+		} 
+		yield return new WaitForSeconds(SambaSound.length);
+		CanSamba = true;
+		startsamba = false; 
+	}
+
+		
+
+
 }

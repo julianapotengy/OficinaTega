@@ -65,7 +65,8 @@
      <Compile Include="Assets\Scripts\Manager\Menu.cs" />
      <Compile Include="Assets\Scripts\Manager\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Manager\RandomHouse.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\SoundArrounds.cs" />
+     <Compile Include="Assets\Scripts\player.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

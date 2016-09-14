@@ -159,13 +159,14 @@ public class Enemy3 : MonoBehaviour
 			if(other.gameObject.name.Equals("Player"))
 			{
 				shakeDuration = 1.5f;
-				player.GetComponent<Player>().stamina =(player.GetComponent<Player>().stamina >25)? 25:10 ;
+				player.GetComponent<player>().stamina =(player.GetComponent<player>().stamina >25)? 25:10 ;
 				once = true;
 				GameManager.Playsound(shockSound);
 				field.saw = false;
 				mask = true; 
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
+				Debug.Log ("Aqui");
 				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
