@@ -19,18 +19,23 @@ public class PauseGame : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.P))
 		{
-			if(Time.timeScale == 1)
-			{
-				Time.timeScale = 0;
-				paused = true;
-				showPaused();
-			}
-			else if (Time.timeScale == 0)
-			{
-				Time.timeScale = 1;
-				paused = false;
-				hidePaused();
-			}
+			Pause();
+		}
+	}
+
+	public void Pause()
+	{
+		if(Time.timeScale == 1)
+		{
+			Time.timeScale = 0;
+			paused = true;
+			showPaused();
+		}
+		else if (Time.timeScale == 0)
+		{
+			Time.timeScale = 1;
+			paused = false;
+			hidePaused();
 		}
 	}
 	
