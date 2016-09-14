@@ -285,7 +285,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  shock: {fileID: 8300000, guid: fdb16ad62c98e814d9ac616deb0e7f03, type: 3}
+  shock: {fileID: 8300000, guid: 7efdf11e0809c8849a1d07e0b446ba38, type: 3}
   Places: []
   temp: []
 --- !u!114 &11471576

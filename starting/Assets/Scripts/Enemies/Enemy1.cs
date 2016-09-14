@@ -113,8 +113,13 @@ public class Enemy1 : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.gameObject.transform.parent == null && other.tag=="player")
+		{
+			Application.LoadLevel(5);
+		}
 		if (field.saw)
 		{
+
 			if (other.gameObject.tag == "camLimit")
 				{
 					field.saw = false;

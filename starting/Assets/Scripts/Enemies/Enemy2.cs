@@ -6,7 +6,7 @@ public class Enemy2 : MonoBehaviour
 	private FieldOfVision field;
 	private PauseGame isPaused;
 
-	private GameObject player;
+	private GameObject Player;
 
 	private Vector3 originalPosition;
 	private Vector3 originalPositionR;
@@ -36,6 +36,7 @@ public class Enemy2 : MonoBehaviour
 
 	void Start ()
 	{ 
+
 		temp = GameObject.FindGameObjectsWithTag ("MovE2");
 		Places = new Vector3[temp.Length]; 
 		for (int i=0; i<temp.Length; i++)
@@ -49,7 +50,7 @@ public class Enemy2 : MonoBehaviour
 
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
-		player = GameObject.FindGameObjectWithTag ("player");
+		Player = GameObject.FindGameObjectWithTag ("player");
 
 		originalPosition = transform.position;
 		originalPositionR = transform.eulerAngles;
@@ -85,13 +86,15 @@ public class Enemy2 : MonoBehaviour
 	{
 		if (fadeIn)
 		{
+			player.caught = true ; 
+			Debug.Log("Aqui");
 			fadeNum += 5;
 			GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
 			                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
 			                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
 			                                                                           fadeNum/255);
-			player.SetActive(false);
-			GetComponent<SpriteRenderer>().enabled = false;
+			Player.SetActive(false);
+			GetComponent<SpriteRenderer>().sortingOrder = -2; 
 			
 			GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = false;
@@ -100,7 +103,7 @@ public class Enemy2 : MonoBehaviour
 			{
 				int rand = Random.Range(0, playerGoTo.Length);
 				playerGoTo[rand] = true;
-				player.transform.position = places[rand].transform.position;
+				Player.transform.position = places[rand].transform.position;
 				
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
@@ -108,10 +111,10 @@ public class Enemy2 : MonoBehaviour
 				fadeIn = false;
 				fadeNum = 0;
 				
-				player.SetActive(true);
+				Player.SetActive(true);
 				GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = true;
 				GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = true;
-				
+				GetComponent<SpriteRenderer>().sortingOrder = 2; 
 				GetComponent<SpriteRenderer>().enabled = true ; 
 				GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
 				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
@@ -125,15 +128,19 @@ public class Enemy2 : MonoBehaviour
 
 	void WalkAndRun()
 	{
+		if (player.caught) {
+			StartCoroutine(stop());
+
+		}
 		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
 			
-			Vector2 posiplayer = player.transform.position;
-			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
+			Vector2 posiplayer = Player.transform.position;
+			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20;
-
+			Debug.Log ("viu");
 			if (!field.leaved)
 			{
 				field.saw = false;
@@ -168,9 +175,27 @@ public class Enemy2 : MonoBehaviour
 			if (other.gameObject.name.Equals ("Player"))
 			{
 				fadeIn = true;
+				AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
+				audio.pitch = 1f;
 				GameManager.Playsound(shock);
 				GetComponent<SpriteRenderer>().color = Color.white;
+				player.caught = true ; 
 			}
 		}
 	}
+	 
+	IEnumerator stop()
+	{
+		yield return new WaitForEndOfFrame ();
+		{
+			field.saw = false ; 
+			GetComponent<SpriteRenderer>().color = Color.white;
+			rand = Random.Range (0, Places.Length);
+			arrived = false;
+			player.caught = false ;
+
+		}
+	}
+
+
 }
