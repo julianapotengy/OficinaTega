@@ -90,6 +90,10 @@ public class Enemy1 : MonoBehaviour
 				transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
 				pagent.SetDestination(posiplayer);
 				pagent.maxSpeed = 25; 
+				if (pagent.remainingDistance<0.3f)
+				{
+					//Application.LoadLevel(5);
+				}
 			}
 		}
 		
@@ -113,8 +117,10 @@ public class Enemy1 : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.transform.parent == null && other.tag=="player")
+
+		if (other.gameObject.transform.parent == null && other.tag.Equals("player"))
 		{
+
 			Application.LoadLevel(5);
 		}
 		if (field.saw)

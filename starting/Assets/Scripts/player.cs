@@ -23,6 +23,7 @@ public class player : MonoBehaviour
 	public bool startsamba;
 	bool Canbreath;
 	bool CanSamba;
+	public float medo = 0 ; 
 	void Awake ()
 	{
 		body = GetComponent <Rigidbody2D> ();
@@ -31,6 +32,7 @@ public class player : MonoBehaviour
 
 	void Start()
 	{
+		medo = 0; 
 		startsamba = false; 
 		CanSamba = true; 
 		Canbreath = true; 
@@ -61,7 +63,7 @@ public class player : MonoBehaviour
 	
 	void Update ()
 	{
-	
+		medo += Time.deltaTime;
 		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 
 		if (!isPaused.paused)

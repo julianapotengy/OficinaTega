@@ -9,7 +9,7 @@ public class ClueObj : MonoBehaviour
 	public string stringClueTxt;
 	private Clues deleteAlert;
 	public GameObject alert;
-
+	public AudioClip NotificationSound;
 	void Start ()
 	{
 		clueTxt = GameObject.Find ("Clue").GetComponent<Text> ();
@@ -29,6 +29,8 @@ public class ClueObj : MonoBehaviour
 		{
 			Clues.cluesColected.Add(stringClueTxt);
 			deleteAlert.showAlert = true;
+			coll.gameObject.GetComponent<player>().medo= 0 ; 
+			GameManager.Playsound(NotificationSound);
 		}
 	}
 

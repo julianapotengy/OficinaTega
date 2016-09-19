@@ -168,6 +168,7 @@ public class Enemy3 : MonoBehaviour
 				transform.rotation = Quaternion.Euler(originalPositionR);
 				Debug.Log ("Aqui");
 				GetComponent<SpriteRenderer>().color = Color.white;
+				other.gameObject.GetComponent<player>().medo+= 20f ;
 			}
 		}
 	}

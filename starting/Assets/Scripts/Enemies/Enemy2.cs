@@ -180,6 +180,7 @@ public class Enemy2 : MonoBehaviour
 				GameManager.Playsound(shock);
 				GetComponent<SpriteRenderer>().color = Color.white;
 				player.caught = true ; 
+				other.gameObject.GetComponent<player>().medo+= 20f ;
 			}
 		}
 	}

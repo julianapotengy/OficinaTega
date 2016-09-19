@@ -1014,161 +1014,162 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generateOnUpdate: 1
   navObstacles:
-  - {fileID: 716190289}
-  - {fileID: 871038370}
-  - {fileID: 136565157}
-  - {fileID: 1480262673}
-  - {fileID: 1108642794}
-  - {fileID: 1478069793}
-  - {fileID: 545752261}
-  - {fileID: 1665497105}
-  - {fileID: 399032140}
-  - {fileID: 768156548}
-  - {fileID: 1196810640}
-  - {fileID: 941170946}
-  - {fileID: 1820976744}
-  - {fileID: 102956042}
-  - {fileID: 1629636189}
-  - {fileID: 1023864958}
-  - {fileID: 491242493}
-  - {fileID: 108482862}
-  - {fileID: 1824842064}
-  - {fileID: 1734223091}
-  - {fileID: 1051813428}
-  - {fileID: 1940654196}
-  - {fileID: 1758579999}
-  - {fileID: 1802209707}
-  - {fileID: 622630381}
-  - {fileID: 687825365}
-  - {fileID: 1483799075}
-  - {fileID: 1242399663}
-  - {fileID: 1491206848}
-  - {fileID: 1173705064}
-  - {fileID: 1730209079}
-  - {fileID: 996913206}
-  - {fileID: 1781867734}
-  - {fileID: 447618179}
-  - {fileID: 1880467544}
-  - {fileID: 1059787047}
-  - {fileID: 1920346887}
-  - {fileID: 990241254}
-  - {fileID: 1590469842}
-  - {fileID: 1183542009}
-  - {fileID: 675341902}
-  - {fileID: 675312770}
-  - {fileID: 786237175}
-  - {fileID: 1057145626}
-  - {fileID: 1278849569}
-  - {fileID: 89027785}
-  - {fileID: 2000597145}
-  - {fileID: 1223504169}
-  - {fileID: 1576070122}
-  - {fileID: 1109720682}
-  - {fileID: 1747664688}
-  - {fileID: 2128353239}
-  - {fileID: 434786447}
-  - {fileID: 918950576}
-  - {fileID: 997045475}
-  - {fileID: 1040860657}
-  - {fileID: 1649872040}
-  - {fileID: 1159988965}
-  - {fileID: 503869177}
-  - {fileID: 1161198176}
-  - {fileID: 1833275326}
-  - {fileID: 552918174}
-  - {fileID: 1982467340}
-  - {fileID: 1040126108}
-  - {fileID: 1143207386}
-  - {fileID: 2013643369}
-  - {fileID: 1263386403}
-  - {fileID: 1614857302}
-  - {fileID: 1038376864}
-  - {fileID: 641739076}
-  - {fileID: 2054982016}
-  - {fileID: 283790934}
-  - {fileID: 112086830}
-  - {fileID: 245319605}
-  - {fileID: 1003602311}
-  - {fileID: 576930802}
-  - {fileID: 217272833}
-  - {fileID: 544981190}
-  - {fileID: 836328868}
-  - {fileID: 301264706}
-  - {fileID: 1502010906}
-  - {fileID: 97575112}
-  - {fileID: 1495147077}
-  - {fileID: 997643518}
-  - {fileID: 1845131526}
-  - {fileID: 334927039}
-  - {fileID: 603870859}
-  - {fileID: 488699499}
-  - {fileID: 63465453}
-  - {fileID: 657603790}
-  - {fileID: 81600695}
-  - {fileID: 2036752087}
-  - {fileID: 1850031928}
-  - {fileID: 1187025186}
-  - {fileID: 1457876629}
-  - {fileID: 1570528399}
-  - {fileID: 1406048126}
-  - {fileID: 86289129}
-  - {fileID: 1812450087}
-  - {fileID: 532354976}
-  - {fileID: 1370882675}
-  - {fileID: 1963928770}
-  - {fileID: 1887638590}
-  - {fileID: 1491792714}
-  - {fileID: 852952502}
-  - {fileID: 1310774303}
-  - {fileID: 1277001569}
   - {fileID: 1882391435}
-  - {fileID: 535048305}
-  - {fileID: 1439286723}
-  - {fileID: 343775422}
-  - {fileID: 1988242626}
-  - {fileID: 2081857269}
-  - {fileID: 130377985}
-  - {fileID: 844005644}
-  - {fileID: 120128223}
-  - {fileID: 1564873742}
-  - {fileID: 1544801170}
-  - {fileID: 1797681107}
-  - {fileID: 1872806735}
-  - {fileID: 739751552}
-  - {fileID: 1133430283}
-  - {fileID: 513740719}
-  - {fileID: 135465883}
-  - {fileID: 1856071166}
-  - {fileID: 1856101494}
-  - {fileID: 5385758}
-  - {fileID: 1923945630}
-  - {fileID: 1187785506}
-  - {fileID: 429430389}
-  - {fileID: 1762270250}
-  - {fileID: 584021883}
-  - {fileID: 1565573034}
-  - {fileID: 434559921}
-  - {fileID: 244250195}
-  - {fileID: 13688965}
-  - {fileID: 1079469181}
-  - {fileID: 935421841}
-  - {fileID: 764337622}
-  - {fileID: 1039874124}
-  - {fileID: 1532404485}
-  - {fileID: 453183522}
-  - {fileID: 2105381542}
-  - {fileID: 97811245}
-  - {fileID: 33035261}
-  - {fileID: 2142804783}
-  - {fileID: 320338389}
-  - {fileID: 2037661685}
-  - {fileID: 2009769482}
-  - {fileID: 1155478783}
-  - {fileID: 1199853796}
   - {fileID: 1828658359}
-  - {fileID: 1684265129}
+  - {fileID: 1143207386}
+  - {fileID: 836328868}
+  - {fileID: 1565573034}
+  - {fileID: 997643518}
+  - {fileID: 675341902}
+  - {fileID: 1478069793}
+  - {fileID: 1491792714}
+  - {fileID: 244250195}
+  - {fileID: 1570528399}
+  - {fileID: 1880467544}
+  - {fileID: 1040126108}
+  - {fileID: 716190289}
   - {fileID: 1452265161}
+  - {fileID: 2036752087}
+  - {fileID: 13688965}
+  - {fileID: 1820976744}
+  - {fileID: 871038370}
+  - {fileID: 2105381542}
+  - {fileID: 1159988965}
+  - {fileID: 786237175}
+  - {fileID: 33035261}
+  - {fileID: 453183522}
+  - {fileID: 1483799075}
+  - {fileID: 334927039}
+  - {fileID: 434786447}
+  - {fileID: 97575112}
+  - {fileID: 2037661685}
+  - {fileID: 1173705064}
+  - {fileID: 1887638590}
+  - {fileID: 1730209079}
+  - {fileID: 108482862}
+  - {fileID: 996913206}
+  - {fileID: 1040860657}
+  - {fileID: 1614857302}
+  - {fileID: 768156548}
+  - {fileID: 2009769482}
+  - {fileID: 990241254}
+  - {fileID: 135465883}
+  - {fileID: 918950576}
+  - {fileID: 576930802}
+  - {fileID: 1003602311}
+  - {fileID: 1187025186}
+  - {fileID: 1734223091}
+  - {fileID: 1684265129}
+  - {fileID: 1833275326}
+  - {fileID: 532354976}
+  - {fileID: 1480262673}
+  - {fileID: 603870859}
+  - {fileID: 941170946}
+  - {fileID: 1155478783}
+  - {fileID: 1196810640}
+  - {fileID: 1059787047}
+  - {fileID: 447618179}
+  - {fileID: 935421841}
+  - {fileID: 1988242626}
+  - {fileID: 1747664688}
+  - {fileID: 2142804783}
+  - {fileID: 1920346887}
+  - {fileID: 1982467340}
+  - {fileID: 1491206848}
+  - {fileID: 1057145626}
+  - {fileID: 63465453}
+  - {fileID: 343775422}
+  - {fileID: 622630381}
+  - {fileID: 1242399663}
+  - {fileID: 488699499}
+  - {fileID: 1564873742}
+  - {fileID: 301264706}
+  - {fileID: 1758579999}
+  - {fileID: 1850031928}
   - {fileID: 432924269}
+  - {fileID: 503869177}
+  - {fileID: 2054982016}
+  - {fileID: 1544801170}
+  - {fileID: 491242493}
+  - {fileID: 1824842064}
+  - {fileID: 1277001569}
+  - {fileID: 1856101494}
+  - {fileID: 1108642794}
+  - {fileID: 544981190}
+  - {fileID: 641739076}
+  - {fileID: 1940654196}
+  - {fileID: 513740719}
+  - {fileID: 545752261}
+  - {fileID: 1502010906}
+  - {fileID: 1872806735}
+  - {fileID: 1812450087}
+  - {fileID: 89027785}
+  - {fileID: 535048305}
+  - {fileID: 687825365}
+  - {fileID: 136565157}
+  - {fileID: 1187785506}
+  - {fileID: 2128353239}
+  - {fileID: 1845131526}
+  - {fileID: 747525156}
+  - {fileID: 657603790}
+  - {fileID: 1109720682}
+  - {fileID: 1023864958}
+  - {fileID: 1802209707}
+  - {fileID: 399032140}
+  - {fileID: 2000597145}
+  - {fileID: 852952502}
+  - {fileID: 81600695}
+  - {fileID: 1263386403}
+  - {fileID: 675312770}
+  - {fileID: 1781867734}
+  - {fileID: 283790934}
+  - {fileID: 130377985}
+  - {fileID: 217272833}
+  - {fileID: 1963928770}
+  - {fileID: 1856071166}
+  - {fileID: 997045475}
+  - {fileID: 1038376864}
+  - {fileID: 86289129}
+  - {fileID: 2013643369}
+  - {fileID: 5385758}
+  - {fileID: 320338389}
+  - {fileID: 1439286723}
+  - {fileID: 1649872040}
+  - {fileID: 1310774303}
+  - {fileID: 429430389}
+  - {fileID: 102956042}
+  - {fileID: 245319605}
+  - {fileID: 1133430283}
+  - {fileID: 1665497105}
+  - {fileID: 1079469181}
+  - {fileID: 1370882675}
+  - {fileID: 844005644}
+  - {fileID: 1576070122}
+  - {fileID: 2081857269}
+  - {fileID: 434559921}
+  - {fileID: 1183542009}
+  - {fileID: 1590469842}
+  - {fileID: 112086830}
+  - {fileID: 1457876629}
+  - {fileID: 584021883}
+  - {fileID: 1532404485}
+  - {fileID: 1797681107}
+  - {fileID: 120128223}
+  - {fileID: 552918174}
+  - {fileID: 1199853796}
+  - {fileID: 1039874124}
+  - {fileID: 1406048126}
+  - {fileID: 1278849569}
+  - {fileID: 97811245}
+  - {fileID: 1223504169}
+  - {fileID: 1161198176}
+  - {fileID: 1051813428}
+  - {fileID: 1629636189}
+  - {fileID: 1495147077}
+  - {fileID: 1923945630}
+  - {fileID: 1762270250}
+  - {fileID: 764337622}
+  - {fileID: 739751552}
   inflateRadius: 10
   regenerateFlag: 1
 --- !u!4 &62581064
@@ -2523,6 +2524,7 @@ Transform:
   - {fileID: 1040738965}
   - {fileID: 2073872921}
   - {fileID: 430036411}
+  - {fileID: 747525155}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &127750160
@@ -3087,6 +3089,7 @@ GameObject:
   - 4: {fileID: 194255717}
   - 212: {fileID: 194255719}
   - 61: {fileID: 194255718}
+  - 50: {fileID: 194255720}
   m_Layer: 0
   m_Name: 1
   m_TagString: map
@@ -3145,6 +3148,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3fa6c607db96e4f47b71e33c7e527d1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!50 &194255720
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194255716}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &197408899
 GameObject:
   m_ObjectHideFlags: 0
@@ -7397,6 +7415,67 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &560919412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 560919413}
+  - 222: {fileID: 560919415}
+  - 114: {fileID: 560919414}
+  m_Layer: 5
+  m_Name: Medo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &560919413
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560919412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2098530554}
+  m_RootOrder: 8
+  m_AnchorMin: {x: .0421490818, y: .781869352}
+  m_AnchorMax: {x: .129294127, y: .949452996}
+  m_AnchoredPosition: {x: -.559997559, y: -.519996643}
+  m_SizeDelta: {x: 1.49000549, y: -3}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &560919414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560919412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cf9b44a5d92c6cb4ba9e742956753a52, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
+--- !u!222 &560919415
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560919412}
 --- !u!1 &562285919
 GameObject:
   m_ObjectHideFlags: 0
@@ -9556,6 +9635,75 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &747525154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 747525155}
+  - 60: {fileID: 747525157}
+  - 114: {fileID: 747525156}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747525155
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747525154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 125672812}
+  m_RootOrder: 5
+--- !u!114 &747525156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747525154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4f7f33d8fc7c0419b2308165807ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invertPolygon: 0
+  shapeType: 0
+  extraOffset: -9.97000027
+--- !u!60 &747525157
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747525154}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -27.706131, y: 96.5144043}
+      - {x: 202.570679, y: 96.7100983}
+      - {x: 203.386353, y: -37.4309158}
+      - {x: 132.004227, y: -37.5946503}
+      - {x: 132.053299, y: -29.6513386}
+      - {x: 162.305298, y: -31.3106995}
+      - {x: 161.563019, y: 26.2543449}
+      - {x: 74.0740814, y: 25.3368721}
+      - {x: 75.0269547, y: -30.655117}
+      - {x: 106.477859, y: -30.0133781}
+      - {x: 106.218887, y: -39.1188889}
+      - {x: -27.8342056, y: -38.4048386}
+      - {x: -28.0854664, y: -4.60180283}
 --- !u!1 &756761600
 GameObject:
   m_ObjectHideFlags: 0
@@ -9791,6 +9939,7 @@ MonoBehaviour:
   - {fileID: 119940, guid: 15a4260501785e642812845dd47916e1, type: 2}
   - {fileID: 193966, guid: 145f83c4afbd69b4bbff23b5e9d0ddfe, type: 2}
   - {fileID: 175438, guid: 65fa8c682857e3643b20d9ff23aa02c1, type: 2}
+  medoimg: {fileID: 0}
 --- !u!1 &766362909
 GameObject:
   m_ObjectHideFlags: 0
@@ -11866,6 +12015,7 @@ MonoBehaviour:
   breathing: {fileID: 8300000, guid: de4766f0cf9de754ebef546667691ea5, type: 3}
   SambaSound: {fileID: 8300000, guid: 9737b775e62659f44a3db9810eb730a9, type: 3}
   startsamba: 0
+  medo: 100
 --- !u!61 &967957243
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21003,6 +21153,7 @@ GameObject:
   - 4: {fileID: 1525959175}
   - 212: {fileID: 1525959178}
   - 61: {fileID: 1525959177}
+  - 50: {fileID: 1525959176}
   m_Layer: 0
   m_Name: 4
   m_TagString: map
@@ -21022,6 +21173,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1080934317}
   m_RootOrder: 3
+--- !u!50 &1525959176
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525959174}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &1525959177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22168,7 +22334,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1600835903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 308, z: -50}
+  m_LocalPosition: {x: 0, y: 331.100006, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1077250973}
@@ -22509,7 +22675,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1623025483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 230, y: 310, z: -50}
+  m_LocalPosition: {x: 230, y: 331.200012, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1077250973}
@@ -22607,6 +22773,7 @@ GameObject:
   - 4: {fileID: 1634200767}
   - 212: {fileID: 1634200770}
   - 61: {fileID: 1634200769}
+  - 50: {fileID: 1634200768}
   m_Layer: 0
   m_Name: 3
   m_TagString: map
@@ -22626,6 +22793,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1080934317}
   m_RootOrder: 2
+--- !u!50 &1634200768
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634200766}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &1634200769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26503,6 +26685,7 @@ GameObject:
   - 4: {fileID: 1938417398}
   - 58: {fileID: 1938417397}
   - 114: {fileID: 1938417396}
+  - 50: {fileID: 1938417399}
   m_Layer: 0
   m_Name: SoundArround
   m_TagString: soundArround
@@ -26546,6 +26729,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 967957245}
   m_RootOrder: 1
+--- !u!50 &1938417399
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938417395}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1940654192
 GameObject:
   m_ObjectHideFlags: 0
@@ -28012,6 +28210,7 @@ GameObject:
   - 4: {fileID: 2081801653}
   - 212: {fileID: 2081801656}
   - 61: {fileID: 2081801655}
+  - 50: {fileID: 2081801654}
   m_Layer: 0
   m_Name: 2
   m_TagString: map
@@ -28031,6 +28230,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1080934317}
   m_RootOrder: 1
+--- !u!50 &2081801654
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081801652}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &2081801655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28297,6 +28511,7 @@ RectTransform:
   - {fileID: 1859460106}
   - {fileID: 65152714}
   - {fileID: 1967847970}
+  - {fileID: 560919413}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}

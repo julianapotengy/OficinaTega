@@ -19,7 +19,7 @@ public class Clues : MonoBehaviour
 						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar"},
 						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato"},
 						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"}};
-	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(-20,0,0),new Vector3(0,40,0),new Vector3(0,-40,0)};
+	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-30,0),new Vector3(-70,-42,0),new Vector3(93,10,0)};
 
 	private List<GameObject> clueStart = new List<GameObject>();
 	private List<GameObject> cluesTxt = new List<GameObject>();
@@ -82,10 +82,10 @@ public class Clues : MonoBehaviour
 	IEnumerator WaitClue()
 	{
 		yield return new WaitForSeconds (0.001f);
+		GameObject[] locais = GameObject.FindGameObjectsWithTag ("enemy");
 		for (int i = 0; i < 3; i++)
 		{
-			cluesTxt.Add(Instantiate (clueObj, GameObject.Find ("Player").transform.position + new Vector3(0,10*(i+1),0),
-			                          Quaternion.identity) as GameObject);
+			cluesTxt.Add(Instantiate (clueObj, locais[i].transform.position,Quaternion.identity) as GameObject);
 			cluesTxt[i].GetComponent<ClueObj>().stringClueTxt = array2d[RandomHouse.goldenHouse, i];
 			cluesTxt[i].GetComponent<ClueObj>().alert = alert;
 		}

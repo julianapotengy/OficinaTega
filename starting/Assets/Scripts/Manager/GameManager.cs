@@ -5,9 +5,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 	public GameObject[] Enemies;
-
+	GameObject player;
+	public Image medoimg; 
 	void Start ()
 	{
+		medoimg = GameObject.Find ("Medo").GetComponent<Image> ();
+		player = GameObject.Find ("Player");
+		//player.GetComponent<player>().medo;
 		for (int i = 0; i < 3; i++)
 		{
 			Instantiate (Enemies [0], new Vector3 (146,18,-11), Quaternion.Euler (0, 0, 0));
@@ -18,7 +22,7 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
-		
+		medoimg.fillAmount = player.GetComponent<player> ().medo / 100f;
 	}
 
 	public static void Playsound(AudioClip clip)
