@@ -42,7 +42,7 @@ public class Enemy3 : MonoBehaviour
 	{
 		mainCamera = Camera.main.transform;
 		temp = GameObject.FindGameObjectsWithTag ("MovE3");
-		Places=  new Vector3[temp.Length]; 
+		Places =  new Vector3[temp.Length]; 
 		for (int i=0; i<temp.Length; i++)
 		{
 			Places[i] = temp[i].transform.position;
@@ -159,7 +159,7 @@ public class Enemy3 : MonoBehaviour
 			if(other.gameObject.name.Equals("Player"))
 			{
 				shakeDuration = 1.5f;
-				player.GetComponent<player>().stamina =(player.GetComponent<player>().stamina >25)? 25:10 ;
+				player.GetComponent<player>().stamina =(player.GetComponent<player>().stamina > 0.25f)? 0.25f:0.1f;
 				once = true;
 				GameManager.Playsound(shockSound);
 				field.saw = false;
@@ -168,7 +168,11 @@ public class Enemy3 : MonoBehaviour
 				transform.rotation = Quaternion.Euler(originalPositionR);
 				Debug.Log ("Aqui");
 				GetComponent<SpriteRenderer>().color = Color.white;
+<<<<<<< HEAD
+				other.gameObject.GetComponent<player>().fear += 20f;
+=======
 				other.gameObject.GetComponent<player>().medo+= 20f ;
+>>>>>>> origin/master
 			}
 		}
 	}

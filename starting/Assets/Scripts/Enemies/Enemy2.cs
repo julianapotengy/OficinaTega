@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Enemy2 : MonoBehaviour
 {
@@ -35,8 +36,7 @@ public class Enemy2 : MonoBehaviour
 	}
 
 	void Start ()
-	{ 
-
+	{
 		temp = GameObject.FindGameObjectsWithTag ("MovE2");
 		Places = new Vector3[temp.Length]; 
 		for (int i=0; i<temp.Length; i++)
@@ -49,7 +49,6 @@ public class Enemy2 : MonoBehaviour
 		arrived = false;
 
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
-
 		Player = GameObject.FindGameObjectWithTag ("player");
 
 		originalPosition = transform.position;
@@ -86,7 +85,7 @@ public class Enemy2 : MonoBehaviour
 	{
 		if (fadeIn)
 		{
-			player.caught = true ; 
+			player.caught = true; 
 			Debug.Log("Aqui");
 			fadeNum += 5;
 			GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
@@ -96,8 +95,8 @@ public class Enemy2 : MonoBehaviour
 			Player.SetActive(false);
 			GetComponent<SpriteRenderer>().sortingOrder = -2; 
 			
-			GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = false;
-			GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find("Stamina").GetComponent<Image>().enabled = false;
+			GameObject.Find("OrangeStamina").GetComponent<Image>().enabled = false;
 			
 			if(this.fadeNum > 255)
 			{
@@ -112,8 +111,8 @@ public class Enemy2 : MonoBehaviour
 				fadeNum = 0;
 				
 				Player.SetActive(true);
-				GameObject.Find("Stamina").GetComponent<SpriteRenderer>().enabled = true;
-				GameObject.Find("OrangeStamina").GetComponent<SpriteRenderer>().enabled = true;
+				GameObject.Find("Stamina").GetComponent<Image>().enabled = true;
+				GameObject.Find("OrangeStamina").GetComponent<Image>().enabled = true;
 				GetComponent<SpriteRenderer>().sortingOrder = 2; 
 				GetComponent<SpriteRenderer>().enabled = true ; 
 				GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
@@ -140,7 +139,6 @@ public class Enemy2 : MonoBehaviour
 			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20;
-			Debug.Log ("viu");
 			if (!field.leaved)
 			{
 				field.saw = false;
@@ -179,8 +177,13 @@ public class Enemy2 : MonoBehaviour
 				audio.pitch = 1f;
 				GameManager.Playsound(shock);
 				GetComponent<SpriteRenderer>().color = Color.white;
+<<<<<<< HEAD
+				player.caught = true;
+				other.gameObject.GetComponent<player>().fear += 20f;
+=======
 				player.caught = true ; 
 				other.gameObject.GetComponent<player>().medo+= 20f ;
+>>>>>>> origin/master
 			}
 		}
 	}

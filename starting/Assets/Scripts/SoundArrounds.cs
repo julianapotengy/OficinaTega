@@ -1,28 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundArrounds : MonoBehaviour {
-	player Player ; 
-	// Use this for initialization
-	void Start () {
-		Player = GetComponentInParent<player> ();
+public class SoundArrounds : MonoBehaviour
+{
+	player player;
+
+	void Start ()
+	{
+		player = GetComponentInParent<player> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update ()
+	{
 	
 	}
 
 	void OnTriggerEnter2D (Collider2D coll)
 	{
-		if (coll.gameObject.tag == "enemy") {		
-			Player.startsamba= true ; }
-	}
-	void OnTriggerStay2D (Collider2D coll)
-	{
-		if (coll.gameObject.tag == "enemy") {			
-			Player.startsamba= true ;
+		if (coll.gameObject.tag == "enemy")
+		{		
+			player.startsamba = true;
 		}
 	}
 
+	void OnTriggerStay2D (Collider2D coll)
+	{
+		if (coll.gameObject.tag == "enemy")
+		{			
+			player.startsamba = true;
+		}
+	}
 }

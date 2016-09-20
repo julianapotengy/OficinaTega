@@ -12,7 +12,7 @@ public class Clues : MonoBehaviour
 	private PauseGame isPaused;
 	[HideInInspector] public bool showClue;
 
-	string[] initialClues = new string[4]{"Fuja dos bate bolas","Procure mais dicas","Ache sua casa","Existem cameras pela cidade"};
+	string[] initialClues = new string[4]{"Procure mais dicas","Fuja dos bate bolas","Ache sua casa","Existem cameras pela cidade"};
 	string[,] array2d = new string[6,3]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"},
 						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta"},
 						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada"},
@@ -21,10 +21,10 @@ public class Clues : MonoBehaviour
 						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"}};
 	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-30,0),new Vector3(-70,-42,0),new Vector3(93,10,0)};
 
+	private GameObject notepad;
+	public static List<string> clues2Show = new List<string> ();
 	private List<GameObject> clueStart = new List<GameObject>();
 	private List<GameObject> cluesTxt = new List<GameObject>();
-	private GameObject notepad;
-
 	public List<Text> notebookClues = new List<Text>();
 	public static List<string> cluesColected = new List<string>();
 
@@ -37,9 +37,9 @@ public class Clues : MonoBehaviour
 	{
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 		showClue = false;
+		notepad = GameObject.Find ("Notepad");
 
 		notebookClues = new List<Text>();
-		notepad = GameObject.Find ("Notepad");
 		cluesColected = new List<string>();
 		StartCoroutine (WaitClue ());
 
@@ -49,6 +49,7 @@ public class Clues : MonoBehaviour
 			                          Quaternion.identity) as GameObject);
 			clueStart[i].GetComponent<ClueObj>().stringClueTxt = initialClues[i];
 			clueStart[i].GetComponent<ClueObj>().alert = alert;
+			clues2Show.Add(initialClues[i]);
 		}
 	}
 
@@ -88,6 +89,7 @@ public class Clues : MonoBehaviour
 			cluesTxt.Add(Instantiate (clueObj, locais[i].transform.position,Quaternion.identity) as GameObject);
 			cluesTxt[i].GetComponent<ClueObj>().stringClueTxt = array2d[RandomHouse.goldenHouse, i];
 			cluesTxt[i].GetComponent<ClueObj>().alert = alert;
+			clues2Show.Add(cluesTxt[i].GetComponent<ClueObj>().stringClueTxt);
 		}
 		getTexts();
 	}
