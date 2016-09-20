@@ -42,6 +42,7 @@ public class Clues : MonoBehaviour
 		notebookClues = new List<Text>();
 		cluesColected = new List<string>();
 		StartCoroutine (WaitClue ());
+		clues2Show = new List<string> ();
 
 		for (int i = 0; i < initialClues.Length; i++)
 		{
@@ -64,13 +65,11 @@ public class Clues : MonoBehaviour
 			}
 
 			if (Input.GetKeyDown (KeyCode.I))
-			{
 				ShowClues();
-				showAlert = false;
-			}
+			
 			if (showAlert)
 				alert.SetActive(true);
-			else 
+			else if(!showAlert)
 				alert.SetActive(false);
 			
 			if(showClue)
@@ -112,5 +111,6 @@ public class Clues : MonoBehaviour
 	public void ShowClues()
 	{
 		showClue = !showClue;
+		showAlert = false;
 	}
 }

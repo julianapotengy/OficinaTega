@@ -20,31 +20,15 @@ public class PauseGame : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.P))
-			Pause();
+		if (Input.GetKeyDown (KeyCode.P))
+			Pause ();
 		if (Input.GetKeyDown (KeyCode.M))
-			MuteButton ();
-
+				MuteButton ();
+		
 		if (soundPaused)
 			audio.mute = true;
 		else if (!soundPaused)
 			audio.mute = false;
-	}
-
-	public void Pause()
-	{
-		if(Time.timeScale == 1)
-		{
-			Time.timeScale = 0;
-			paused = true;
-			showPaused();
-		}
-		else if (Time.timeScale == 0)
-		{
-			Time.timeScale = 1;
-			paused = false;
-			hidePaused();
-		}
 	}
 	
 	public void Reload()
@@ -67,10 +51,21 @@ public class PauseGame : MonoBehaviour
 			g.SetActive(false);
 		}
 	}
-	
-	public void LoadLevel(int level)
+
+	public void Pause()
 	{
-		Application.LoadLevel(level);
+		if(Time.timeScale == 1)
+		{
+			Time.timeScale = 0;
+			paused = true;
+			showPaused();
+		}
+		else if (Time.timeScale == 0)
+		{
+			Time.timeScale = 1;
+			paused = false;
+			hidePaused();
+		}
 	}
 
 	public void MuteButton()

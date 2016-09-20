@@ -15,19 +15,17 @@ public class FieldOfVision : MonoBehaviour
 		enemy3 = GameObject.Find ("Enemy3(Clone)");
 		player = GameObject.FindGameObjectWithTag ("player");
 	}
-
 	void Update()
 	{
-		if (!saw && !leaved)
+		if (!saw && !leaved){
 			player.GetComponent<SpriteRenderer> ().color = Color.white;
+		}
 	}
-
 	void OnTriggerEnter2D(Collider2D other)
 	{
 
 		if (other.gameObject.tag == "player")
 		{
-			//Debug.Log("FIRST");
 			saw = true;
 			leaved = true;
 			player.GetComponent<SpriteRenderer> ().color = Color.cyan;

@@ -6,7 +6,6 @@ public class player : MonoBehaviour
 {
 	private PauseGame isPaused;
 	public static bool caught = false;
-	public float fear;
 	
 	private Rigidbody2D body;
 	private float speed, axisX, axisY;
@@ -19,46 +18,33 @@ public class player : MonoBehaviour
 
 	[HideInInspector] public float stamina, staminaCount;
 	public Image staminaBar;
-	private GameObject tutorial;
-
 	public AudioClip breathing;
-	public AudioClip SambaSound;
+	public AudioClip SambaSound; 
+	private GameObject tutorial;
 	public bool startsamba;
-<<<<<<< HEAD
-	bool canBreath;
-	bool canSamba;
-
-=======
 	bool Canbreath;
 	bool CanSamba;
-	public float medo = 0 ; 
->>>>>>> origin/master
+	public float medo = 0;
+
 	void Awake ()
 	{
 		body = GetComponent <Rigidbody2D> ();
-		caught = false;
+		caught = false ;
 	}
 
 	void Start()
 	{
-<<<<<<< HEAD
-		startsamba = false;
-		canSamba = true;
-		canBreath = true;
-
-=======
 		medo = 0; 
 		startsamba = false; 
 		CanSamba = true; 
 		Canbreath = true; 
->>>>>>> origin/master
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
-		tutorial = GameObject.Find ("TutorialPanel");
 
-		fear = 0;
 		speed = 15;
 		sp = GetComponent<SpriteRenderer> ();
 		stamina = 1;
+
+		tutorial = GameObject.Find ("TutorialPanel");
 	}
 
 	void FixedUpdate()
@@ -79,14 +65,16 @@ public class player : MonoBehaviour
 	
 	void Update ()
 	{
-<<<<<<< HEAD
-=======
-		medo += Time.deltaTime;
->>>>>>> origin/master
 		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
-		fear += Time.deltaTime;
+
 		if (!isPaused.paused)
 		{
+			medo += Time.deltaTime/2;
+			if (medo >= 100)
+			{
+				Application.LoadLevel(3);
+			}
+
 			if (startsamba)
 			{
 				StartCoroutine(Samba());
@@ -98,15 +86,16 @@ public class player : MonoBehaviour
 				speed = 15; 		
 			}
 			
-			staminaCount = (stamina / 1) * 1.2f;
+			staminaCount = (stamina / 1f) * 1.2f;
 			staminaBar.GetComponent<Image>().fillAmount = staminaCount;
 
 			if (stamina < 0.25f)
 			{
 				StartCoroutine(respirar());
-				staminaBar.GetComponent<Image>().color = Color.red;
+				staminaBar.GetComponent<Image> ().color = Color.red;
 			}
-			else staminaBar.GetComponent<Image>().color = Color.white;
+			else
+				staminaBar.GetComponent<Image> ().color = Color.white;
 			if (zoomOut)
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (12, 20, 5f * (Time.time - activeZoom));
@@ -180,28 +169,30 @@ public class player : MonoBehaviour
 			coll.GetComponent<SpriteRenderer>().enabled = true; 
 		}
 	}
-
 	IEnumerator respirar()
 	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canBreath)
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && Canbreath)
 		{
 			GameManager.Playsound (breathing);
-			canBreath = false; 
+			Canbreath = false; 
 		} 
 		yield return new WaitForSeconds(breathing.length);
-		canBreath = true; 
+		Canbreath = true; 
 	}
-
 	IEnumerator Samba()
 	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "sambasound" && canSamba)
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "sambasound" && CanSamba)
 		{
 			GameManager.Playsound (SambaSound);
-			canSamba = false; 
-			startsamba = false; 
+			CanSamba = false ; 
+			startsamba = false ; 
 		} 
 		yield return new WaitForSeconds(SambaSound.length);
-		canSamba = true;
+		CanSamba = true;
 		startsamba = false; 
 	}
+
+		
+
+
 }

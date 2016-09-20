@@ -75,7 +75,7 @@ public class Enemy1 : MonoBehaviour
 	{
 		if (field.saw)
 		{
-			pagent.rotateTransform = false; 
+			pagent.rotateTransform = false ; 
 			timer += Time.deltaTime;
 			GetComponent<SpriteRenderer>().color = Color.red;
 			GameManager.Playsound(heartBeating);
@@ -117,20 +117,14 @@ public class Enemy1 : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-<<<<<<< HEAD
+
 		if (other.gameObject.transform.parent == null && other.tag.Equals("player"))
 		{
 			Application.LoadLevel(3);
-=======
-
-		if (other.gameObject.transform.parent == null && other.tag.Equals("player"))
-		{
-
-			Application.LoadLevel(5);
->>>>>>> origin/master
 		}
 		if (field.saw)
 		{
+
 			if (other.gameObject.tag == "camLimit")
 				{
 					field.saw = false;

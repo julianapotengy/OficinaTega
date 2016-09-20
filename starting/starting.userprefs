@@ -1,24 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Clues\Clues.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemy3.cs">
     <Files>
-      <File FileName="Assets\Scripts\Clues\Clues.cs" Line="90" Column="1" />
-      <File FileName="Assets\Scripts\Clues\ClueObj.cs" Line="33" Column="33" />
-      <File FileName="Assets\Scripts\Enemies\Enemy2.cs" Line="181" Column="49" />
-      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="167" Column="43" />
-      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="24" Column="3" />
-      <File FileName="Assets\Scripts\player.cs" Line="70" Column="8" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Clues\ClueObj.cs">
-    <Files>
-      <File FileName="Assets\Scripts\player.cs" Line="26" Column="23" />
-      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="12" Column="35" />
-      <File FileName="Assets\Scripts\Clues\ClueObj.cs" Line="33" Column="45" />
-      <File FileName="Assets\Scripts\Enemies\Enemy2.cs" Line="183" Column="50" />
-      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="171" Column="50" />
-      <File FileName="Assets\Scripts\Clues\Clues.cs" Line="22" Column="82" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Enemies\Enemy2.cs" Line="180" Column="7" />
+      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="164" Column="7" />
+      <File FileName="Assets\Scripts\Enemies\FieldOfVision.cs" Line="54" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

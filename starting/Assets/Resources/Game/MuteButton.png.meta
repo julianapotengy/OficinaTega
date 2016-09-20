@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: e8c2d7f98525a564586a27b2d71456b6
-timeCreated: 1474337851
-licenseType: Free
+guid: 1226427b50980464eb6ca1d11013a020
+timeCreated: 1474373066
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: MuteButton
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,14 +30,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,17 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: MuteButton
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 100
-        width: 310
-        height: 310
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
