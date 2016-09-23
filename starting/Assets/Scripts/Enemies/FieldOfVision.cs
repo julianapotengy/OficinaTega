@@ -29,8 +29,7 @@ public class FieldOfVision : MonoBehaviour
 			saw = true;
 			leaved = true;
 			player.GetComponent<SpriteRenderer> ().color = Color.cyan;
-			AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
-			audio.pitch = 1f;
+
 		}
 	}
 
@@ -50,8 +49,7 @@ public class FieldOfVision : MonoBehaviour
 			enemy3.GetComponent<Enemy3>().once = false;
 			player.GetComponent<SpriteRenderer> ().color = Color.white;
 
-			AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
-			audio.pitch = 1;
+
 		}
 	}
 }

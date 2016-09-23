@@ -26,7 +26,7 @@ public class Enemy2 : MonoBehaviour
 	public AudioClip shock;
 	private int rand;
 	private bool arrived;
-
+	public static bool canShock;
 	public Vector3[] Places;
 	public GameObject[]temp;
 
@@ -37,7 +37,7 @@ public class Enemy2 : MonoBehaviour
 
 	void Start ()
 	{ 
-
+		canShock = true;
 		temp = GameObject.FindGameObjectsWithTag ("MovE2");
 		Places = new Vector3[temp.Length]; 
 		for (int i=0; i<temp.Length; i++)
@@ -177,7 +177,7 @@ public class Enemy2 : MonoBehaviour
 				fadeIn = true;
 				AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
 				audio.pitch = 1f;
-				//GameManager.Playsound(shock);
+				if (canShock) StartCoroutine(sound2());
 				GetComponent<SpriteRenderer>().color = Color.white;
 				player.caught = true ; 
 				other.gameObject.GetComponent<player>().medo+= 20f ;
@@ -196,6 +196,16 @@ public class Enemy2 : MonoBehaviour
 			player.caught = false ;
 
 		}
+	}
+	IEnumerator sound2()
+	{
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canShock)
+		{
+			GameManager.Playsound (shock);
+			canShock = false; 
+		} 
+		yield return new WaitForSeconds(shock.length);
+		canShock = true; 
 	}
 
 

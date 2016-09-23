@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
+
 		medoimg.fillAmount = player.GetComponent<player> ().medo / 100f;
 	}
 

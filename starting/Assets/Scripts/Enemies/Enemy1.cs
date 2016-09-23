@@ -22,7 +22,7 @@ public class Enemy1 : MonoBehaviour
 	private bool arrived;
 	public Vector3[] Places;
 	public GameObject[]temp;
-
+	public static bool canBeath;
 	void Awake()
 	{
 		field = GetComponentInChildren<FieldOfVision> ();
@@ -30,6 +30,7 @@ public class Enemy1 : MonoBehaviour
 
 	void Start ()
 	{
+		canBeath = true;
 		temp = GameObject.FindGameObjectsWithTag ("MovE1");
 		Places =  new Vector3[temp.Length]; 
 		for (int i = 0; i < temp.Length; i++)
@@ -77,9 +78,8 @@ public class Enemy1 : MonoBehaviour
 		{
 			pagent.rotateTransform = false ; 
 			timer += Time.deltaTime;
-			GetComponent<SpriteRenderer>().color = Color.red;
-			GameManager.Playsound(heartBeating);
-
+			if (canBeath) StartCoroutine(heartBeat());
+			Debug.Log ("aqui2");
 			Vector2 posiplayer = player.transform.position;
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
@@ -135,4 +135,15 @@ public class Enemy1 : MonoBehaviour
 				}
 		}
 	}
+	IEnumerator heartBeat()
+	{
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canBeath)
+		{
+			GameManager.Playsound (heartBeating);
+			canBeath = false; 
+		} 
+		yield return new WaitForSeconds(heartBeating.length);
+		canBeath = true; 
+	}
+
 }

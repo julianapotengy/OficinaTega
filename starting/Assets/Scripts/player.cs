@@ -77,7 +77,7 @@ public class player : MonoBehaviour
 
 			if (startsamba)
 			{
-				StartCoroutine(Samba());
+				if (CanSamba) StartCoroutine(Samba());
 			}
 			WalkAndRun ();
 			if (stamina <= 0)
@@ -91,7 +91,7 @@ public class player : MonoBehaviour
 
 			if (stamina < 0.25f)
 			{
-				StartCoroutine(respirar());
+				if (Canbreath) StartCoroutine(respirar());
 				staminaBar.GetComponent<Image> ().color = Color.red;
 			}
 			else
@@ -101,10 +101,16 @@ public class player : MonoBehaviour
 				Camera.main.orthographicSize = Mathf.Lerp (12, 20, 5f * (Time.time - activeZoom));
 				if (stamina < 1 && !Input.GetKey (KeyCode.Space))
 				{
-					if (stamina <= 0.5f)
+					if (stamina <= 0.5f&& axisX==0 && axisY ==0 )
 						stamina += 0.04f * Time.deltaTime;
-					if (stamina >= 0.5f)
+					else if (stamina <= 0.5f)
+					{
+						stamina += 0.02f * Time.deltaTime;
+					}
+					if (stamina >= 0.5f&& axisX==0 &&axisY ==0 )
 						stamina += 0.08f * Time.deltaTime;
+					else if (stamina>=0.5f)
+						stamina += 0.06f * Time.deltaTime;
 				}
 			}
 			else

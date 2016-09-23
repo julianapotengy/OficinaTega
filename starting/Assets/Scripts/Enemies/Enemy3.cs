@@ -32,6 +32,7 @@ public class Enemy3 : MonoBehaviour
 
 	public Vector3[] Places;
 	public GameObject[]temp;
+	public static bool canShock;
 
 	void Awake()
 	{
@@ -40,6 +41,7 @@ public class Enemy3 : MonoBehaviour
 
 	void Start ()
 	{
+		canShock = true;
 		mainCamera = Camera.main.transform;
 		temp = GameObject.FindGameObjectsWithTag ("MovE3");
 		Places =  new Vector3[temp.Length]; 
@@ -162,6 +164,7 @@ public class Enemy3 : MonoBehaviour
 				player.GetComponent<player>().stamina =(player.GetComponent<player>().stamina > 0.25f)? 0.25f:0.1f;
 				once = true;
 				//GameManager.Playsound(shockSound);
+				if (canShock) StartCoroutine(sound2());
 				field.saw = false;
 				mask = true; 
 				transform.position = originalPosition;
@@ -177,4 +180,15 @@ public class Enemy3 : MonoBehaviour
 		yield return new WaitForSeconds (0.001f);
 			shock.SetActive (false);
 	}
+	IEnumerator sound2()
+	{
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canShock)
+		{
+			GameManager.Playsound (shockSound);
+			canShock = false; 
+		} 
+		yield return new WaitForSeconds(shockSound.length);
+		canShock = true; 
+	}
+
 }
