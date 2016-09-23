@@ -14,7 +14,7 @@ public class HistoryTexts : MonoBehaviour
 
 	void Start ()
 	{
-		history = GameObject.Find ("History");
+		history = GameObject.Find ("HistoryCredits");
 		credits = GameObject.Find ("Credits");
 		timer = 0;
 		credits.SetActive(false);
@@ -48,6 +48,8 @@ public class HistoryTexts : MonoBehaviour
 		{
 			history.SetActive(false);
 		}
+		if (Input.anyKey)
+			goToMenu ();
 	}
 
 	public void goToMenu()

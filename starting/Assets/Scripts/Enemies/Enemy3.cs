@@ -86,6 +86,7 @@ public class Enemy3 : MonoBehaviour
 	{
 		if (!isPaused.paused)
 		{
+			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			WalkAndRun ();
 			for (int i=0; i<temp.Length;i++)
 			{

@@ -77,7 +77,8 @@ public class player : MonoBehaviour
 
 			if (startsamba)
 			{
-				if (CanSamba) StartCoroutine(Samba());
+				if (CanSamba)
+					StartCoroutine(Samba());
 			}
 			WalkAndRun ();
 			if (stamina <= 0)
@@ -91,7 +92,8 @@ public class player : MonoBehaviour
 
 			if (stamina < 0.25f)
 			{
-				if (Canbreath) StartCoroutine(respirar());
+				if (Canbreath)
+					StartCoroutine(respirar());
 				staminaBar.GetComponent<Image> ().color = Color.red;
 			}
 			else
@@ -150,9 +152,9 @@ public class player : MonoBehaviour
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
+	void OnCollisionStay2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "goldenHouse")
+		if (other.gameObject.tag == "goldenHouse" && Input.GetKeyDown(Clues.theKey))
 		{
 			Application.LoadLevel(2);
 		}
@@ -175,6 +177,7 @@ public class player : MonoBehaviour
 			coll.GetComponent<SpriteRenderer>().enabled = true; 
 		}
 	}
+
 	IEnumerator respirar()
 	{
 		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && Canbreath)
@@ -185,20 +188,17 @@ public class player : MonoBehaviour
 		yield return new WaitForSeconds(breathing.length);
 		Canbreath = true; 
 	}
+
 	IEnumerator Samba()
 	{
 		if (Object.FindObjectOfType <AudioSource> ().clip.name != "sambasound" && CanSamba)
 		{
 			GameManager.Playsound (SambaSound);
-			CanSamba = false ; 
-			startsamba = false ; 
+			CanSamba = false; 
+			startsamba = false; 
 		} 
 		yield return new WaitForSeconds(SambaSound.length);
 		CanSamba = true;
 		startsamba = false; 
 	}
-
-		
-
-
 }

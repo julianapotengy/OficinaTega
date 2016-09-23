@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SoundArrounds.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Clues\Clues.cs">
     <Files>
-      <File FileName="Assets\Scripts\player.cs" Line="110" Column="36" />
-      <File FileName="Assets\Scripts\SoundArrounds.cs" Line="36" Column="57" />
-      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="36" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\Enemy2.cs" Line="29" Column="15" />
-      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="35" Column="15" />
-      <File FileName="Assets\Scripts\Enemies\Enemy1.cs" Line="25" Column="16" />
+      <File FileName="Assets\Scripts\player.cs" Line="157" Column="79" />
+      <File FileName="Assets\Scripts\Clues\Clues.cs" Line="14" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

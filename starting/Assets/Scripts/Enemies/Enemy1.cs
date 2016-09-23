@@ -23,6 +23,7 @@ public class Enemy1 : MonoBehaviour
 	public Vector3[] Places;
 	public GameObject[]temp;
 	public static bool canBeath;
+
 	void Awake()
 	{
 		field = GetComponentInChildren<FieldOfVision> ();
@@ -64,6 +65,7 @@ public class Enemy1 : MonoBehaviour
 	{
 		if (!isPaused.paused)
 		{
+			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			WalkAndRun();
 			for (int i=0; i<temp.Length;i++)
 			{

@@ -74,9 +74,10 @@ public class Enemy2 : MonoBehaviour
 	{
 		if (!isPaused.paused)
 		{
+			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			FadeIn();
 			WalkAndRun();
-			for (int i=0; i<temp.Length;i++)
+			for (int i=0; i < temp.Length; i++)
 			{
 				Destroy(temp[i].gameObject);
 			}
@@ -128,9 +129,9 @@ public class Enemy2 : MonoBehaviour
 
 	void WalkAndRun()
 	{
-		if (player.caught) {
+		if (player.caught)
+		{
 			StartCoroutine(stop());
-
 		}
 		if (field.saw)
 		{
@@ -140,7 +141,7 @@ public class Enemy2 : MonoBehaviour
 			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20;
-			Debug.Log ("viu");
+
 			if (!field.leaved)
 			{
 				field.saw = false;
@@ -179,8 +180,8 @@ public class Enemy2 : MonoBehaviour
 				audio.pitch = 1f;
 				if (canShock) StartCoroutine(sound2());
 				GetComponent<SpriteRenderer>().color = Color.white;
-				player.caught = true ; 
-				other.gameObject.GetComponent<player>().medo+= 20f ;
+				player.caught = true; 
+				other.gameObject.GetComponent<player>().medo+= 20f;
 			}
 		}
 	}
@@ -189,11 +190,11 @@ public class Enemy2 : MonoBehaviour
 	{
 		yield return new WaitForEndOfFrame ();
 		{
-			field.saw = false ; 
+			field.saw = false; 
 			GetComponent<SpriteRenderer>().color = Color.white;
 			rand = Random.Range (0, Places.Length);
 			arrived = false;
-			player.caught = false ;
+			player.caught = false;
 
 		}
 	}
