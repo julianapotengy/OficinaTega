@@ -12,12 +12,6 @@ public class SoundArrounds : MonoBehaviour
 	private float low;
 	private GameObject nearBatebola;
 	private List< float> salvartodos;
-	private GameManager levelSelected;
-
-	void Awake()
-	{
-		levelSelected = GameObject.Find ("GameManager").GetComponent<GameManager> ();
-	}
 
 	void Start ()
 	{
@@ -37,7 +31,7 @@ public class SoundArrounds : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "enemy" && time > 1)
 		{		
-			if(levelSelected.level == "easy" || levelSelected.level == "medium")
+			if(PlayerPrefs.GetString("DIFFICULTY") == "easy" || PlayerPrefs.GetString("DIFFICULTY") == "medium")
 			{
 				Player.startsamba = true; 
 				compass.SetActive (true);
@@ -49,7 +43,7 @@ public class SoundArrounds : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "enemy" && time > 1)
 		{	
-			if(levelSelected.level == "easy" || levelSelected.level == "medium")
+			if(PlayerPrefs.GetString("DIFFICULTY") == "easy" || PlayerPrefs.GetString("DIFFICULTY") == "medium")
 			{
 				Player.startsamba = true;
 				compass.SetActive (true);
