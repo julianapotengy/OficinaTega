@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
-		medoimg.fillAmount = player.GetComponent<player> ().medo / 100f;
+		if(PlayerPrefs.GetString("MODE") == "classic")
+			medoimg.fillAmount = player.GetComponent<player> ().medo / 100f;
 	}
 
 	public static void Playsound(AudioClip clip)

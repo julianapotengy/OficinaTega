@@ -35,6 +35,11 @@ public class PauseGame : MonoBehaviour
 	{
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+	public void Modos()
+	{
+		Application.LoadLevel (4);
+	}
 	
 	public void showPaused()
 	{

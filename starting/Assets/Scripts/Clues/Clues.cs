@@ -14,12 +14,12 @@ public class Clues : MonoBehaviour
 	string[] possibleKeys = new string[6]{"r","t","y","u","f","g"};
 	public static string theKey;
 	string[] initialClues = new string[4]{"Procure mais dicas","Fuja dos bate bolas","Ache sua casa","Cameras"};
-	string[,] array2d = new string[6,4]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate","O pra entrar"},
+	string[,] array2d = new string[6,4]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"," pra entrar"},
 						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta","O pra entrar"},
-						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada","O pra entrar"},
-						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar","O pra entrar"},
-						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato","O pra entrar"},
-						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva","O pra entrar"}};
+						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada"," pra entrar"},
+						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar"," pra entrar"},
+						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato"," pra entrar"},
+						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"," pra entrar"}};
 	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-30,0),new Vector3(-70,-42,0),new Vector3(93,10,0)};
 
 	private GameObject notepad;
@@ -32,8 +32,11 @@ public class Clues : MonoBehaviour
 	void Awake()
 	{
 		alert = GameObject.FindGameObjectWithTag ("Alert");
-		theKey = possibleKeys [Random.Range (0, possibleKeys.Length)];
-		array2d[RandomHouse.goldenHouse,3] = theKey.ToUpper() + " para entrar";
+	
+		if (PlayerPrefs.GetString ("DIFFICULTY") == "hard" || PlayerPrefs.GetString ("DIFFICULTY") == "medium")
+			theKey = possibleKeys [Random.Range (0, possibleKeys.Length)];
+		if (PlayerPrefs.GetString ("DIFFICULTY") == "easy")
+			theKey = "h";
 	}
 
 	void Start ()
@@ -61,6 +64,7 @@ public class Clues : MonoBehaviour
 	{
 		if(!isPaused.paused)
 		{
+			array2d[RandomHouse.goldenHouse,3] = theKey + " para entrar";
 			Debug.Log(theKey);
 			for (int i = 0; i < cluesColected.Count; i++)
 			{
@@ -87,6 +91,18 @@ public class Clues : MonoBehaviour
 	{
 		yield return new WaitForSeconds (0.001f);
 		GameObject[] locais = GameObject.FindGameObjectsWithTag ("enemy");
+		GameObject[] mapclue = GameObject.FindGameObjectsWithTag ("map");
+		for (int i = 0; i<mapclue.Length; i++) {
+			if (PlayerPrefs.GetString("DIFFICULTY") == "hard")
+			{
+				List<Transform> transf = new List<Transform>();
+				foreach (Transform t in mapclue[i].transform)
+				{
+					transf.Add(t);
+				}
+				mapclue[i].transform.position = transf[Random.Range(0,transf.Count)].position;
+			}
+		}
 		for (int i = 0; i < 4; i++)
 		{
 			cluesTxt.Add(Instantiate (clueObj, locais[i].transform.position,Quaternion.identity) as GameObject);

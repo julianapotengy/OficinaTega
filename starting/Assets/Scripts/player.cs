@@ -6,6 +6,7 @@ public class player : MonoBehaviour
 {
 	private PauseGame isPaused;
 	public static bool caught = false;
+	private GameObject tutorial;
 	
 	private Rigidbody2D body;
 	private float speed, axisX, axisY;
@@ -19,12 +20,13 @@ public class player : MonoBehaviour
 	[HideInInspector] public float stamina, staminaCount;
 	public Image staminaBar;
 	public AudioClip breathing;
-	public AudioClip SambaSound; 
-	private GameObject tutorial;
+	public AudioClip SambaSound;
 	public bool startsamba;
 	bool Canbreath;
 	bool CanSamba;
 	public float medo = 0;
+	Camera Playermap;
+	bool CatchMap;
 
 	void Awake ()
 	{
@@ -34,6 +36,8 @@ public class player : MonoBehaviour
 
 	void Start()
 	{
+		CatchMap = false;
+		Playermap = GameObject.Find ("CameraPlayer").GetComponent<Camera>();
 		medo = 0; 
 		startsamba = false; 
 		CanSamba = true; 
@@ -69,10 +73,13 @@ public class player : MonoBehaviour
 
 		if (!isPaused.paused)
 		{
-			medo += Time.deltaTime/2;
-			if (medo >= 100)
+			if(PlayerPrefs.GetString("MODE") == "classic")
 			{
-				Application.LoadLevel(3);
+				medo += Time.deltaTime/2;
+				if (medo >= 100)
+				{
+					Application.LoadLevel(3);
+				}
 			}
 
 			if (startsamba)
@@ -103,15 +110,15 @@ public class player : MonoBehaviour
 				Camera.main.orthographicSize = Mathf.Lerp (12, 20, 5f * (Time.time - activeZoom));
 				if (stamina < 1 && !Input.GetKey (KeyCode.Space))
 				{
-					if (stamina <= 0.5f&& axisX==0 && axisY ==0 )
+					if (stamina <= 0.5f && axisX ==0 && axisY == 0)
 						stamina += 0.04f * Time.deltaTime;
 					else if (stamina <= 0.5f)
 					{
 						stamina += 0.02f * Time.deltaTime;
 					}
-					if (stamina >= 0.5f&& axisX==0 &&axisY ==0 )
+					if (stamina >= 0.5f && axisX == 0 && axisY == 0)
 						stamina += 0.08f * Time.deltaTime;
-					else if (stamina>=0.5f)
+					else if (stamina >= 0.5f)
 						stamina += 0.06f * Time.deltaTime;
 				}
 			}
@@ -150,6 +157,16 @@ public class player : MonoBehaviour
 			sp.sprite = faces[3];
 			Destroy(tutorial);
 		}
+		if (Input.GetKeyDown(KeyCode.B) && CatchMap)
+		{
+			Playermap.depth = 20;
+			Time.timeScale = 0;
+		}
+		if (Input.GetKeyUp(KeyCode.B) && CatchMap)
+		{
+			Playermap.depth = -20;
+			Time.timeScale = 1;
+		}
 	}
 
 	void OnCollisionStay2D(Collision2D other)
@@ -163,18 +180,34 @@ public class player : MonoBehaviour
 	void OnTriggerStay2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "map")
+		if (PlayerPrefs.GetString ("DIFFICULTY") == "hard" || PlayerPrefs.GetString ("DIFFICULTY") == "medium")
 		{
-			GameObject.Find("MapCam" + coll.gameObject.name).GetComponent<Camera>().depth = 5;
-			coll.GetComponent<SpriteRenderer>().enabled = false; 
+			GameObject.Find ("MapCam" + coll.gameObject.name).GetComponent<Camera> ().depth = 5;
+			coll.GetComponent<SpriteRenderer> ().enabled = false; 
+		} 
+		else
+		{
+			GameObject.Find	("Clue").GetComponent<Text>().text= "Aperte B para abrir o mapa";
+			CatchMap = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D coll)
 	{
+
 		if (coll.gameObject.tag == "map")
 		{
 			GameObject.Find("MapCam" + coll.gameObject.name).GetComponent<Camera>().depth = -12;
 			coll.GetComponent<SpriteRenderer>().enabled = true; 
+			if (PlayerPrefs.GetString("DIFFICULTY") == "easy")
+			{
+				GameObject[] tempmaps= GameObject.FindGameObjectsWithTag("map");
+				for (int i = 0 ; i<tempmaps.Length;i++)
+				{
+					Destroy(tempmaps[i]);
+				}
+				GameObject.Find	("Clue").GetComponent<Text>().text= "";
+			}
 		}
 	}
 
