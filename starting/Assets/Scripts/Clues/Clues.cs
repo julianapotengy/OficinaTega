@@ -14,12 +14,12 @@ public class Clues : MonoBehaviour
 	string[] possibleKeys = new string[6]{"r","t","y","u","f","g"};
 	public static string theKey;
 	string[] initialClues = new string[4]{"Procure mais dicas","Fuja dos bate bolas","Ache sua casa","Cameras"};
-	string[,] array2d = new string[6,4]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"," pra entrar"},
-						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta","T pra entrar"},
-						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada","C pra entrar"},
-						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar","U pra entrar"},
-						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato","H pra entrar"},
-						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva","B pra entrar"}};
+	string[,] array2d = new string[6,4]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate","O pra entrar"},
+						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta","O pra entrar"},
+						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada","O pra entrar"},
+						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar","O pra entrar"},
+						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato","O pra entrar"},
+						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva","O pra entrar"}};
 	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-30,0),new Vector3(-70,-42,0),new Vector3(93,10,0)};
 
 	private GameObject notepad;
@@ -33,7 +33,7 @@ public class Clues : MonoBehaviour
 	{
 		alert = GameObject.FindGameObjectWithTag ("Alert");
 		theKey = possibleKeys [Random.Range (0, possibleKeys.Length)];
-		array2d[RandomHouse.goldenHouse,3] = theKey.ToUpper()+ " para entrar";
+		array2d[RandomHouse.goldenHouse,3] = theKey.ToUpper() + " para entrar";
 	}
 
 	void Start ()

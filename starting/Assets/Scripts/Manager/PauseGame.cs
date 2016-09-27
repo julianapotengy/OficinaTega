@@ -11,7 +11,7 @@ public class PauseGame : MonoBehaviour
 	
 	void Start ()
 	{
-		Time.timeScale = 1;
+		Time.timeScale = 0;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		hidePaused();
 		paused = false;
