@@ -8,6 +8,8 @@ public class Clues : MonoBehaviour
 	public GameObject clueObj;
 	private GameObject alert;
 	[HideInInspector] public bool showAlert;
+	public float damageTime = 0.1f;
+	public float shakeRange = 20f;
 
 	private PauseGame isPaused;
 	[HideInInspector] public bool showClue;

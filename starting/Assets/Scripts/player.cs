@@ -22,11 +22,9 @@ public class player : MonoBehaviour
 	public AudioClip breathing;
 	public AudioClip SambaSound;
 	public bool startsamba;
-	bool Canbreath;
-	bool CanSamba;
+	private bool Canbreath, CanSamba, CatchMap;
 	public float medo = 0;
 	Camera Playermap;
-	bool CatchMap;
 
 	void Awake ()
 	{
@@ -48,7 +46,7 @@ public class player : MonoBehaviour
 		sp = GetComponent<SpriteRenderer> ();
 		stamina = 1;
 
-		tutorial = GameObject.Find ("TutorialPanel");
+		tutorial = GameObject.Find ("Tutorial");
 	}
 
 	void FixedUpdate()
