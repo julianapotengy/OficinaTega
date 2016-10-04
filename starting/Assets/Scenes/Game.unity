@@ -1017,162 +1017,162 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generateOnUpdate: 1
   navObstacles:
-  - {fileID: 1797681107}
-  - {fileID: 1079469181}
-  - {fileID: 1920346887}
-  - {fileID: 641739076}
-  - {fileID: 434786447}
-  - {fileID: 1850031928}
-  - {fileID: 503869177}
-  - {fileID: 2009769482}
-  - {fileID: 1242399663}
-  - {fileID: 1982467340}
-  - {fileID: 996913206}
-  - {fileID: 1277001569}
-  - {fileID: 1684265129}
-  - {fileID: 997045475}
-  - {fileID: 1730209079}
-  - {fileID: 33035261}
-  - {fileID: 1833275326}
-  - {fileID: 1734223091}
-  - {fileID: 2037661685}
-  - {fileID: 102956042}
-  - {fileID: 1059787047}
-  - {fileID: 432924269}
-  - {fileID: 1183542009}
-  - {fileID: 1478069793}
-  - {fileID: 97811245}
-  - {fileID: 1856101494}
-  - {fileID: 1988242626}
-  - {fileID: 990241254}
-  - {fileID: 1057145626}
-  - {fileID: 453183522}
-  - {fileID: 244250195}
   - {fileID: 1824842064}
-  - {fileID: 2013643369}
-  - {fileID: 584021883}
-  - {fileID: 1133430283}
   - {fileID: 1781867734}
-  - {fileID: 1457876629}
-  - {fileID: 1439286723}
-  - {fileID: 1187785506}
-  - {fileID: 1629636189}
-  - {fileID: 1108642794}
-  - {fileID: 576930802}
-  - {fileID: 1310774303}
-  - {fileID: 603870859}
-  - {fileID: 1278849569}
-  - {fileID: 1820976744}
-  - {fileID: 1370882675}
-  - {fileID: 283790934}
-  - {fileID: 1159988965}
-  - {fileID: 1665497105}
-  - {fileID: 491242493}
-  - {fileID: 1762270250}
-  - {fileID: 544981190}
-  - {fileID: 1502010906}
-  - {fileID: 1649872040}
-  - {fileID: 1564873742}
-  - {fileID: 535048305}
+  - {fileID: 2081857269}
   - {fileID: 1544801170}
-  - {fileID: 1565573034}
-  - {fileID: 343775422}
-  - {fileID: 1040126108}
-  - {fileID: 320338389}
-  - {fileID: 1491206848}
-  - {fileID: 399032140}
-  - {fileID: 1923945630}
-  - {fileID: 81600695}
-  - {fileID: 997643518}
-  - {fileID: 1812450087}
-  - {fileID: 447618179}
-  - {fileID: 675312770}
-  - {fileID: 1039874124}
-  - {fileID: 1872806735}
-  - {fileID: 532354976}
-  - {fileID: 1143207386}
-  - {fileID: 739751552}
-  - {fileID: 1614857302}
-  - {fileID: 1882391435}
-  - {fileID: 112086830}
-  - {fileID: 552918174}
-  - {fileID: 935421841}
-  - {fileID: 545752261}
-  - {fileID: 513740719}
-  - {fileID: 488699499}
-  - {fileID: 63465453}
-  - {fileID: 768156548}
-  - {fileID: 1263386403}
-  - {fileID: 1856071166}
-  - {fileID: 429430389}
-  - {fileID: 1406048126}
-  - {fileID: 1845131526}
-  - {fileID: 786237175}
-  - {fileID: 2036752087}
-  - {fileID: 657603790}
-  - {fileID: 1940654196}
-  - {fileID: 675341902}
-  - {fileID: 97575112}
-  - {fileID: 2105381542}
-  - {fileID: 1802209707}
-  - {fileID: 941170946}
-  - {fileID: 622630381}
-  - {fileID: 5385758}
-  - {fileID: 1109720682}
+  - {fileID: 432924269}
+  - {fileID: 2128353239}
+  - {fileID: 641739076}
+  - {fileID: 434559921}
+  - {fileID: 1502010906}
+  - {fileID: 1734223091}
   - {fileID: 1480262673}
-  - {fileID: 1155478783}
-  - {fileID: 1173705064}
-  - {fileID: 245319605}
-  - {fileID: 852952502}
-  - {fileID: 1576070122}
-  - {fileID: 871038370}
-  - {fileID: 764337622}
-  - {fileID: 1223504169}
-  - {fileID: 1570528399}
+  - {fileID: 1730209079}
+  - {fileID: 990241254}
   - {fileID: 1532404485}
-  - {fileID: 89027785}
+  - {fileID: 747525156}
+  - {fileID: 852952502}
+  - {fileID: 918950576}
+  - {fileID: 1872806735}
+  - {fileID: 102956042}
+  - {fileID: 552918174}
+  - {fileID: 603870859}
+  - {fileID: 1590469842}
+  - {fileID: 320338389}
+  - {fileID: 2142804783}
+  - {fileID: 453183522}
+  - {fileID: 1478069793}
+  - {fileID: 1564873742}
+  - {fileID: 1452265161}
+  - {fileID: 844005644}
+  - {fileID: 2037661685}
+  - {fileID: 81600695}
+  - {fileID: 112086830}
+  - {fileID: 1483799075}
+  - {fileID: 1242399663}
+  - {fileID: 1491792714}
+  - {fileID: 343775422}
   - {fileID: 1758579999}
   - {fileID: 1187025186}
-  - {fileID: 1452265161}
-  - {fileID: 1747664688}
-  - {fileID: 130377985}
-  - {fileID: 1483799075}
+  - {fileID: 1310774303}
+  - {fileID: 1040126108}
   - {fileID: 1003602311}
-  - {fileID: 86289129}
-  - {fileID: 1051813428}
-  - {fileID: 1880467544}
-  - {fileID: 334927039}
-  - {fileID: 135465883}
+  - {fileID: 1833275326}
   - {fileID: 1495147077}
-  - {fileID: 2081857269}
-  - {fileID: 2128353239}
-  - {fileID: 687825365}
-  - {fileID: 301264706}
-  - {fileID: 434559921}
-  - {fileID: 13688965}
-  - {fileID: 1196810640}
-  - {fileID: 716190289}
-  - {fileID: 1023864958}
-  - {fileID: 1491792714}
+  - {fileID: 1812450087}
+  - {fileID: 244250195}
+  - {fileID: 545752261}
+  - {fileID: 1159988965}
+  - {fileID: 1133430283}
+  - {fileID: 1565573034}
+  - {fileID: 334927039}
+  - {fileID: 1684265129}
+  - {fileID: 997643518}
   - {fileID: 217272833}
-  - {fileID: 1040860657}
-  - {fileID: 918950576}
-  - {fileID: 2142804783}
-  - {fileID: 120128223}
-  - {fileID: 1038376864}
-  - {fileID: 1590469842}
-  - {fileID: 1887638590}
-  - {fileID: 844005644}
-  - {fileID: 836328868}
-  - {fileID: 1828658359}
-  - {fileID: 108482862}
-  - {fileID: 2000597145}
-  - {fileID: 747525156}
-  - {fileID: 2054982016}
+  - {fileID: 2036752087}
+  - {fileID: 768156548}
+  - {fileID: 1109720682}
   - {fileID: 1199853796}
-  - {fileID: 1161198176}
+  - {fileID: 1187785506}
+  - {fileID: 1038376864}
+  - {fileID: 1614857302}
   - {fileID: 1963928770}
+  - {fileID: 1982467340}
+  - {fileID: 108482862}
+  - {fileID: 675341902}
+  - {fileID: 1856071166}
+  - {fileID: 716190289}
+  - {fileID: 97575112}
+  - {fileID: 1040860657}
   - {fileID: 136565157}
+  - {fileID: 491242493}
+  - {fileID: 1406048126}
+  - {fileID: 135465883}
+  - {fileID: 1629636189}
+  - {fileID: 1143207386}
+  - {fileID: 2000597145}
+  - {fileID: 1988242626}
+  - {fileID: 63465453}
+  - {fileID: 2054982016}
+  - {fileID: 1278849569}
+  - {fileID: 447618179}
+  - {fileID: 1820976744}
+  - {fileID: 532354976}
+  - {fileID: 1828658359}
+  - {fileID: 1183542009}
+  - {fileID: 675312770}
+  - {fileID: 503869177}
+  - {fileID: 739751552}
+  - {fileID: 1439286723}
+  - {fileID: 941170946}
+  - {fileID: 1845131526}
+  - {fileID: 245319605}
+  - {fileID: 2105381542}
+  - {fileID: 513740719}
+  - {fileID: 130377985}
+  - {fileID: 1923945630}
+  - {fileID: 1173705064}
+  - {fileID: 996913206}
+  - {fileID: 434786447}
+  - {fileID: 1079469181}
+  - {fileID: 622630381}
+  - {fileID: 1887638590}
+  - {fileID: 786237175}
+  - {fileID: 1797681107}
+  - {fileID: 871038370}
+  - {fileID: 836328868}
+  - {fileID: 535048305}
+  - {fileID: 86289129}
+  - {fileID: 1155478783}
+  - {fileID: 283790934}
+  - {fileID: 997045475}
+  - {fileID: 120128223}
+  - {fileID: 1057145626}
+  - {fileID: 5385758}
+  - {fileID: 89027785}
+  - {fileID: 33035261}
+  - {fileID: 935421841}
+  - {fileID: 1108642794}
+  - {fileID: 1223504169}
+  - {fileID: 1576070122}
+  - {fileID: 1850031928}
+  - {fileID: 1051813428}
+  - {fileID: 1920346887}
+  - {fileID: 429430389}
+  - {fileID: 1059787047}
+  - {fileID: 1880467544}
+  - {fileID: 1277001569}
+  - {fileID: 764337622}
+  - {fileID: 657603790}
+  - {fileID: 687825365}
+  - {fileID: 1263386403}
+  - {fileID: 1940654196}
+  - {fileID: 399032140}
+  - {fileID: 576930802}
+  - {fileID: 1762270250}
+  - {fileID: 1457876629}
+  - {fileID: 1161198176}
+  - {fileID: 1039874124}
+  - {fileID: 1491206848}
+  - {fileID: 488699499}
+  - {fileID: 1196810640}
+  - {fileID: 2009769482}
+  - {fileID: 97811245}
+  - {fileID: 1570528399}
+  - {fileID: 1882391435}
+  - {fileID: 1802209707}
+  - {fileID: 2013643369}
+  - {fileID: 1747664688}
+  - {fileID: 1856101494}
+  - {fileID: 1649872040}
+  - {fileID: 584021883}
+  - {fileID: 13688965}
+  - {fileID: 544981190}
+  - {fileID: 301264706}
+  - {fileID: 1665497105}
+  - {fileID: 1023864958}
+  - {fileID: 1370882675}
   inflateRadius: 10
   regenerateFlag: 1
 --- !u!4 &62581064
@@ -1302,7 +1302,7 @@ RectTransform:
   - {fileID: 695712284}
   - {fileID: 860497410}
   m_Father: {fileID: 2098530554}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: .293597519, y: .162690043}
   m_AnchorMax: {x: .704178274, y: .830789566}
   m_AnchoredPosition: {x: .5, y: 1.00000381}
@@ -6861,9 +6861,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2052328921}
   m_Father: {fileID: 2098530554}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: .50100708, y: .5}
@@ -7562,6 +7563,7 @@ GameObject:
   - 124: {fileID: 555651282}
   - 81: {fileID: 555651281}
   - 82: {fileID: 555651286}
+  - 114: {fileID: 555651287}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7708,6 +7710,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &555651287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555651280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31992b9cd9ebfea48a991d5255951b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &560919412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,7 +7749,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2098530554}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: .0180000011, y: .639690101}
   m_AnchorMax: {x: .0942531154, y: .787380159}
   m_AnchoredPosition: {x: -.0999999046, y: 0}
@@ -9631,6 +9644,7 @@ GameObject:
   - 222: {fileID: 695712287}
   - 114: {fileID: 695712286}
   - 114: {fileID: 695712285}
+  - 114: {fileID: 695712288}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: ShowOnPause
@@ -9736,6 +9750,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 695712283}
+--- !u!114 &695712288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695712283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 555651287}
+          m_MethodName: buttonHigh
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &696239564
 GameObject:
   m_ObjectHideFlags: 0
@@ -11523,6 +11567,7 @@ GameObject:
   - 222: {fileID: 860497413}
   - 114: {fileID: 860497412}
   - 114: {fileID: 860497411}
+  - 114: {fileID: 860497414}
   m_Layer: 5
   m_Name: ModoButton
   m_TagString: ShowOnPause
@@ -11628,6 +11673,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860497409}
+--- !u!114 &860497414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860497409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 555651287}
+          m_MethodName: buttonHigh
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &862941609
 GameObject:
   m_ObjectHideFlags: 0
@@ -12302,6 +12377,7 @@ GameObject:
   - 222: {fileID: 937034535}
   - 114: {fileID: 937034534}
   - 114: {fileID: 937034533}
+  - 114: {fileID: 937034536}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -12321,7 +12397,7 @@ RectTransform:
   m_Children:
   - {fileID: 1196081034}
   m_Father: {fileID: 2098530554}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: .924324989, y: .890313208}
   m_AnchorMax: {x: .98147589, y: .979000032}
   m_AnchoredPosition: {x: 0, y: -1}
@@ -12407,6 +12483,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 937034531}
+--- !u!114 &937034536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 937034531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 555651287}
+          m_MethodName: buttonHigh
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &941170944
 GameObject:
   m_ObjectHideFlags: 0
@@ -12818,6 +12924,7 @@ GameObject:
   - 50: {fileID: 967957246}
   - 114: {fileID: 967957242}
   - 61: {fileID: 967957243}
+  - 95: {fileID: 967957247}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -12845,7 +12952,7 @@ MonoBehaviour:
   staminaCount: 0
   staminaBar: {fileID: 1593674590}
   breathing: {fileID: 8300000, guid: de4766f0cf9de754ebef546667691ea5, type: 3}
-  SambaSound: {fileID: 8300000, guid: 9737b775e62659f44a3db9810eb730a9, type: 3}
+  SambaSound: {fileID: 8300000, guid: 733301d1ae1ee1f4b8765b7211b64254, type: 3}
   startsamba: 0
   medo: 100
 --- !u!61 &967957243
@@ -12917,6 +13024,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!95 &967957247
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967957241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23d9857a5eeb78a499ee0895dbff8dfb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &971789034
 GameObject:
   m_ObjectHideFlags: 0
@@ -23305,7 +23429,7 @@ RectTransform:
   m_Children:
   - {fileID: 1913748045}
   m_Father: {fileID: 2098530554}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_AnchorMin: {x: .115000002, y: .732000053}
   m_AnchorMax: {x: .185700163, y: .853000045}
   m_AnchoredPosition: {x: .143001556, y: -.229995728}
@@ -29384,6 +29508,121 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &2052328920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 2052328921}
+  - 222: {fileID: 2052328924}
+  - 114: {fileID: 2052328923}
+  - 114: {fileID: 2052328922}
+  m_Layer: 5
+  m_Name: jump
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2052328921
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052328920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 505353170}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .921543658, y: .0210000016}
+  m_AnchorMax: {x: 1, y: .135492533}
+  m_AnchoredPosition: {x: -1, y: -.5}
+  m_SizeDelta: {x: 2, y: -2}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &2052328922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052328920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2052328923}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 967957242}
+        m_MethodName: jumpTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2052328923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052328920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: aaaea75e49ed6494f8ade0052878809b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2052328924
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052328920}
 --- !u!1 &2052642420
 GameObject:
   m_ObjectHideFlags: 0
@@ -30100,11 +30339,11 @@ RectTransform:
   - {fileID: 1004796591}
   - {fileID: 1155362471}
   - {fileID: 1355242093}
-  - {fileID: 505353170}
   - {fileID: 560919413}
   - {fileID: 1586823273}
   - {fileID: 65152714}
   - {fileID: 937034532}
+  - {fileID: 505353170}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}

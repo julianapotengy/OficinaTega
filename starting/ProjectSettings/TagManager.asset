@@ -20,6 +20,7 @@ TagManager:
   - Alert
   - soundArround
   - ShowLevels2Choose
+  - ShowModos
   layers:
   - Default
   - TransparentFX

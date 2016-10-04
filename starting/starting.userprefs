@@ -1,13 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\Text3.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Menu\Text3.cs" Line="41" Column="30" />
-      <File FileName="Assets\Scripts\Menu\HistoryTexts.cs" Line="25" Column="16" />
-      <File FileName="Assets\Scripts\Menu\Texts.cs" Line="15" Column="20" />
-      <File FileName="Assets\Scripts\Menu\Text2.cs" Line="13" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

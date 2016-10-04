@@ -1,52 +1,94 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ModosManager : MonoBehaviour
 {
-	public GameObject[] showLevels2Choose;
+	private GameObject showLevels2Choose;
+	private GameObject showModos;
+	private bool loadScene;
+	[SerializeField]
+	private int scene;
+	[SerializeField]
+	private Text loading;
+	private bool canLoad;
 
 	void Start ()
 	{
-		showLevels2Choose = GameObject.FindGameObjectsWithTag ("ShowLevels2Choose");
-		foreach(GameObject g in showLevels2Choose)
+		showLevels2Choose = GameObject.FindGameObjectWithTag ("ShowLevels2Choose");
+		showLevels2Choose.SetActive (false);
+		showModos = GameObject.FindGameObjectWithTag ("ShowModos");
+		loadScene = false;
+		loading.gameObject.SetActive (false);
+		canLoad = false;
+	}
+
+	void Update()
+	{
+		if(canLoad && !loadScene)
 		{
-			g.SetActive(false);
+			loading.gameObject.SetActive (true);
+			loadScene = true;
+			loading.text = "Carregando...";
+			StartCoroutine(LoadNewScene());
+		}
+		if(loadScene)
+		{
+			loading.color = new Color(loading.color.r, loading.color.g, loading.color.b, Mathf.PingPong(Time.time, 1));
 		}
 	}
 
 	public void SetClassicMode()
 	{
+		GameManager.ButtonMenuClip ();
 		PlayerPrefs.SetString ("MODE", "classic");
-		foreach(GameObject g in showLevels2Choose)
-		{
-			g.SetActive(true);
-		}
+		showLevels2Choose.SetActive (true);
 	}
 
 	public void SetSurvivelMode()
 	{
+		GameManager.ButtonMenuClip ();
 		PlayerPrefs.SetString ("MODE", "survivel");
-		foreach(GameObject g in showLevels2Choose)
-		{
-			g.SetActive(true);
-		}
+		showLevels2Choose.SetActive (true);
 	}
 
 	public void SetEasyDifficulty()
 	{
+		GameManager.ButtonMenuClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "easy");
-		Application.LoadLevel ("Game");
+		canLoad = true;
+
+		showLevels2Choose.SetActive (false);
+		showModos.SetActive (false);
 	}
 
 	public void SetMediumDifficulty()
 	{
+		GameManager.ButtonMenuClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "medium");
-		Application.LoadLevel ("Game");
+		canLoad = true;
+		showLevels2Choose.SetActive (false);
+		showModos.SetActive (false);
 	}
 
 	public void SetHardDifficulty()
 	{
+		GameManager.ButtonMenuClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "hard");
-		Application.LoadLevel ("Game");
+		canLoad = true;
+		showLevels2Choose.SetActive (false);
+		showModos.SetActive (false);
+	}
+
+	IEnumerator LoadNewScene()
+	{
+
+		yield return new WaitForSeconds(1);
+		AsyncOperation async = Application.LoadLevelAsync(scene);
+		while (!async.isDone)
+		{
+			yield return null;
+		}
+		
 	}
 }

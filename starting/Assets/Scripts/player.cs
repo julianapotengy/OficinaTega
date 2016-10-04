@@ -73,7 +73,7 @@ public class player : MonoBehaviour
 		{
 			if(PlayerPrefs.GetString("MODE") == "classic")
 			{
-				medo += Time.deltaTime/2;
+				if (tutorial == null) medo += Time.deltaTime/2;
 				if (medo >= 100)
 				{
 					Application.LoadLevel(3);
@@ -138,21 +138,20 @@ public class player : MonoBehaviour
 		if (axisX < 0)
 		{
 			sp.sprite = faces [2];
-			Destroy(tutorial); 
 		}
 		if (axisX > 0)
 		{
 			sp.sprite = faces [1];
-			Destroy(tutorial); 
 		}
 		if (axisY < 0)
 		{
 			sp.sprite = faces[0];
-			Destroy(tutorial); 
 		}
 		if (axisY > 0)
 		{
 			sp.sprite = faces[3];
+		}
+		if (tutorial != null && Input.anyKey) {
 			Destroy(tutorial);
 		}
 		if (Input.GetKeyDown(KeyCode.B) && CatchMap)
@@ -231,5 +230,9 @@ public class player : MonoBehaviour
 		yield return new WaitForSeconds(SambaSound.length);
 		CanSamba = true;
 		startsamba = false; 
+	}
+	public void jumpTutorial ()
+	{
+		Destroy (tutorial);
 	}
 }

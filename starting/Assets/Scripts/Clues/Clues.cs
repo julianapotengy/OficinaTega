@@ -12,7 +12,7 @@ public class Clues : MonoBehaviour
 	public float shakeRange = 20f;
 
 	private PauseGame isPaused;
-	[HideInInspector] public bool showClue;
+	[HideInInspector] public bool showClue = false;
 	string[] possibleKeys = new string[6]{"r","t","y","u","f","g"};
 	public static string theKey;
 	string[] initialClues = new string[4]{"Procure mais dicas","Fuja dos bate bolas","Ache sua casa","Cameras"};
@@ -67,7 +67,7 @@ public class Clues : MonoBehaviour
 		if(!isPaused.paused)
 		{
 			array2d[RandomHouse.goldenHouse,3] = theKey + " para entrar";
-			Debug.Log(theKey);
+			//Debug.Log(theKey);
 			for (int i = 0; i < cluesColected.Count; i++)
 			{
 				if (cluesColected[i] != null)
@@ -132,6 +132,7 @@ public class Clues : MonoBehaviour
 
 	public void ShowClues()
 	{
+		GameManager.ButtonPaperClip ();	
 		showClue = !showClue;
 		showAlert = false;
 	}

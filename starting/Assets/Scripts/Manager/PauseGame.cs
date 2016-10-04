@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PauseGame : MonoBehaviour
 {
 	public GameObject[] pauseObjects;
-	[HideInInspector] public bool paused;
+	[HideInInspector] public bool paused= false;
 	private bool soundPaused;
 	private AudioSource audio;
 	
@@ -33,12 +33,16 @@ public class PauseGame : MonoBehaviour
 	
 	public void Reload()
 	{
+		GameManager.ButtonPaperClip ();
 		Application.LoadLevel(Application.loadedLevel);
+
 	}
 
 	public void Modos()
 	{
+		GameManager.ButtonPaperClip ();		
 		Application.LoadLevel (4);
+
 	}
 	
 	public void showPaused()
@@ -59,6 +63,7 @@ public class PauseGame : MonoBehaviour
 
 	public void Pause()
 	{
+		GameManager.ButtonPaperClip ();
 		if(Time.timeScale == 1)
 		{
 			Time.timeScale = 0;

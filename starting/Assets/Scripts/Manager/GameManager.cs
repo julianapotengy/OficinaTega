@@ -7,9 +7,14 @@ public class GameManager : MonoBehaviour
 	public GameObject[] Enemies;
 	private GameObject player;
 	public Image medoimg;
-
+	GameObject fadein;
+	bool startfadin;
 	void Start ()
 	{
+		startfadin = true;
+		fadein = GameObject.Find ("FadeIn");
+		fadein.GetComponent<SpriteRenderer> ().color = new Color (0, 0, 0, 1);
+
 		medoimg = GameObject.Find ("Medo").GetComponent<Image> ();
 		player = GameObject.FindGameObjectWithTag ("player");
 
@@ -23,6 +28,11 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
+		if (startfadin) {
+			fadein.GetComponent<SpriteRenderer> ().color -= new Color(0,0,0,0.5f*Time.deltaTime);
+			if (fadein.GetComponent<SpriteRenderer> ().color.a <=0)
+				startfadin= false;
+		}
 		if(PlayerPrefs.GetString("MODE") == "classic")
 			medoimg.fillAmount = player.GetComponent<player> ().medo / 100f;
 	}
@@ -32,4 +42,20 @@ public class GameManager : MonoBehaviour
 		AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
 		audio.PlayOneShot (clip);
 	}
+	public static void ButtonPaperClip()
+	{
+		AudioClip sound = Resources.Load ("Sounds/ButtonPressedPaper") as AudioClip;
+		Playsound (sound);
+	}
+	public static void ButtonMenuClip()
+	{
+		AudioClip sound = Resources.Load ("Sounds/MenuButtonPressed") as AudioClip;
+		Playsound (sound);
+	}
+	public static void ButtonHighlightedClip()
+	{
+		AudioClip sound = Resources.Load ("Sounds/ButtonHighlighted") as AudioClip;
+		Playsound (sound);
+	}
+
 }
