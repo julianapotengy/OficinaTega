@@ -65,7 +65,6 @@
      <Compile Include="Assets\Scripts\Manager\ModosManager.cs" />
      <Compile Include="Assets\Scripts\Manager\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Manager\RandomHouse.cs" />
-     <Compile Include="Assets\Scripts\Manager\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Menu\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Menu\HistoryTexts.cs" />
      <Compile Include="Assets\Scripts\Menu\Menu.cs" />
