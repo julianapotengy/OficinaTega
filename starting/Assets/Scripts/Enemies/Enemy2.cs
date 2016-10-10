@@ -6,7 +6,6 @@ public class Enemy2 : MonoBehaviour
 {
 	private FieldOfVision field;
 	private PauseGame isPaused;
-
 	private GameObject Player;
 
 	private Vector3 originalPosition;
@@ -50,8 +49,7 @@ public class Enemy2 : MonoBehaviour
 		arrived = false;
 
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
-
-		Player = GameObject.FindGameObjectWithTag ("player");
+		Player = GameObject.FindGameObjectWithTag ("Player");
 
 		originalPosition = transform.position;
 		originalPositionR = transform.eulerAngles;
@@ -88,7 +86,7 @@ public class Enemy2 : MonoBehaviour
 	{
 		if (fadeIn)
 		{
-			player.caught = true ; 
+			player.caught = true; 
 			Debug.Log("Aqui");
 			fadeNum += 5;
 			GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
@@ -122,13 +120,15 @@ public class Enemy2 : MonoBehaviour
 				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
 				                                                                           fadeNum / 255);
 			}
-			
-			
 		}
 	}
 
 	void WalkAndRun()
 	{
+		Vector2 posiplayer = Player.transform.position;
+		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+		if (Player.GetComponent<player> ().medo >= 100)
+			pagent.SetDestination (posiplayer);
 		if (player.caught)
 		{
 			StartCoroutine(stop());
@@ -136,9 +136,7 @@ public class Enemy2 : MonoBehaviour
 		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
-			
-			Vector2 posiplayer = Player.transform.position;
-			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20;
 
@@ -181,7 +179,7 @@ public class Enemy2 : MonoBehaviour
 				if (canShock) StartCoroutine(sound2());
 				GetComponent<SpriteRenderer>().color = Color.white;
 				player.caught = true; 
-				other.gameObject.GetComponent<player>().medo+= 20f;
+				other.gameObject.GetComponent<player>().medo += 20f;
 			}
 		}
 	}
@@ -195,9 +193,9 @@ public class Enemy2 : MonoBehaviour
 			rand = Random.Range (0, Places.Length);
 			arrived = false;
 			player.caught = false;
-
 		}
 	}
+
 	IEnumerator sound2()
 	{
 		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canShock)

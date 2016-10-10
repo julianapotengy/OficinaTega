@@ -67,7 +67,6 @@ public class Clues : MonoBehaviour
 		if(!isPaused.paused)
 		{
 			array2d[RandomHouse.goldenHouse,3] = theKey + " para entrar";
-			//Debug.Log(theKey);
 			for (int i = 0; i < cluesColected.Count; i++)
 			{
 				if (cluesColected[i] != null)

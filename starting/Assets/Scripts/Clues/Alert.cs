@@ -9,12 +9,12 @@ public class Alert : MonoBehaviour
 	{
 		if(Up)
 		{
-			gameObject.transform.Translate(0.1f,0.1f,0);
+			gameObject.transform.Translate(0.1f, 0.1f, 0);
 			Up = false;
 		}
 		else
 		{
-			gameObject.transform.Translate(-0.1f,-0.1f,0);
+			gameObject.transform.Translate(-0.1f, -0.1f, 0);
 			Up = true;
 		}
 	}

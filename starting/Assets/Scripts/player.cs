@@ -7,12 +7,11 @@ public class player : MonoBehaviour
 	private PauseGame isPaused;
 	public static bool caught = false;
 	private GameObject tutorial;
+	private Animator anim;
 	
 	private Rigidbody2D body;
-	private float speed, axisX, axisY;
-
-	public Sprite[] faces = new Sprite[4];
-	private SpriteRenderer sp;
+	private float axisX, axisY;
+	private int speed;
 
 	private float activeZoom;
 	private bool zoomOut = true;
@@ -22,8 +21,8 @@ public class player : MonoBehaviour
 	public AudioClip breathing;
 	public AudioClip SambaSound;
 	public bool startsamba;
-	private bool Canbreath, CanSamba, CatchMap;
-	public float medo = 0;
+	private bool Canbreath, CanSamba, CatchMap, faceRight;
+	public float medo;
 	Camera Playermap;
 
 	void Awake ()
@@ -43,9 +42,9 @@ public class player : MonoBehaviour
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 
 		speed = 15;
-		sp = GetComponent<SpriteRenderer> ();
 		stamina = 1;
-
+		faceRight = true;
+		anim = GetComponent<Animator> ();
 		tutorial = GameObject.Find ("Tutorial");
 	}
 
@@ -63,6 +62,11 @@ public class player : MonoBehaviour
 			activeZoom = Time.time;
 			zoomOut = true;
 		}
+		float move = Input.GetAxis("Horizontal");
+		int realMove = (int)move;
+		anim.SetInteger("speed", Mathf.Abs(realMove));
+		if (move > 0 && !faceRight) Flip();
+		else if (move < 0 && faceRight) Flip();
 	}
 	
 	void Update ()
@@ -73,11 +77,8 @@ public class player : MonoBehaviour
 		{
 			if(PlayerPrefs.GetString("MODE") == "classic")
 			{
-				if (tutorial == null) medo += Time.deltaTime/2;
-				if (medo >= 100)
-				{
-					Application.LoadLevel(3);
-				}
+				if (tutorial == null) 
+					medo += Time.deltaTime/2;
 			}
 
 			if (startsamba)
@@ -123,7 +124,7 @@ public class player : MonoBehaviour
 			else
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (20, 12, 5f * (Time.time - activeZoom));
-				if (stamina > 0 && (axisX !=0 || axisY !=0))
+				if (stamina > 0 && (axisX != 0 || axisY != 0))
 					stamina -= 0.1f * Time.deltaTime;
 			}
 		}
@@ -135,24 +136,16 @@ public class player : MonoBehaviour
 		axisY = Input.GetAxis ("Vertical");
 		body.velocity = new Vector3(axisX * speed, axisY * speed, 0);
 
-		if (axisX < 0)
-		{
-			sp.sprite = faces [2];
-		}
-		if (axisX > 0)
-		{
-			sp.sprite = faces [1];
-		}
 		if (axisY < 0)
-		{
-			sp.sprite = faces[0];
-		}
+			anim.SetBool("goDown", true);
+		else anim.SetBool("goDown", false);
 		if (axisY > 0)
+			anim.SetBool("goUp", true);
+		else anim.SetBool("goUp", false);
+
+		if (tutorial != null && Input.anyKey)
 		{
-			sp.sprite = faces[3];
-		}
-		if (tutorial != null && Input.anyKey) {
-			Destroy(tutorial);
+			jumpTutorial();
 		}
 		if (Input.GetKeyDown(KeyCode.B) && CatchMap)
 		{
@@ -177,21 +170,22 @@ public class player : MonoBehaviour
 	void OnTriggerStay2D(Collider2D coll)
 	{
 		if (coll.gameObject.tag == "map")
-		if (PlayerPrefs.GetString ("DIFFICULTY") == "hard" || PlayerPrefs.GetString ("DIFFICULTY") == "medium")
 		{
-			GameObject.Find ("MapCam" + coll.gameObject.name).GetComponent<Camera> ().depth = 5;
-			coll.GetComponent<SpriteRenderer> ().enabled = false; 
-		} 
-		else
-		{
-			GameObject.Find	("Clue").GetComponent<Text>().text= "Aperte B para abrir o mapa";
-			CatchMap = true;
+			if (PlayerPrefs.GetString ("DIFFICULTY") == "hard" || PlayerPrefs.GetString ("DIFFICULTY") == "medium")
+			{
+				GameObject.Find ("MapCam" + coll.gameObject.name).GetComponent<Camera> ().depth = 5;
+				coll.GetComponent<SpriteRenderer> ().enabled = false; 
+			}
+			else
+			{
+				GameObject.Find ("Clue").GetComponent<Text> ().text = "Aperte B para abrir o mapa";
+				CatchMap = true;
+			}
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D coll)
 	{
-
 		if (coll.gameObject.tag == "map")
 		{
 			GameObject.Find("MapCam" + coll.gameObject.name).GetComponent<Camera>().depth = -12;
@@ -206,6 +200,15 @@ public class player : MonoBehaviour
 				GameObject.Find	("Clue").GetComponent<Text>().text= "";
 			}
 		}
+	}
+
+	private void Flip()
+	{
+		faceRight = !faceRight;
+		
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 	IEnumerator respirar()
@@ -231,6 +234,7 @@ public class player : MonoBehaviour
 		CanSamba = true;
 		startsamba = false; 
 	}
+
 	public void jumpTutorial ()
 	{
 		Destroy (tutorial);

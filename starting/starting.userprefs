@@ -1,6 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\GameManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="90" Column="6" />
+      <File FileName="Assets\Scripts\Clues\Alert.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="107" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

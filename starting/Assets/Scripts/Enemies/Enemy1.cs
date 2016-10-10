@@ -44,10 +44,10 @@ public class Enemy1 : MonoBehaviour
 		arrived = false; 
 		
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
 
 		my = GetComponent <Transform> ();
 		body = GetComponent <Rigidbody2D> ();
-		player = GameObject.FindGameObjectWithTag ("player");
 
 		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < goTo.Length; i++)
@@ -76,13 +76,15 @@ public class Enemy1 : MonoBehaviour
 
 	void WalkAndRun()
 	{
+		Vector2 posiplayer = player.transform.position;
+		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+		if (player.GetComponent<player> ().medo >= 100)
+			pagent.SetDestination (posiplayer);
 		if (field.saw)
 		{
-			pagent.rotateTransform = false ; 
+			pagent.rotateTransform = false; 
 			timer += Time.deltaTime;
 			if (canBeath) StartCoroutine(heartBeat());
-			Debug.Log ("aqui2");
-			Vector2 posiplayer = player.transform.position;
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
@@ -119,24 +121,23 @@ public class Enemy1 : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-
-		if (other.gameObject.transform.parent == null && other.tag.Equals("player"))
+		if (other.gameObject.transform.parent == null && other.tag.Equals("Player"))
 		{
 			Application.LoadLevel(3);
 		}
 		if (field.saw)
 		{
-
 			if (other.gameObject.tag == "camLimit")
-				{
-					field.saw = false;
-					rand = Random.Range (0,Places.Length);
-					arrived = false; 
-					timer = 0;
-					GetComponent<SpriteRenderer>().color = Color.white;
-				}
+			{
+				field.saw = false;
+				rand = Random.Range (0,Places.Length);
+				arrived = false; 
+				timer = 0;
+				GetComponent<SpriteRenderer>().color = Color.white;
+			}
 		}
 	}
+
 	IEnumerator heartBeat()
 	{
 		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canBeath)
@@ -147,5 +148,4 @@ public class Enemy1 : MonoBehaviour
 		yield return new WaitForSeconds(heartBeating.length);
 		canBeath = true; 
 	}
-
 }

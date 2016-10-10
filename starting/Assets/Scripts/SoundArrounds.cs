@@ -7,7 +7,6 @@ public class SoundArrounds : MonoBehaviour
 {
 	private player Player;
 	private float time;
-	private Rigidbody2D rb;
 	private GameObject compass;
 	private float low;
 	private GameObject nearBatebola;
@@ -16,8 +15,7 @@ public class SoundArrounds : MonoBehaviour
 	void Start ()
 	{
 		time = 0;
-		rb = GetComponent<Rigidbody2D> ();
-		Player = GetComponentInParent<player> ();
+		Player = GameObject.FindGameObjectWithTag ("Player").GetComponent<player> ();;
 		compass = GameObject.Find ("Compass");
 		compass.SetActive (false);
 	}
@@ -56,7 +54,7 @@ public class SoundArrounds : MonoBehaviour
 				{
 					if (batebolas.gameObject.tag == "enemy")
 					{
-						salvartodos.Add( Vector3.Distance(batebolas.gameObject.transform.position, Player.gameObject.transform.position));
+						salvartodos.Add(Vector3.Distance(batebolas.gameObject.transform.position, Player.gameObject.transform.position));
 						i++;
 					}
 				}

@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class PauseGame : MonoBehaviour
 {
 	public GameObject[] pauseObjects;
-	[HideInInspector] public bool paused= false;
+	[HideInInspector] public bool paused = false;
 	private bool soundPaused;
 	private AudioSource audio;
+	public Sprite[] soundImg = new Sprite[2];
+	public GameObject soundManager;
 	
 	void Start ()
 	{
@@ -23,12 +25,18 @@ public class PauseGame : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.P))
 			Pause ();
 		if (Input.GetKeyDown (KeyCode.M))
-				MuteButton ();
+			MuteButton ();
 		
 		if (soundPaused)
+		{
 			audio.mute = true;
+			soundManager.GetComponent<Image>().sprite = soundImg[0];
+		}
 		else if (!soundPaused)
+		{
 			audio.mute = false;
+			soundManager.GetComponent<Image>().sprite = soundImg[1];
+		}
 	}
 	
 	public void Reload()

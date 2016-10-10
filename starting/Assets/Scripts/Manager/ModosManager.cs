@@ -82,7 +82,6 @@ public class ModosManager : MonoBehaviour
 
 	IEnumerator LoadNewScene()
 	{
-
 		yield return new WaitForSeconds(1);
 		AsyncOperation async = Application.LoadLevelAsync(scene);
 		while (!async.isDone)

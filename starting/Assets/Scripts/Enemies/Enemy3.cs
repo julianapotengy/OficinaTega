@@ -6,7 +6,6 @@ public class Enemy3 : MonoBehaviour
 	private FieldOfVision field;
 	[HideInInspector] public bool once;
 	private PauseGame isPaused;
-	
 	private GameObject player;
 
 	private Vector3 originalPosition;
@@ -23,8 +22,7 @@ public class Enemy3 : MonoBehaviour
 	private float decreaseFactor;
 	private Vector3 camPosition;
 	
-	private bool mask; 
-	private bool arrived;
+	private bool mask, arrived;
 	private int rand; 
 	private float timer; 
 	public static GameObject shock; 
@@ -45,15 +43,14 @@ public class Enemy3 : MonoBehaviour
 		mainCamera = Camera.main.transform;
 		temp = GameObject.FindGameObjectsWithTag ("MovE3");
 		Places =  new Vector3[temp.Length]; 
-		for (int i=0; i<temp.Length; i++)
+		for (int i = 0; i < temp.Length; i++)
 		{
 			Places[i] = temp[i].transform.position;
 		}
 
 		once = false;
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
-
-		player = GameObject.FindGameObjectWithTag ("player");
+		player = GameObject.FindGameObjectWithTag ("Player");
 
 		originalPosition = transform.position;
 		originalPositionR = transform.eulerAngles;
@@ -88,14 +85,14 @@ public class Enemy3 : MonoBehaviour
 		{
 			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			WalkAndRun ();
-			for (int i=0; i<temp.Length;i++)
+			for (int i = 0; i < temp.Length; i++)
 			{
 				Destroy(temp[i].gameObject);
 			}
 			camPosition = mainCamera.position;
 			if (mask)
 			{
-				timer+=Time.deltaTime;
+				timer += Time.deltaTime;
 				if (timer <= 1f)
 					shock.SetActive(true); 
 				else
@@ -107,24 +104,26 @@ public class Enemy3 : MonoBehaviour
 			}
 			if (shakeDuration > 0)
 			{
-				mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
+				mainCamera.position = camPosition + Random.insideUnitSphere * shakeAmount;
 				shakeDuration -= Time.deltaTime * decreaseFactor;
 			}
 			else
 			{
 				shakeDuration = 0f;
-				mainCamera.localPosition = camPosition;
+				mainCamera.position = camPosition;
 			}
 		}
 	}
 
 	void WalkAndRun()
 	{
+		Vector2 posiplayer = player.transform.position;
+		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+		if (player.GetComponent<player> ().medo >= 100)
+			pagent.SetDestination (posiplayer);
 		if (field.saw)
 		{
 			GetComponent<SpriteRenderer>().color = Color.red;
-			Vector2 posiplayer = player.transform.position;
-			transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20; 
 
@@ -181,6 +180,7 @@ public class Enemy3 : MonoBehaviour
 		yield return new WaitForSeconds (0.001f);
 			shock.SetActive (false);
 	}
+
 	IEnumerator sound2()
 	{
 		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canShock)

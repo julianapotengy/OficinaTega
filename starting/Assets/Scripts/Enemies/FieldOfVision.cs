@@ -13,18 +13,20 @@ public class FieldOfVision : MonoBehaviour
 		saw = false;
 		leaved = false;
 		enemy3 = GameObject.Find ("Enemy3(Clone)");
-		player = GameObject.FindGameObjectWithTag ("player");
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
+
 	void Update()
 	{
-		if (!saw && !leaved){
+		if (!saw && !leaved)
+		{
 			player.GetComponent<SpriteRenderer> ().color = Color.white;
 		}
 	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
-
-		if (other.gameObject.tag == "player")
+		if (other.gameObject.tag == "Player")
 		{
 			saw = true;
 			leaved = true;
@@ -35,7 +37,7 @@ public class FieldOfVision : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "player")
+		if (other.gameObject.tag == "Player")
 		{
 			leaved = true; 
 		}
@@ -43,13 +45,11 @@ public class FieldOfVision : MonoBehaviour
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "player")
+		if (other.gameObject.tag == "Player")
 		{
 			leaved = false;
 			enemy3.GetComponent<Enemy3>().once = false;
 			player.GetComponent<SpriteRenderer> ().color = Color.white;
-
-
 		}
 	}
 }

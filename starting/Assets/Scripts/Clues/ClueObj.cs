@@ -26,7 +26,7 @@ public class ClueObj : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "player")
+		if (coll.gameObject.tag == "Player")
 		{
 			stringClueTxt = Clues.clues2Show[0];
 			Clues.cluesColected.Add(stringClueTxt);
@@ -38,13 +38,13 @@ public class ClueObj : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "player")
-			clueTxt.text = "Aperte i para abrir o caderno";
+		if (coll.gameObject.tag == "Player")
+			clueTxt.text = Clues.clues2Show[0];
 	}
 
 	void OnTriggerExit2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "player")
+		if (coll.gameObject.tag == "Player")
 		{
 			clueTxt.text = "";
 			Clues.clues2Show.RemoveAt(0);
