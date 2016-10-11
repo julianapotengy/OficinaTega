@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 	private float shakeAmount;
 	private float decreaseFactor;
 	private Vector3 camPosition;
+	private bool canshake;
 
 	void Start ()
 	{
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
 		shakeDuration = 0;
 		shakeAmount = 0.7f;
 		decreaseFactor = 1;
+		canshake = true;
 
 		for (int i = 0; i < 3; i++)
 		{
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	void Update ()
-	{
+	{	
 		if (startfadin)
 		{
 			fadein.GetComponent<SpriteRenderer> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
@@ -73,21 +75,7 @@ public class GameManager : MonoBehaviour
 				mainCamera.Rotate(0, 0, Time.deltaTime * 1.5f);
 		}
 
-		/*if(playerMedo.medo >= 50)
-		{
-			shakeDuration = 1.5f;
-		}
-		camPosition = mainCamera.position;
-		if (shakeDuration > 0)
-		{
-			mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
-			shakeDuration -= Time.deltaTime * decreaseFactor;
-		}
-		else
-		{
-			shakeDuration = 0;
-			mainCamera.localPosition = camPosition;
-		}*/
+
 
 		if(playerMedo.medo >= 75)
 		{
@@ -131,4 +119,5 @@ public class GameManager : MonoBehaviour
 		AudioClip sound = Resources.Load ("Sounds/ButtonHighlighted") as AudioClip;
 		Playsound (sound);
 	}
+
 }

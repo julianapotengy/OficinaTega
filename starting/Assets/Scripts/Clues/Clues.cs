@@ -10,7 +10,7 @@ public class Clues : MonoBehaviour
 	[HideInInspector] public bool showAlert;
 	public float damageTime = 0.1f;
 	public float shakeRange = 20f;
-
+	private bool fineshedanim;
 	private PauseGame isPaused;
 	[HideInInspector] public bool showClue = false;
 	string[] possibleKeys = new string[6]{"r","t","y","u","f","g"};
@@ -34,11 +34,12 @@ public class Clues : MonoBehaviour
 	void Awake()
 	{
 		alert = GameObject.FindGameObjectWithTag ("Alert");
-	
+		fineshedanim = true;
 		if (PlayerPrefs.GetString ("DIFFICULTY") == "hard" || PlayerPrefs.GetString ("DIFFICULTY") == "medium")
 			theKey = possibleKeys [Random.Range (0, possibleKeys.Length)];
 		if (PlayerPrefs.GetString ("DIFFICULTY") == "easy")
 			theKey = "h";
+		Debug.Log (theKey);
 	}
 
 	void Start ()
@@ -64,27 +65,27 @@ public class Clues : MonoBehaviour
 
 	void Update()
 	{
-		if(!isPaused.paused)
-		{
-			array2d[RandomHouse.goldenHouse,3] = theKey + " para entrar";
-			for (int i = 0; i < cluesColected.Count; i++)
-			{
-				if (cluesColected[i] != null)
-					notebookClues[i].text = i + 1 + ". " + cluesColected[i];
+		if (!isPaused.paused) {
+			array2d [RandomHouse.goldenHouse, 3] = theKey + " para entrar";
+			for (int i = 0; i < cluesColected.Count; i++) {
+				if (cluesColected [i] != null)
+					notebookClues [i].text = i + 1 + ". " + cluesColected [i];
 			}
 
 			if (Input.GetKeyDown (KeyCode.I))
-				ShowClues();
+				ShowClues ();
 			
 			if (showAlert)
-				alert.SetActive(true);
-			else if(!showAlert)
-				alert.SetActive(false);
-			
+				alert.SetActive (true);
+			else if (!showAlert)
+				alert.SetActive (false);
+			/*
 			if(showClue)
 				notepad.SetActive(true);
 			else if(!showClue)
 				notepad.SetActive(false);
+		}*/
+
 		}
 	}
 
@@ -133,6 +134,55 @@ public class Clues : MonoBehaviour
 	{
 		GameManager.ButtonPaperClip ();	
 		showClue = !showClue;
-		showAlert = false;
+		showAlert = false;/*
+		if (showClue) {
+			StartCoroutine (animationUiOpen (notepad));
+		}
+		else 
+			 StartCoroutine (animationUiClose (notepad));
+	}*/
+		StartCoroutine (waitanimfinish (showClue));
 	}
-}
+
+ 		IEnumerator animationUiOpen(GameObject obj)
+	{
+		obj.SetActive(true);
+		float lerp = 0;
+		fineshedanim = false;
+			while (lerp<=1&& !fineshedanim) {
+
+				lerp += Time.deltaTime;
+
+			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (1, 1, 1), lerp);
+				yield return new WaitForSeconds (Time.deltaTime);
+			}
+		fineshedanim = true;
+		}
+	IEnumerator animationUiClose(GameObject obj)
+	{
+		float lerp = 0;
+		fineshedanim =false;
+		while (lerp<=1&& !fineshedanim) {
+
+			lerp += Time.deltaTime;
+			
+			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (0, 0, 0), lerp);
+			yield return new WaitForSeconds (Time.deltaTime);
+		}
+			obj.SetActive(false);
+		fineshedanim = true;
+	}
+	IEnumerator waitanimfinish(bool showclue)
+	{
+		while (!fineshedanim) {
+			yield return new WaitForSeconds(Time.deltaTime);
+		}
+		if (fineshedanim) {
+		if (showclue)
+			{
+				StartCoroutine(animationUiOpen(notepad));
+			}
+			else StartCoroutine(animationUiClose(notepad));
+		}
+	}
+	}

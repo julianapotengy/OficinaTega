@@ -45,7 +45,7 @@ public class SoundArrounds : MonoBehaviour
 			{
 				Player.startsamba = true;
 				compass.SetActive (true);
-				var batebolasNear = Physics2D.OverlapCircleAll(transform.position,148.3756f);
+				var batebolasNear = Physics2D.OverlapCircleAll(transform.position,100);
 				salvartodos = new List<float>();
 				int i = 0;
 				low = 10000000000;
@@ -76,7 +76,7 @@ public class SoundArrounds : MonoBehaviour
 					}
 				}
 				
-				var dir = nearBatebola.transform.position - Player.transform.position;
+				Vector3 dir  = nearBatebola.gameObject.transform.position - Player.transform.position;
 				dir.Normalize();
 				var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 				compass.transform.FindChild("agulha").GetComponent<RectTransform>().transform.rotation = Quaternion.Euler(0,0,angle-90);

@@ -24,7 +24,14 @@ public class player : MonoBehaviour
 	private bool Canbreath, CanSamba, CatchMap, faceRight;
 	public float medo;
 	Camera Playermap;
-
+	public bool medoShake;
+	private bool medoactive;
+	public Transform mainCamera;
+	private float shakeDuration;
+	private float shakeAmount;
+	private float decreaseFactor;
+	private Vector3 camPosition;
+	float lerp =0;
 	void Awake ()
 	{
 		body = GetComponent <Rigidbody2D> ();
@@ -33,6 +40,12 @@ public class player : MonoBehaviour
 
 	void Start()
 	{
+		shakeDuration = 0;
+		shakeAmount = 1f;
+		decreaseFactor = 1;
+		mainCamera = Camera.main.transform;
+		medoactive = false;
+		medoShake = false;
 		CatchMap = false;
 		Playermap = GameObject.Find ("CameraPlayer").GetComponent<Camera>();
 		medo = 0; 
@@ -71,10 +84,30 @@ public class player : MonoBehaviour
 	
 	void Update ()
 	{
-		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
-
+		//if (!medoShake) {
+			
+			Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+		//}		
 		if (!isPaused.paused)
-		{
+		{	
+			camPosition = mainCamera.position;
+			
+			if (medo>=40)
+			{
+				if (!medoactive)
+				StartCoroutine(medoshaking());
+			}
+			if (shakeDuration > 0)
+			{
+
+				mainCamera.position = camPosition + Random.insideUnitSphere * shakeAmount;
+				shakeDuration -= Time.deltaTime * decreaseFactor;
+			}
+			else
+			{
+				shakeDuration = 0f;
+				mainCamera.position = camPosition;
+			}
 			if(PlayerPrefs.GetString("MODE") == "classic")
 			{
 				if (tutorial == null) 
@@ -142,7 +175,11 @@ public class player : MonoBehaviour
 		if (axisY > 0)
 			anim.SetBool("goUp", true);
 		else anim.SetBool("goUp", false);
-
+		if (tutorial != null) {
+			lerp += Time.deltaTime/1.5f;
+			tutorial.GetComponent<RectTransform>().localScale= Vector3.Lerp(tutorial.GetComponent<RectTransform>().localScale,new Vector3(1,1,1),lerp);
+		
+		}
 		if (tutorial != null && Input.anyKey)
 		{
 			jumpTutorial();
@@ -158,12 +195,31 @@ public class player : MonoBehaviour
 			Time.timeScale = 1;
 		}
 	}
+	void OnCollisionEnter2D(Collision2D other){
+	 if (other.gameObject.tag == "goldenHouse" || other.gameObject.tag == "housePremises") {
+			GameObject.Find("Clue").GetComponent<Text>().text = "Descubra qual tecla apertar para entrar.";
+		}
+	}
 
 	void OnCollisionStay2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "goldenHouse" && Input.GetKeyDown(Clues.theKey))
+		if (other.gameObject.tag == "housePremises" && Input.GetKeyDown(Clues.theKey))
+		{
+			medo+=10;
+			shakeDuration =1f;
+			GameObject.Find("Clue").GetComponent<Text>().text = "Essa não é sua casa, continue procurando. ";
+		}
+		else if (other.gameObject.tag == "goldenHouse" && Input.GetKeyDown(Clues.theKey))
 		{
 			Application.LoadLevel(2);
+		}
+
+
+	}
+	void OnCollisionExit2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "goldenHouse" || other.gameObject.tag == "housePremises") {
+			GameObject.Find("Clue").GetComponent<Text>().text = "";
 		}
 	}
 
@@ -238,5 +294,15 @@ public class player : MonoBehaviour
 	public void jumpTutorial ()
 	{
 		Destroy (tutorial);
+	}
+	IEnumerator medoshaking()
+	{
+		medoactive = true;
+		yield return new WaitForSeconds(5);
+		medoShake = true;
+		shakeDuration = 1f;
+		yield return new WaitForSeconds(1);
+		medoShake = false;
+		medoactive = false;
 	}
 }

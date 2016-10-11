@@ -19,7 +19,7 @@ public class PauseGame : MonoBehaviour
 		paused = false;
 		audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
 	}
-
+	
 	void Update()
 	{
 		if (Input.GetKeyDown (KeyCode.P))
@@ -43,14 +43,14 @@ public class PauseGame : MonoBehaviour
 	{
 		GameManager.ButtonPaperClip ();
 		Application.LoadLevel(Application.loadedLevel);
-
+		
 	}
-
+	
 	public void Modos()
 	{
 		GameManager.ButtonPaperClip ();		
 		Application.LoadLevel (4);
-
+		
 	}
 	
 	public void showPaused()
@@ -68,7 +68,7 @@ public class PauseGame : MonoBehaviour
 			g.SetActive(false);
 		}
 	}
-
+	
 	public void Pause()
 	{
 		GameManager.ButtonPaperClip ();
@@ -85,7 +85,7 @@ public class PauseGame : MonoBehaviour
 			hidePaused();
 		}
 	}
-
+	
 	public void MuteButton()
 	{
 		soundPaused = !soundPaused;
