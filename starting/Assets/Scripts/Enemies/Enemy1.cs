@@ -91,13 +91,9 @@ public class Enemy1 : MonoBehaviour
 
 			if (timer > 1)
 			{
-				transform.position = new Vector3(transform.position.x, transform.position.y, -9.2f);
+				transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 				pagent.SetDestination(posiplayer);
-				pagent.maxSpeed = 25; 
-				if (pagent.remainingDistance<0.3f)
-				{
-					//Application.LoadLevel(5);
-				}
+				pagent.maxSpeed = 25;
 			}
 		}
 		

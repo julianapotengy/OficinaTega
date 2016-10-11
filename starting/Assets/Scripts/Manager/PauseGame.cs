@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -43,14 +44,12 @@ public class PauseGame : MonoBehaviour
 	{
 		GameManager.ButtonPaperClip ();
 		Application.LoadLevel(Application.loadedLevel);
-		
 	}
 	
 	public void Modos()
 	{
 		GameManager.ButtonPaperClip ();		
 		Application.LoadLevel (4);
-		
 	}
 	
 	public void showPaused()

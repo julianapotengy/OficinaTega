@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class SoundArrounds : MonoBehaviour
 {
-	private player Player;
+	public player Player;
 	private float time;
 	private GameObject compass;
 	private float low;
 	private GameObject nearBatebola;
 	private List< float> salvartodos;
-
+	public Collider2D[] batebolasNear;
 	void Start ()
 	{
 		time = 0;
@@ -23,6 +23,7 @@ public class SoundArrounds : MonoBehaviour
 	void Update ()
 	{
 		time++;
+		Debug.Log (PlayerPrefs.GetString ("DIFFICULTY"));
 	}
 
 	void OnTriggerEnter2D (Collider2D coll)
@@ -45,7 +46,7 @@ public class SoundArrounds : MonoBehaviour
 			{
 				Player.startsamba = true;
 				compass.SetActive (true);
-				var batebolasNear = Physics2D.OverlapCircleAll(transform.position,100);
+				batebolasNear = Physics2D.OverlapCircleAll(transform.position,100);
 				salvartodos = new List<float>();
 				int i = 0;
 				low = 10000000000;
@@ -69,14 +70,15 @@ public class SoundArrounds : MonoBehaviour
 				{
 					if (batebolas.gameObject.tag == "enemy")
 					{
-						if (Vector3.Distance(batebolas.gameObject.transform.position, Player.gameObject.transform.position)<= low)
+						if (Mathf.Round( Vector3.Distance(batebolas.gameObject.transform.position, Player.gameObject.transform.position))<= low)
 						{
 							nearBatebola = batebolas.gameObject;
 						}
 					}
 				}
+				Debug.Log (nearBatebola.name);
 				
-				Vector3 dir  = nearBatebola.gameObject.transform.position - Player.transform.position;
+				Vector3 dir  = nearBatebola.gameObject.transform.position - Player.gameObject.transform.position;
 				dir.Normalize();
 				var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 				compass.transform.FindChild("agulha").GetComponent<RectTransform>().transform.rotation = Quaternion.Euler(0,0,angle-90);

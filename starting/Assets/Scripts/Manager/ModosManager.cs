@@ -57,7 +57,6 @@ public class ModosManager : MonoBehaviour
 		GameManager.ButtonMenuClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "easy");
 		canLoad = true;
-
 		showLevels2Choose.SetActive (false);
 		showModos.SetActive (false);
 	}

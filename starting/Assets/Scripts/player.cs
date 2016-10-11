@@ -31,11 +31,12 @@ public class player : MonoBehaviour
 	private float shakeAmount;
 	private float decreaseFactor;
 	private Vector3 camPosition;
-	float lerp =0;
+	private float lerp = 0;
+
 	void Awake ()
 	{
 		body = GetComponent <Rigidbody2D> ();
-		caught = false ;
+		caught = false;
 	}
 
 	void Start()
@@ -91,7 +92,7 @@ public class player : MonoBehaviour
 		if (!isPaused.paused)
 		{	
 			camPosition = mainCamera.position;
-			
+			//if (medo<= 25) mainCamera.rotation = Quaternion.Euler(Vector3.Lerp
 			if (medo>=40)
 			{
 				if (!medoactive)
@@ -249,7 +250,7 @@ public class player : MonoBehaviour
 			if (PlayerPrefs.GetString("DIFFICULTY") == "easy")
 			{
 				GameObject[] tempmaps= GameObject.FindGameObjectsWithTag("map");
-				for (int i = 0 ; i<tempmaps.Length;i++)
+				for (int i = 0; i < tempmaps.Length; i++)
 				{
 					Destroy(tempmaps[i]);
 				}

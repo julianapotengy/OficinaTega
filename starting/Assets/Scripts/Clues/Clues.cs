@@ -23,7 +23,7 @@ public class Clues : MonoBehaviour
 						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato"," pra entrar"},
 						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"," pra entrar"}};
 	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-30,0),new Vector3(-70,-42,0),new Vector3(93,10,0)};
-
+	float lerp = 0;
 	private GameObject notepad;
 	public static List<string> clues2Show = new List<string> ();
 	private List<GameObject> clueStart = new List<GameObject>();
@@ -65,9 +65,11 @@ public class Clues : MonoBehaviour
 
 	void Update()
 	{
-		if (!isPaused.paused) {
+		if (!isPaused.paused)
+		{
 			array2d [RandomHouse.goldenHouse, 3] = theKey + " para entrar";
-			for (int i = 0; i < cluesColected.Count; i++) {
+			for (int i = 0; i < cluesColected.Count; i++)
+			{
 				if (cluesColected [i] != null)
 					notebookClues [i].text = i + 1 + ". " + cluesColected [i];
 			}
@@ -94,7 +96,8 @@ public class Clues : MonoBehaviour
 		yield return new WaitForSeconds (0.001f);
 		GameObject[] locais = GameObject.FindGameObjectsWithTag ("enemy");
 		GameObject[] mapclue = GameObject.FindGameObjectsWithTag ("map");
-		for (int i = 0; i<mapclue.Length; i++) {
+		for (int i = 0; i<mapclue.Length; i++)
+		{
 			if (PlayerPrefs.GetString("DIFFICULTY") == "hard")
 			{
 				List<Transform> transf = new List<Transform>();
@@ -127,62 +130,35 @@ public class Clues : MonoBehaviour
 				}
 			}
 		}
-		notepad.SetActive (false);
+
 	}
 
 	public void ShowClues()
 	{
 		GameManager.ButtonPaperClip ();	
 		showClue = !showClue;
-		showAlert = false;/*
-		if (showClue) {
-			StartCoroutine (animationUiOpen (notepad));
-		}
-		else 
-			 StartCoroutine (animationUiClose (notepad));
-	}*/
-		StartCoroutine (waitanimfinish (showClue));
+		showAlert = false;
+		lerp = 0;
+		StartCoroutine (ClueAnimation(notepad));
+
 	}
 
- 		IEnumerator animationUiOpen(GameObject obj)
+	IEnumerator ClueAnimation(GameObject obj)
 	{
-		obj.SetActive(true);
-		float lerp = 0;
-		fineshedanim = false;
-			while (lerp<=1&& !fineshedanim) {
+	
+		while (showClue) {
 
-				lerp += Time.deltaTime;
-
+			if (lerp<= 1)lerp += Time.deltaTime;			
 			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (1, 1, 1), lerp);
-				yield return new WaitForSeconds (Time.deltaTime);
-			}
-		fineshedanim = true;
-		}
-	IEnumerator animationUiClose(GameObject obj)
-	{
-		float lerp = 0;
-		fineshedanim =false;
-		while (lerp<=1&& !fineshedanim) {
-
-			lerp += Time.deltaTime;
-			
-			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (0, 0, 0), lerp);
 			yield return new WaitForSeconds (Time.deltaTime);
 		}
-			obj.SetActive(false);
-		fineshedanim = true;
-	}
-	IEnumerator waitanimfinish(bool showclue)
-	{
-		while (!fineshedanim) {
-			yield return new WaitForSeconds(Time.deltaTime);
-		}
-		if (fineshedanim) {
-		if (showclue)
-			{
-				StartCoroutine(animationUiOpen(notepad));
-			}
-			else StartCoroutine(animationUiClose(notepad));
+		while (!showClue) {
+			if (lerp<= 1)lerp += Time.deltaTime;			
+			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (0, 0, 0), lerp);
+			yield return new WaitForSeconds (Time.deltaTime);
+
 		}
 	}
 	}
+	
+	
