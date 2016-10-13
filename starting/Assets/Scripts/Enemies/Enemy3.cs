@@ -8,8 +8,7 @@ public class Enemy3 : MonoBehaviour
 	private PauseGame isPaused;
 	private GameObject player;
 
-	private Vector3 originalPosition;
-	private Vector3 originalPositionR;
+	private Vector3 originalPosition, originalPositionR;
 
 	private PolyNavAgent pagent;
 	public Transform[] places2Walk;
@@ -17,14 +16,11 @@ public class Enemy3 : MonoBehaviour
 	private bool[] goTo = new bool[4];
 	
 	public Transform mainCamera;
-	private float shakeDuration;
-	private float shakeAmount;
-	private float decreaseFactor;
+	private float shakeDuration, shakeAmount, decreaseFactor, timer;
 	private Vector3 camPosition;
 	
 	private bool mask, arrived;
-	private int rand; 
-	private float timer; 
+	private int rand;
 	public static GameObject shock; 
 	private AudioClip shockSound;
 
@@ -170,7 +166,7 @@ public class Enemy3 : MonoBehaviour
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
 				GetComponent<SpriteRenderer>().color = Color.white;
-				other.gameObject.GetComponent<player>().medo+= 20f ;
+				other.gameObject.GetComponent<player>().medo += 20f;
 			}
 		}
 	}
@@ -191,5 +187,4 @@ public class Enemy3 : MonoBehaviour
 		yield return new WaitForSeconds(shockSound.length);
 		canShock = true; 
 	}
-
 }

@@ -11,11 +11,6 @@ public class GameManager : MonoBehaviour
 	private GameObject fadein;
 	private bool startfadin, goToNegative, canFade;
 	public Transform mainCamera;
-	private float shakeDuration;
-	private float shakeAmount;
-	private float decreaseFactor;
-	private Vector3 camPosition;
-	private bool canshake;
 
 	void Start ()
 	{
@@ -28,10 +23,6 @@ public class GameManager : MonoBehaviour
 		mainCamera = Camera.main.transform;
 		goToNegative = false;
 		canFade = false;
-		shakeDuration = 0;
-		shakeAmount = 0.7f;
-		decreaseFactor = 1;
-		canshake = true;
 
 		for (int i = 0; i < 3; i++)
 		{
@@ -52,7 +43,7 @@ public class GameManager : MonoBehaviour
 		if(PlayerPrefs.GetString("MODE") == "classic")
 			medoimg.fillAmount = playerMedo.medo / 100f;
 
-		if (playerMedo.medo >= 25)
+		if (playerMedo.medo >= 50)
 		{
 			if(!goToNegative)
 			{
@@ -67,15 +58,13 @@ public class GameManager : MonoBehaviour
 					goToNegative = false;
 			}
 		}
-		else if(playerMedo.medo < 25)
+		else if(playerMedo.medo <= 49)
 		{
-			if(!goToNegative && mainCamera.rotation.z > 0)
+			if(mainCamera.rotation.z > 0)
 				mainCamera.Rotate(0, 0, Time.deltaTime * -1.5f);
-			else if(goToNegative && mainCamera.rotation.z < 0)
+			else if(mainCamera.rotation.z < 0)
 				mainCamera.Rotate(0, 0, Time.deltaTime * 1.5f);
 		}
-
-
 
 		if(playerMedo.medo >= 75)
 		{
@@ -92,7 +81,7 @@ public class GameManager : MonoBehaviour
 					canFade = false;
 			}
 		}
-		else if(playerMedo.medo < 75)
+		else if(playerMedo.medo <= 74)
 		{
 			if(fadein.GetComponent<SpriteRenderer>().color.a > 0)
 				fadein.GetComponent<SpriteRenderer> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
@@ -119,5 +108,4 @@ public class GameManager : MonoBehaviour
 		AudioClip sound = Resources.Load ("Sounds/ButtonHighlighted") as AudioClip;
 		Playsound (sound);
 	}
-
 }

@@ -10,26 +10,20 @@ public class player : MonoBehaviour
 	private Animator anim;
 	
 	private Rigidbody2D body;
-	private float axisX, axisY;
+	private float axisX, axisY, activeZoom, shakeDuration, shakeAmount, decreaseFactor;
 	private int speed;
 
-	private float activeZoom;
 	private bool zoomOut = true;
 
 	[HideInInspector] public float stamina, staminaCount;
 	public Image staminaBar;
-	public AudioClip breathing;
-	public AudioClip SambaSound;
+	public AudioClip breathing, SambaSound;
 	public bool startsamba;
-	private bool Canbreath, CanSamba, CatchMap, faceRight;
+	private bool Canbreath, CanSamba, CatchMap, faceRight, medoactive;
 	public float medo;
 	Camera Playermap;
 	public bool medoShake;
-	private bool medoactive;
 	public Transform mainCamera;
-	private float shakeDuration;
-	private float shakeAmount;
-	private float decreaseFactor;
 	private Vector3 camPosition;
 	private float lerp = 0;
 
@@ -64,43 +58,38 @@ public class player : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0)
+		if(!isPaused.paused)
 		{
-			speed = 30;
-			activeZoom = Time.time;
-			zoomOut = false;
+			if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0)
+			{
+				speed = 30;
+				activeZoom = Time.time;
+				zoomOut = false;
+			}
+			else if(!Input.GetKey(KeyCode.Space) && !zoomOut)
+			{
+				speed = 15;
+				activeZoom = Time.time;
+				zoomOut = true;
+			}
+			float move = Input.GetAxis("Horizontal");
+			int realMove = (int)move;
+			anim.SetInteger("speed", Mathf.Abs(realMove));
+			if (move > 0 && !faceRight)
+				Flip();
+			else if (move < 0 && faceRight)
+				Flip();
 		}
-		else if(!Input.GetKey(KeyCode.Space) && !zoomOut)
-		{
-			speed = 15;
-			activeZoom = Time.time;
-			zoomOut = true;
-		}
-		float move = Input.GetAxis("Horizontal");
-		int realMove = (int)move;
-		anim.SetInteger("speed", Mathf.Abs(realMove));
-		if (move > 0 && !faceRight) Flip();
-		else if (move < 0 && faceRight) Flip();
 	}
 	
 	void Update ()
 	{
-		//if (!medoShake) {
-			
-			Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
-		//}		
+		mainCamera.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, mainCamera.position.z);	
+		camPosition = mainCamera.position;
 		if (!isPaused.paused)
 		{	
-			camPosition = mainCamera.position;
-			//if (medo<= 25) mainCamera.rotation = Quaternion.Euler(Vector3.Lerp
-			if (medo>=40)
-			{
-				if (!medoactive)
-				StartCoroutine(medoshaking());
-			}
 			if (shakeDuration > 0)
 			{
-
 				mainCamera.position = camPosition + Random.insideUnitSphere * shakeAmount;
 				shakeDuration -= Time.deltaTime * decreaseFactor;
 			}
@@ -176,10 +165,11 @@ public class player : MonoBehaviour
 		if (axisY > 0)
 			anim.SetBool("goUp", true);
 		else anim.SetBool("goUp", false);
-		if (tutorial != null) {
+
+		if (tutorial != null)
+		{
 			lerp += Time.deltaTime/1.5f;
 			tutorial.GetComponent<RectTransform>().localScale= Vector3.Lerp(tutorial.GetComponent<RectTransform>().localScale,new Vector3(1,1,1),lerp);
-		
 		}
 		if (tutorial != null && Input.anyKey)
 		{
@@ -196,8 +186,11 @@ public class player : MonoBehaviour
 			Time.timeScale = 1;
 		}
 	}
-	void OnCollisionEnter2D(Collision2D other){
-	 if (other.gameObject.tag == "goldenHouse" || other.gameObject.tag == "housePremises") {
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+	 if (other.gameObject.tag == "goldenHouse" || other.gameObject.tag == "housePremises")
+		{
 			GameObject.Find("Clue").GetComponent<Text>().text = "Descubra qual tecla apertar para entrar.";
 		}
 	}
@@ -206,20 +199,20 @@ public class player : MonoBehaviour
 	{
 		if (other.gameObject.tag == "housePremises" && Input.GetKeyDown(Clues.theKey))
 		{
-			medo+=10;
-			shakeDuration =1f;
-			GameObject.Find("Clue").GetComponent<Text>().text = "Essa não é sua casa, continue procurando. ";
+			medo += 10;
+			shakeDuration = 1f;
+			GameObject.Find("Clue").GetComponent<Text>().text = "Essa não é sua casa, continue procurando.";
 		}
 		else if (other.gameObject.tag == "goldenHouse" && Input.GetKeyDown(Clues.theKey))
 		{
 			Application.LoadLevel(2);
 		}
-
-
 	}
+
 	void OnCollisionExit2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "goldenHouse" || other.gameObject.tag == "housePremises") {
+		if (other.gameObject.tag == "goldenHouse" || other.gameObject.tag == "housePremises")
+		{
 			GameObject.Find("Clue").GetComponent<Text>().text = "";
 		}
 	}
@@ -262,7 +255,6 @@ public class player : MonoBehaviour
 	private void Flip()
 	{
 		faceRight = !faceRight;
-		
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
@@ -295,15 +287,5 @@ public class player : MonoBehaviour
 	public void jumpTutorial ()
 	{
 		Destroy (tutorial);
-	}
-	IEnumerator medoshaking()
-	{
-		medoactive = true;
-		yield return new WaitForSeconds(5);
-		medoShake = true;
-		shakeDuration = 1f;
-		yield return new WaitForSeconds(1);
-		medoShake = false;
-		medoactive = false;
 	}
 }

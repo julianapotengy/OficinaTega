@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-//example
 [RequireComponent(typeof(PolyNavAgent))]
-public class ClickToMove : MonoBehaviour{
-	
+public class ClickToMove : MonoBehaviour
+{
 	private PolyNavAgent _agent;
-	public PolyNavAgent agent{
+	public PolyNavAgent agent
+	{
 		get
 		{
 			if (!_agent)
@@ -15,8 +15,9 @@ public class ClickToMove : MonoBehaviour{
 		}
 	}
 
-	void Update() {
+	void Update()
+	{
 		if (Input.GetMouseButton(0))
-			agent.SetDestination( Camera.main.ScreenToWorldPoint(Input.mousePosition) );
+			agent.SetDestination(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 	}
 }

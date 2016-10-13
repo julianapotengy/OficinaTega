@@ -12,6 +12,7 @@ public class SoundArrounds : MonoBehaviour
 	private GameObject nearBatebola;
 	private List< float> salvartodos;
 	public Collider2D[] batebolasNear;
+
 	void Start ()
 	{
 		time = 0;
@@ -23,7 +24,6 @@ public class SoundArrounds : MonoBehaviour
 	void Update ()
 	{
 		time++;
-		Debug.Log (PlayerPrefs.GetString ("DIFFICULTY"));
 	}
 
 	void OnTriggerEnter2D (Collider2D coll)

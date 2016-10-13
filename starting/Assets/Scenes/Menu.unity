@@ -117,10 +117,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1613077857}
   m_RootOrder: 2
-  m_AnchorMin: {x: .301539779, y: .0667678267}
-  m_AnchorMax: {x: .708000004, y: .933232248}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .266305268, y: .0667678267}
+  m_AnchorMax: {x: .741000056, y: .933232248}
+  m_AnchoredPosition: {x: .916059494, y: 2}
+  m_SizeDelta: {x: -4.36100006, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &4871681
 MonoBehaviour:
@@ -137,9 +137,9 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06bed69188ec54c4abfcfd1d6627ed25, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 20
     m_Alignment: 4
@@ -234,12 +234,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: .5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -797,10 +797,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1613077857}
   m_RootOrder: 3
-  m_AnchorMin: {x: .301539779, y: .0667678267}
-  m_AnchorMax: {x: .708000004, y: .933232248}
-  m_AnchoredPosition: {x: -7.47665763e-05, y: 2.00014877}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .266305268, y: .0667678267}
+  m_AnchorMax: {x: .741000056, y: .933232248}
+  m_AnchoredPosition: {x: .89188385, y: 2}
+  m_SizeDelta: {x: -4.31299973, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &885484256
 MonoBehaviour:
@@ -830,9 +830,9 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06bed69188ec54c4abfcfd1d6627ed25, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 20
     m_Alignment: 4
@@ -1224,10 +1224,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1613077857}
   m_RootOrder: 1
-  m_AnchorMin: {x: .289491385, y: .314582109}
+  m_AnchorMin: {x: .289491385, y: .231000006}
   m_AnchorMax: {x: .708000004, y: .467000008}
-  m_AnchoredPosition: {x: -1.00000095, y: -1.00000763}
-  m_SizeDelta: {x: 2, y: 0}
+  m_AnchoredPosition: {x: -1, y: .5}
+  m_SizeDelta: {x: 2, y: -3}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1845893329
 MonoBehaviour:
@@ -1244,9 +1244,9 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06bed69188ec54c4abfcfd1d6627ed25, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -1340,9 +1340,9 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06bed69188ec54c4abfcfd1d6627ed25, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 20
     m_Alignment: 4
@@ -1370,10 +1370,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1613077857}
   m_RootOrder: 4
-  m_AnchorMin: {x: .301539779, y: .0667678267}
-  m_AnchorMax: {x: .708000004, y: .933232248}
-  m_AnchoredPosition: {x: -7.74860382e-05, y: 2.00014877}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .266305268, y: .0667678267}
+  m_AnchorMax: {x: .741000056, y: .933232248}
+  m_AnchoredPosition: {x: .999996185, y: 2}
+  m_SizeDelta: {x: -4, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1989784715
 GameObject:
@@ -1424,9 +1424,9 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06bed69188ec54c4abfcfd1d6627ed25, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4

@@ -10,7 +10,6 @@ public class Clues : MonoBehaviour
 	[HideInInspector] public bool showAlert;
 	public float damageTime = 0.1f;
 	public float shakeRange = 20f;
-	private bool fineshedanim;
 	private PauseGame isPaused;
 	[HideInInspector] public bool showClue = false;
 	string[] possibleKeys = new string[6]{"r","t","y","u","f","g"};
@@ -34,7 +33,6 @@ public class Clues : MonoBehaviour
 	void Awake()
 	{
 		alert = GameObject.FindGameObjectWithTag ("Alert");
-		fineshedanim = true;
 		if (PlayerPrefs.GetString ("DIFFICULTY") == "hard" || PlayerPrefs.GetString ("DIFFICULTY") == "medium")
 			theKey = possibleKeys [Random.Range (0, possibleKeys.Length)];
 		if (PlayerPrefs.GetString ("DIFFICULTY") == "easy")
@@ -47,7 +45,6 @@ public class Clues : MonoBehaviour
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 		showClue = false;
 		notepad = GameObject.Find ("Notepad");
-
 		notebookClues = new List<Text>();
 		cluesColected = new List<string>();
 		StartCoroutine (WaitClue ());
@@ -81,13 +78,6 @@ public class Clues : MonoBehaviour
 				alert.SetActive (true);
 			else if (!showAlert)
 				alert.SetActive (false);
-			/*
-			if(showClue)
-				notepad.SetActive(true);
-			else if(!showClue)
-				notepad.SetActive(false);
-		}*/
-
 		}
 	}
 
@@ -130,7 +120,6 @@ public class Clues : MonoBehaviour
 				}
 			}
 		}
-
 	}
 
 	public void ShowClues()
@@ -140,25 +129,21 @@ public class Clues : MonoBehaviour
 		showAlert = false;
 		lerp = 0;
 		StartCoroutine (ClueAnimation(notepad));
-
 	}
 
 	IEnumerator ClueAnimation(GameObject obj)
 	{
-	
-		while (showClue) {
-
+		while (showClue)
+		{
 			if (lerp<= 1)lerp += Time.deltaTime;			
 			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (1, 1, 1), lerp);
 			yield return new WaitForSeconds (Time.deltaTime);
 		}
-		while (!showClue) {
+		while (!showClue)
+		{
 			if (lerp<= 1)lerp += Time.deltaTime;			
 			obj.GetComponent<RectTransform> ().localScale = Vector3.Lerp (obj.GetComponent<RectTransform> ().localScale, new Vector3 (0, 0, 0), lerp);
 			yield return new WaitForSeconds (Time.deltaTime);
-
 		}
 	}
-	}
-	
-	
+}

@@ -5,14 +5,14 @@ public class FieldOfVision : MonoBehaviour
 {
 	[HideInInspector] public bool saw;
 	[HideInInspector] public bool leaved;
-	private GameObject enemy3;
+	private Enemy3 enemy3;
 	private GameObject player;
 	
 	void Start ()
 	{
 		saw = false;
 		leaved = false;
-		enemy3 = GameObject.Find ("Enemy3(Clone)");
+		enemy3 = gameObject.transform.parent.GetComponent<Enemy3>();
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
@@ -31,7 +31,6 @@ public class FieldOfVision : MonoBehaviour
 			saw = true;
 			leaved = true;
 			player.GetComponent<SpriteRenderer> ().color = Color.cyan;
-
 		}
 	}
 

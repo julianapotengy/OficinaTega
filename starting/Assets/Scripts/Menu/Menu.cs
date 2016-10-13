@@ -41,5 +41,4 @@ public class Menu : MonoBehaviour
 			yield return new WaitForSeconds(1.2f);
 		}
 	}
-
 }
