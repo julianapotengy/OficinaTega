@@ -40,21 +40,21 @@ public class ModosManager : MonoBehaviour
 
 	public void SetClassicMode()
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		PlayerPrefs.SetString ("MODE", "classic");
 		showLevels2Choose.SetActive (true);
 	}
 
 	public void SetSurvivelMode()
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		PlayerPrefs.SetString ("MODE", "survivel");
 		showLevels2Choose.SetActive (true);
 	}
 
 	public void SetEasyDifficulty()
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "easy");
 		canLoad = true;
 		showLevels2Choose.SetActive (false);
@@ -63,7 +63,7 @@ public class ModosManager : MonoBehaviour
 
 	public void SetMediumDifficulty()
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "medium");
 		canLoad = true;
 		showLevels2Choose.SetActive (false);
@@ -72,7 +72,7 @@ public class ModosManager : MonoBehaviour
 
 	public void SetHardDifficulty()
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		PlayerPrefs.SetString ("DIFFICULTY", "hard");
 		canLoad = true;
 		showLevels2Choose.SetActive (false);
@@ -87,6 +87,10 @@ public class ModosManager : MonoBehaviour
 		{
 			yield return null;
 		}
-		
+	}
+
+	public void buttonHigh()
+	{
+		GameManager.ButtonHighlightedClip ();
 	}
 }

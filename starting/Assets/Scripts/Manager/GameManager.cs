@@ -95,12 +95,7 @@ public class GameManager : MonoBehaviour
 	}
 	public static void ButtonPaperClip()
 	{
-		AudioClip sound = Resources.Load ("Sounds/ButtonPressedPaper") as AudioClip;
-		Playsound (sound);
-	}
-	public static void ButtonMenuClip()
-	{
-		AudioClip sound = Resources.Load ("Sounds/MenuButtonPressed") as AudioClip;
+		AudioClip sound = Resources.Load ("Sounds/ClickButton") as AudioClip;
 		Playsound (sound);
 	}
 	public static void ButtonHighlightedClip()

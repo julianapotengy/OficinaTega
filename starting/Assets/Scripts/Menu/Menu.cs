@@ -16,13 +16,13 @@ public class Menu : MonoBehaviour
 
 	public void changeScene(int i)
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		Application.LoadLevel (i);
 	}
 
 	public void Exit()
 	{
-		GameManager.ButtonMenuClip ();
+		GameManager.ButtonPaperClip ();
 		Application.Quit ();
 	}
 

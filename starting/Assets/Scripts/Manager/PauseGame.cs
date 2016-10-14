@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ public class PauseGame : MonoBehaviour
 	private AudioSource audio;
 	public Sprite[] soundImg = new Sprite[2];
 	public GameObject soundManager;
-	
+
 	void Start ()
 	{
 		Time.timeScale = 1;

@@ -7,7 +7,7 @@ public class Enemy2 : MonoBehaviour
 	private FieldOfVision field;
 	private PauseGame isPaused;
 	private GameObject Player;
-
+	private GameObject tutorial;
 	private Vector3 originalPosition;
 	private Vector3 originalPositionR;
 
@@ -47,7 +47,7 @@ public class Enemy2 : MonoBehaviour
 		pagent = GetComponent<PolyNavAgent> ();
 		rand = Random.Range (0, Places.Length);
 		arrived = false;
-
+		tutorial = GameObject.Find ("Tutorial");
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 		Player = GameObject.FindGameObjectWithTag ("Player");
 
@@ -70,7 +70,7 @@ public class Enemy2 : MonoBehaviour
 
 	void Update ()
 	{
-		if (!isPaused.paused)
+		if (!isPaused.paused && tutorial == null)
 		{
 			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			FadeIn();

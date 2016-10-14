@@ -7,7 +7,7 @@ public class Enemy3 : MonoBehaviour
 	[HideInInspector] public bool once;
 	private PauseGame isPaused;
 	private GameObject player;
-
+	private GameObject tutorial;
 	private Vector3 originalPosition, originalPositionR;
 
 	private PolyNavAgent pagent;
@@ -45,6 +45,7 @@ public class Enemy3 : MonoBehaviour
 		}
 
 		once = false;
+		tutorial = GameObject.Find ("Tutorial");
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 
@@ -77,7 +78,7 @@ public class Enemy3 : MonoBehaviour
 
 	void Update ()
 	{
-		if (!isPaused.paused)
+		if (!isPaused.paused && tutorial == null)
 		{
 			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			WalkAndRun ();

@@ -76,7 +76,6 @@ public class SoundArrounds : MonoBehaviour
 						}
 					}
 				}
-				Debug.Log (nearBatebola.name);
 				
 				Vector3 dir  = nearBatebola.gameObject.transform.position - Player.gameObject.transform.position;
 				dir.Normalize();

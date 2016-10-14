@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringClueTxt: 
   alert: {fileID: 0}
-  NotificationSound: {fileID: 8300000, guid: bb46d60607358e4459104385c8b9243e, type: 3}
+  NotificationSound: {fileID: 8300000, guid: 5b96892159e339f499bf97253b4de9cb, type: 3}
 --- !u!212 &21262670
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3175,7 +3175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delegates:
-  - eventID: 4
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -5427,6 +5427,7 @@ GameObject:
   - 222: {fileID: 402972048}
   - 114: {fileID: 402972047}
   - 114: {fileID: 402972046}
+  - 114: {fileID: 402972049}
   m_Layer: 5
   m_Name: MuteButton
   m_TagString: ShowOnPause
@@ -5531,6 +5532,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402972044}
+--- !u!114 &402972049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402972044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 555651287}
+          m_MethodName: buttonHigh
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &406203049
 GameObject:
   m_ObjectHideFlags: 0
@@ -12994,8 +13025,8 @@ MonoBehaviour:
   stamina: 0
   staminaCount: 0
   staminaBar: {fileID: 1593674590}
-  breathing: {fileID: 8300000, guid: de4766f0cf9de754ebef546667691ea5, type: 3}
-  SambaSound: {fileID: 8300000, guid: 733301d1ae1ee1f4b8765b7211b64254, type: 3}
+  breathing: {fileID: 8300000, guid: 4e4b9fd51d1e21540adf745ac4b493df, type: 3}
+  SambaSound: {fileID: 8300000, guid: e2ed03c79be9b784583d40ca4d7f711a, type: 3}
   startsamba: 0
   medo: 100
   medoShake: 0
@@ -14102,6 +14133,7 @@ GameObject:
   - 114: {fileID: 1004796593}
   - 114: {fileID: 1004796592}
   - 114: {fileID: 1004796595}
+  - 114: {fileID: 1004796596}
   m_Layer: 5
   m_Name: AlertButton
   m_TagString: Alert
@@ -14217,6 +14249,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd15d142d922924c9f40dfde85225a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1004796596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004796590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 555651287}
+          m_MethodName: buttonHigh
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1013593311
 GameObject:
   m_ObjectHideFlags: 0
@@ -22189,6 +22251,7 @@ GameObject:
   - 222: {fileID: 1518963618}
   - 114: {fileID: 1518963617}
   - 114: {fileID: 1518963616}
+  - 114: {fileID: 1518963619}
   m_Layer: 5
   m_Name: NotepadButton
   m_TagString: Untagged
@@ -22293,6 +22356,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518963614}
+--- !u!114 &1518963619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518963614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 555651287}
+          m_MethodName: buttonHigh
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1519207116
 GameObject:
   m_ObjectHideFlags: 0
@@ -23501,7 +23594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delegates:
-  - eventID: 4
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -25856,7 +25949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delegates:
-  - eventID: 4
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -30469,7 +30562,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .800000012
+  m_Intensity: 1
   m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10

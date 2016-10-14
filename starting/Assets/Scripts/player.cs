@@ -48,7 +48,6 @@ public class player : MonoBehaviour
 		CanSamba = true; 
 		Canbreath = true; 
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
-
 		speed = 15;
 		stamina = 1;
 		faceRight = true;
