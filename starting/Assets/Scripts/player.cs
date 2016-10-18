@@ -26,6 +26,7 @@ public class player : MonoBehaviour
 	public Transform mainCamera;
 	private Vector3 camPosition;
 	private float lerp = 0;
+	[SerializeField] Animation animation;
 
 	void Awake ()
 	{
@@ -53,27 +54,37 @@ public class player : MonoBehaviour
 		faceRight = true;
 		anim = GetComponent<Animator> ();
 		tutorial = GameObject.Find ("Tutorial");
+
 	}
 
 	void FixedUpdate()
 	{
 		if(!isPaused.paused)
 		{
-			if (Input.GetKey(KeyCode.Space) && zoomOut && stamina > 0)
+			if ((Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)) && zoomOut && stamina > 0)
 			{
 				speed = 30;
 				activeZoom = Time.time;
 				zoomOut = false;
+				anim.speed =1.5f;
+				//animation["WalkingPlaye"].speed =2;
+				//animation["WalkingUpPlayer"].speed= 2;
+				//animation["WalkingDownPlayer"].speed= 2;
 			}
-			else if(!Input.GetKey(KeyCode.Space) && !zoomOut)
+			else if(!(Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)) && !zoomOut)
 			{
 				speed = 15;
 				activeZoom = Time.time;
 				zoomOut = true;
+				anim.speed=1;
+				//animation["WalkingPlaye"].speed =1;
+				//animation["WalkingUpPlayer"].speed= 1;
+				//animation["WalkingDownPlayer"].speed= 1;
+
 			}
 			float move = Input.GetAxis("Horizontal");
-			int realMove = (int)move;
-			anim.SetInteger("speed", Mathf.Abs(realMove));
+			float realMove = move;
+			anim.SetFloat("speed", Mathf.Abs(realMove));
 			if (move > 0 && !faceRight)
 				Flip();
 			else if (move < 0 && faceRight)
@@ -129,7 +140,7 @@ public class player : MonoBehaviour
 			if (zoomOut)
 			{
 				Camera.main.orthographicSize = Mathf.Lerp (12, 20, 5f * (Time.time - activeZoom));
-				if (stamina < 1 && !Input.GetKey (KeyCode.Space))
+				if (stamina < 1 && !(Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)))
 				{
 					if (stamina <= 0.5f && axisX ==0 && axisY == 0)
 						stamina += 0.04f * Time.deltaTime;

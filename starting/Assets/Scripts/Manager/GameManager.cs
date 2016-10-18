@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 		if(PlayerPrefs.GetString("MODE") == "classic")
 			medoimg.fillAmount = playerMedo.medo / 100f;
 
-		if (playerMedo.medo >= 50)
+		/*if (playerMedo.medo >= 50)
 		{
 			if(!goToNegative)
 			{
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 		{
 			if(fadein.GetComponent<SpriteRenderer>().color.a > 0)
 				fadein.GetComponent<SpriteRenderer> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
-		}
+		}*/
 	}
 
 	public static void Playsound(AudioClip clip)
