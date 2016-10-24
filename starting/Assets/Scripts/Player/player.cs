@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
+
 	private PauseGame isPaused;
 	public static bool caught = false;
 	private GameObject tutorial;
@@ -27,6 +28,9 @@ public class player : MonoBehaviour
 	private Vector3 camPosition;
 	private float lerp = 0;
 	[SerializeField] Animation animation;
+	[SerializeField] Image boyImg;
+	[SerializeField] Sprite[] reactions;
+	[SerializeField] GameObject uis;
 
 	void Awake ()
 	{
@@ -34,8 +38,11 @@ public class player : MonoBehaviour
 		caught = false;
 	}
 
-	void Start()
-	{
+	void Start(){
+		foreach (Image img in uis.transform) {
+		//	img.enabled = false;
+		}
+	
 		shakeDuration = 0;
 		shakeAmount = 1f;
 		decreaseFactor = 1;
@@ -90,6 +97,7 @@ public class player : MonoBehaviour
 		camPosition = mainCamera.position;
 		if (!isPaused.paused)
 		{	
+
 			if (shakeDuration > 0)
 			{
 				mainCamera.position = camPosition + Random.insideUnitSphere * shakeAmount;
@@ -289,5 +297,19 @@ public class player : MonoBehaviour
 	public void jumpTutorial ()
 	{
 		Destroy (tutorial);
+		foreach (Image img in uis.transform) {
+			img.enabled = true;
+		}
+	}
+	void faceUpdate()
+	{
+		if (medo > 75)
+			boyImg.sprite = reactions [0];
+		else if (medo>50)
+			boyImg.sprite = reactions [1];
+		else if (medo>25)
+			boyImg.sprite = reactions [2];
+		else
+			boyImg.sprite = reactions [3];
 	}
 }
