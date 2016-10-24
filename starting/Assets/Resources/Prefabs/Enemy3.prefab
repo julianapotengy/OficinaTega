@@ -395,6 +395,7 @@ MonoBehaviour:
   once: 0
   places2Walk: []
   mainCamera: {fileID: 0}
+  shockSound: {fileID: 8300000, guid: 42e07ac5677774c41a40ec00324b283e, type: 3}
   Places: []
   temp: []
 --- !u!212 &21279434

@@ -22,7 +22,7 @@ public class Enemy3 : MonoBehaviour
 	private bool mask, arrived;
 	private int rand;
 	public static GameObject shock; 
-	private AudioClip shockSound;
+	public AudioClip shockSound;
 
 	public Vector3[] Places;
 	public GameObject[]temp;
@@ -73,7 +73,6 @@ public class Enemy3 : MonoBehaviour
 		timer = 0;
 		shock = GameObject.Find ("susto");
 		StartCoroutine (wait ());
-		shockSound = Resources.Load ("Game/Susto") as AudioClip;
 	}
 
 	void Update ()
@@ -120,7 +119,6 @@ public class Enemy3 : MonoBehaviour
 			pagent.SetDestination (posiplayer);
 		if (field.saw)
 		{
-			GetComponent<SpriteRenderer>().color = Color.red;
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20; 
 
@@ -129,7 +127,6 @@ public class Enemy3 : MonoBehaviour
 				arrived = false;
 				field.saw = false; 
 				once = false; 
-				GetComponent<SpriteRenderer>().color = Color.white;
 				rand = Random.Range (0, Places.Length);
 			}
 		}
@@ -160,13 +157,12 @@ public class Enemy3 : MonoBehaviour
 				shakeDuration = 1.5f;
 				player.GetComponent<player>().stamina =(player.GetComponent<player>().stamina > 0.25f)? 0.25f:0.1f;
 				once = true;
-				//GameManager.Playsound(shockSound);
-				if (canShock) StartCoroutine(sound2());
+				if (canShock)
+					StartCoroutine(sound2());
 				field.saw = false;
 				mask = true; 
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
-				GetComponent<SpriteRenderer>().color = Color.white;
 				other.gameObject.GetComponent<player>().medo += 20f;
 			}
 		}
@@ -180,7 +176,7 @@ public class Enemy3 : MonoBehaviour
 
 	IEnumerator sound2()
 	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canShock)
+		if (Object.FindObjectOfType <AudioSource> ().clip.name != "Breathing" && canShock)
 		{
 			GameManager.Playsound (shockSound);
 			canShock = false; 

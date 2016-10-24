@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Enemy1 : MonoBehaviour
 {
-	public AudioClip heartBeating;
 	private FieldOfVision field;
 	private PauseGame isPaused;
 	private GameObject tutorial;
@@ -84,7 +83,6 @@ public class Enemy1 : MonoBehaviour
 		{
 			pagent.rotateTransform = false; 
 			timer += Time.deltaTime;
-			if (canBeath) StartCoroutine(heartBeat());
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;
@@ -129,19 +127,7 @@ public class Enemy1 : MonoBehaviour
 				rand = Random.Range (0,Places.Length);
 				arrived = false; 
 				timer = 0;
-				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
-	}
-
-	IEnumerator heartBeat()
-	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canBeath)
-		{
-			GameManager.Playsound (heartBeating);
-			canBeath = false; 
-		} 
-		yield return new WaitForSeconds(heartBeating.length);
-		canBeath = true; 
 	}
 }

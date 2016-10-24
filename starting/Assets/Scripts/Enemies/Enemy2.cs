@@ -95,7 +95,6 @@ public class Enemy2 : MonoBehaviour
 			                                                                           fadeNum/255);
 			Player.SetActive(false);
 			GetComponent<SpriteRenderer>().sortingOrder = -2;
-			GameObject.Find("Stamina").GetComponent<Image>().enabled = false;
 			GameObject.Find("OrangeStamina").GetComponent<Image>().enabled = false;
 			
 			if(this.fadeNum > 255)
@@ -111,10 +110,9 @@ public class Enemy2 : MonoBehaviour
 				fadeNum = 0;
 				
 				Player.SetActive(true);
-				GameObject.Find("Stamina").GetComponent<Image>().enabled = true;
 				GameObject.Find("OrangeStamina").GetComponent<Image>().enabled = true;
 				GetComponent<SpriteRenderer>().sortingOrder = 2; 
-				GetComponent<SpriteRenderer>().enabled = true ; 
+				GetComponent<SpriteRenderer>().enabled = true; 
 				GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
 				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
 				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
@@ -135,8 +133,6 @@ public class Enemy2 : MonoBehaviour
 		}
 		if (field.saw)
 		{
-			GetComponent<SpriteRenderer>().color = Color.red;
-
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 20;
 
@@ -145,7 +141,6 @@ public class Enemy2 : MonoBehaviour
 				field.saw = false;
 				rand = Random.Range (0, Places.Length);
 				arrived = false;
-				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
 		
@@ -177,7 +172,6 @@ public class Enemy2 : MonoBehaviour
 				AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
 				audio.pitch = 1f;
 				if (canShock) StartCoroutine(sound2());
-				GetComponent<SpriteRenderer>().color = Color.white;
 				player.caught = true; 
 				other.gameObject.GetComponent<player>().medo += 20f;
 			}
@@ -188,8 +182,7 @@ public class Enemy2 : MonoBehaviour
 	{
 		yield return new WaitForEndOfFrame ();
 		{
-			field.saw = false; 
-			GetComponent<SpriteRenderer>().color = Color.white;
+			field.saw = false;
 			rand = Random.Range (0, Places.Length);
 			arrived = false;
 			player.caught = false;
@@ -206,6 +199,4 @@ public class Enemy2 : MonoBehaviour
 		yield return new WaitForSeconds(shock.length);
 		canShock = true; 
 	}
-
-
 }

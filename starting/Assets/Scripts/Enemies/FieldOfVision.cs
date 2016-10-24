@@ -12,16 +12,9 @@ public class FieldOfVision : MonoBehaviour
 	{
 		saw = false;
 		leaved = false;
-		enemy3 = gameObject.transform.parent.GetComponent<Enemy3>();
 		player = GameObject.FindGameObjectWithTag ("Player");
-	}
-
-	void Update()
-	{
-		if (!saw && !leaved)
-		{
-			player.GetComponent<SpriteRenderer> ().color = Color.white;
-		}
+		if(gameObject.transform.parent.name.Equals("Enemy3(Clone)"))
+			enemy3 = gameObject.transform.parent.GetComponent<Enemy3>();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -30,7 +23,6 @@ public class FieldOfVision : MonoBehaviour
 		{
 			saw = true;
 			leaved = true;
-			player.GetComponent<SpriteRenderer> ().color = Color.cyan;
 		}
 	}
 
@@ -47,8 +39,8 @@ public class FieldOfVision : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			leaved = false;
-			enemy3.GetComponent<Enemy3>().once = false;
-			player.GetComponent<SpriteRenderer> ().color = Color.white;
+			if(gameObject.transform.parent.name.Equals("Enemy3(Clone)"))
+				enemy3.GetComponent<Enemy3>().once = false;
 		}
 	}
 }
