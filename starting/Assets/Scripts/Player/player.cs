@@ -16,7 +16,8 @@ public class player : MonoBehaviour
 
 	private bool zoomOut = true;
 
-	[HideInInspector] public float stamina, staminaCount;
+	public float stamina;
+	[HideInInspector]public float staminaCount;
 	public Image staminaBar;
 	public AudioClip breathing, SambaSound;
 	public bool startsamba;
@@ -39,10 +40,7 @@ public class player : MonoBehaviour
 	}
 
 	void Start(){
-		foreach (Image img in uis.transform) {
-		//	img.enabled = false;
-		}
-	
+
 		shakeDuration = 0;
 		shakeAmount = 1f;
 		decreaseFactor = 1;
@@ -61,6 +59,7 @@ public class player : MonoBehaviour
 		faceRight = true;
 		anim = GetComponent<Animator> ();
 		tutorial = GameObject.Find ("Tutorial");
+		uis.GetComponent<RectTransform> ().localScale = new Vector3 (0, 0, 0);
 	}
 
 	void FixedUpdate()
@@ -97,7 +96,7 @@ public class player : MonoBehaviour
 		camPosition = mainCamera.position;
 		if (!isPaused.paused)
 		{	
-
+			faceUpdate();
 			if (shakeDuration > 0)
 			{
 				mainCamera.position = camPosition + Random.insideUnitSphere * shakeAmount;
@@ -149,9 +148,9 @@ public class player : MonoBehaviour
 						stamina += 0.02f * Time.deltaTime;
 					}
 					if (stamina >= 0.5f && axisX == 0 && axisY == 0)
-						stamina += 0.08f * Time.deltaTime;
-					else if (stamina >= 0.5f)
 						stamina += 0.06f * Time.deltaTime;
+					else if (stamina >= 0.5f)
+						stamina += 0.04f * Time.deltaTime;
 				}
 			}
 			else
@@ -167,7 +166,8 @@ public class player : MonoBehaviour
 	{
 		axisX = Input.GetAxis ("Horizontal");
 		axisY = Input.GetAxis ("Vertical");
-		body.velocity = new Vector3(axisX * speed, axisY * speed, 0);
+
+		body.velocity = new Vector2(axisX * speed, axisY * speed);
 
 		if (axisY < 0)
 			anim.SetBool("goDown", true);
@@ -297,19 +297,18 @@ public class player : MonoBehaviour
 	public void jumpTutorial ()
 	{
 		Destroy (tutorial);
-		foreach (Image img in uis.transform) {
-			img.enabled = true;
-		}
+		uis.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
+
 	}
 	void faceUpdate()
 	{
 		if (medo > 75)
-			boyImg.sprite = reactions [0];
-		else if (medo>50)
-			boyImg.sprite = reactions [1];
-		else if (medo>25)
-			boyImg.sprite = reactions [2];
-		else
 			boyImg.sprite = reactions [3];
+		else if (medo>50)
+			boyImg.sprite = reactions [2];
+		else if (medo>25)
+			boyImg.sprite = reactions [1];
+		else
+			boyImg.sprite = reactions [0];
 	}
 }

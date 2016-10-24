@@ -4,7 +4,7 @@ using System.Collections;
 public class Menu : MonoBehaviour
 {
 	GameObject light;
-
+	[SerializeField] AudioClip lightaudio;
 	void Start()
 	{
 		if (Application.loadedLevel == 0)
@@ -38,6 +38,7 @@ public class Menu : MonoBehaviour
 		{
 			controle =!controle;
 			light.SetActive(controle);
+			//GameManager.Playsound(lightaudio);
 			yield return new WaitForSeconds(1.2f);
 		}
 	}

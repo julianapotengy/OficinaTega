@@ -37,7 +37,6 @@ public class Clues : MonoBehaviour
 			theKey = possibleKeys [Random.Range (0, possibleKeys.Length)];
 		if (PlayerPrefs.GetString ("DIFFICULTY") == "easy")
 			theKey = "h";
-		Debug.Log (theKey);
 	}
 
 	void Start ()

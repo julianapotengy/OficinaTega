@@ -18,9 +18,13 @@ public class ModosManager : MonoBehaviour
 		showLevels2Choose = GameObject.FindGameObjectWithTag ("ShowLevels2Choose");
 		showLevels2Choose.SetActive (false);
 		showModos = GameObject.FindGameObjectWithTag ("ShowModos");
+		showModos.SetActive (false);
 		loadScene = false;
 		loading.gameObject.SetActive (false);
 		canLoad = false;
+		showLevels2Choose.SetActive (true);
+		PlayerPrefs.SetString ("MODE", "classic");
+
 	}
 
 	void Update()

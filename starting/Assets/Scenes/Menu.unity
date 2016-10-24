@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375f5797b480d0d4a81085a26fbe86e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .100000001
+  letterPause: .0799999982
   text2: {fileID: 885484257}
 --- !u!1 &533127839
 GameObject:
@@ -529,6 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31992b9cd9ebfea48a991d5255951b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightaudio: {fileID: 8300000, guid: 049ff9c2d9b1c49cb8cb5a98a662c8c4, type: 3}
 --- !u!82 &756954327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -813,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb38f0b534d286343addd958171e83d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .100000001
+  letterPause: .0799999982
   text3: {fileID: 1902058077}
 --- !u!114 &885484257
 MonoBehaviour:
@@ -1276,7 +1277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1871242467
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1324,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba11851add775148bf66c6c9834238c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .100000001
+  letterPause: .0799999982
 --- !u!114 &1902058077
 MonoBehaviour:
   m_ObjectHideFlags: 0

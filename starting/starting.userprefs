@@ -1,11 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SoundArrounds.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/player.cs">
     <Files>
-      <File FileName="Assets\Scripts\SoundArrounds.cs" Line="89" Column="2" />
-      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="103" Column="62" />
-      <File FileName="Assets\Scripts\Enemies\Enemy1.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/Player/player.cs" Line="20" Column="19" />
+      <File FileName="Assets/Scripts/Clues/Clues.cs" Line="40" Column="1" />
+      <File FileName="Assets/Scripts/Manager/ModosManager.cs" Line="27" Column="3" />
+      <File FileName="Assets/Scripts/Menu/Menu.cs" Line="41" Column="6" />
+      <File FileName="Assets/Scripts/Menu/Text2.cs" Line="7" Column="33" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
