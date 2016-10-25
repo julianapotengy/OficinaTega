@@ -8,7 +8,7 @@ public class Text3 : MonoBehaviour
 	string message;
 	private float timer;
 	private GameObject history;
-	private GameObject credits;
+	[SerializeField] private GameObject credits;
 	private bool showCredits;
 	
 	void Start ()
@@ -16,7 +16,6 @@ public class Text3 : MonoBehaviour
 		message = GetComponent<Text> ().text;
 		GetComponent<Text> ().text = "";
 		history = GameObject.Find ("HistoryCredits");
-		credits = GameObject.Find ("Credits");
 		credits.SetActive(false);
 		showCredits = false;
 	}
@@ -34,6 +33,7 @@ public class Text3 : MonoBehaviour
 				timer = 0;
 			}
 		}
+	
 		if(showCredits)
 		{
 			timer += Time.deltaTime;
