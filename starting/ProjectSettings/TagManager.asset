@@ -20,7 +20,6 @@ TagManager:
   - Alert
   - soundArround
   - ShowLevels2Choose
-  - ShowModos
   layers:
   - Default
   - TransparentFX
@@ -57,6 +56,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Clues
+    uniqueID: 2252492217
     locked: 0
   - name: Personagens
     uniqueID: 266612329

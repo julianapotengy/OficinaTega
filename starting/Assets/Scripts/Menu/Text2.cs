@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Text2 : MonoBehaviour
 {
-	public float letterPause = 0.2f;
+	public float letterPause = 0.04f;
 	string message;
 	public Text text3;
 	private float timer;
@@ -20,7 +20,7 @@ public class Text2 : MonoBehaviour
 		if(GetComponent<Text>().text == message)
 		{
 			timer += Time.deltaTime;
-			if(timer >= 1)
+			if(timer >= 2)
 			{
 				text3.GetComponent<Text3>().Wait();
 				GetComponent<Text>().text = "";

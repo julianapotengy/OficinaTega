@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 60cb8e7f3789bb34abdd752e07c6a596
+timeCreated: 1477416632
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tipo1_0
+    21300002: tipo1_1
+    21300004: tipo1_2
+    21300006: tipo1_3
+    21300008: tipo1_4
+    21300010: tipo1Lado_0
+    21300012: tipo1Lado_1
+    21300014: tipo1Lado_2
+    21300016: tipo1Lado_4
+    21300018: tipo1Lado_5
+    21300020: tipo1Lado_6
+    21300022: tipo1Lado_7
+    21300024: tipo2_0
+    21300026: tipo2_1
+    21300028: tipo2_2
+    21300030: tipo2_3
+    21300032: tipo2_4
+    21300034: tipo2Lado_0
+    21300036: tipo2Lado_1
+    21300038: tipo2Lado_2
+    21300040: tipo2Lado_4
+    21300042: tipo2Lado_5
+    21300044: tipo2Lado_6
+    21300046: tipo2Lado_7
+    21300048: tipo3_0
+    21300050: tipo3_1
+    21300052: tipo3_2
+    21300054: tipo3_3
+    21300056: tipo3_4
+    21300058: tipo3Lado_0
+    21300060: tipo3Lado_1
+    21300062: tipo3Lado_2
+    21300064: tipo3Lado_3
+    21300066: tipo3Lado_4
+    21300068: tipo3Lado_5
+    21300070: tipo3Lado_6
+    21300072: tipo3Lado_7
+    21300074: tipo3Costas_0
+    21300076: tipo3Costas_1
+    21300078: tipo3Costas_2
+    21300080: tipo3Costas_3
+    21300082: tipo2Costas_0
+    21300084: tipo2Costas_1
+    21300086: tipo2Costas_2
+    21300088: tipo2Costas_3
+    21300090: tipo1Costas_0
+    21300092: tipo1Costas_1
+    21300094: tipo1Costas_2
+    21300096: tipo1Costas_3
+    21300098: tipo1Lado_3
+    21300100: tipo2Lado_3
+    21300102: susto
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tipo1_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1850
+        width: 126
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1850
+        width: 121
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1_2
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1850
+        width: 125
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1_3
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1850
+        width: 122
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1850
+        width: 126
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_0
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1849
+        width: 91
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_1
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1849
+        width: 91
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_2
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1849
+        width: 91
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_4
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 1849
+        width: 91
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_5
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1849
+        width: 91
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_6
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 1850
+        width: 91
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_7
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 1848
+        width: 91
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1435
+        width: 126
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1436
+        width: 121
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2_2
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1435
+        width: 125
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2_3
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1436
+        width: 122
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1436
+        width: 126
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_0
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 1436
+        width: 94
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_1
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1436
+        width: 94
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_2
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1435
+        width: 92
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_4
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 1435
+        width: 94
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_5
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1436
+        width: 94
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_6
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1436
+        width: 94
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_7
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 1435
+        width: 94
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1036
+        width: 126
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1036
+        width: 121
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3_2
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1036
+        width: 125
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3_3
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1036
+        width: 122
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1036
+        width: 125
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_0
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1038
+        width: 84
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_1
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1038
+        width: 54
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_2
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 1038
+        width: 82
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_3
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1037
+        width: 53
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_4
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 1037
+        width: 90
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_5
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 1038
+        width: 54
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_6
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 1038
+        width: 83
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Lado_7
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 1037
+        width: 53
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Costas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703
+        width: 125
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Costas_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 703
+        width: 122
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Costas_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 703
+        width: 126
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo3Costas_3
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 703
+        width: 122
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Costas_0
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 702
+        width: 126
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Costas_1
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 702
+        width: 122
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Costas_2
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 701
+        width: 125
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Costas_3
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 702
+        width: 122
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Costas_0
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 702
+        width: 126
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Costas_1
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 702
+        width: 122
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Costas_2
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 702
+        width: 125
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Costas_3
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 702
+        width: 122
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo1Lado_3
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1849
+        width: 90
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tipo2Lado_3
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 1435
+        width: 94
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: susto
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1133
+        width: 99
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

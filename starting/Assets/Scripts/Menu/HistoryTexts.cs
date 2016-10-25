@@ -6,7 +6,6 @@ public class HistoryTexts : MonoBehaviour
 {
 	private GameObject history;
 	public Image headphoneImage;
-	public Text headphoneText;
 	public Text historyText;
 	private float timer;
 	private bool canWrite;
@@ -25,7 +24,6 @@ public class HistoryTexts : MonoBehaviour
 		if(timer >= 5 && !canWrite)
 		{
 			headphoneImage.enabled = false;
-			headphoneText.enabled = false;
 			historyText.GetComponent<Texts>().Wait();
 			canWrite = true;
 		}
@@ -35,6 +33,6 @@ public class HistoryTexts : MonoBehaviour
 
 	public void goToMenu()
 	{
-		history.SetActive(false);
+        Application.LoadLevel("Menu");
 	}
 }

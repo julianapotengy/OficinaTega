@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
-
 	private PauseGame isPaused;
 	public static bool caught = false;
 	private GameObject tutorial;
@@ -138,7 +137,7 @@ public class player : MonoBehaviour
 				staminaBar.GetComponent<Image> ().color = Color.white;
 			if (zoomOut)
 			{
-				Camera.main.orthographicSize = Mathf.Lerp (12, 20, 5f * (Time.time - activeZoom));
+				Camera.main.orthographicSize = Mathf.Lerp (7, 9, 5f * (Time.time - activeZoom));
 				if (stamina < 1 && !(Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)))
 				{
 					if (stamina <= 0.5f && axisX ==0 && axisY == 0)
@@ -155,7 +154,7 @@ public class player : MonoBehaviour
 			}
 			else
 			{
-				Camera.main.orthographicSize = Mathf.Lerp (20, 12, 5f * (Time.time - activeZoom));
+				Camera.main.orthographicSize = Mathf.Lerp (9, 7, 5f * (Time.time - activeZoom));
 				if (stamina > 0 && (axisX != 0 || axisY != 0))
 					stamina -= 0.1f * Time.deltaTime;
 			}

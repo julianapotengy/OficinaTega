@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ModosManager : MonoBehaviour
 {
 	private GameObject showLevels2Choose;
-	private GameObject showModos;
 	private bool loadScene;
 	[SerializeField]
 	private int scene;
@@ -17,14 +16,11 @@ public class ModosManager : MonoBehaviour
 	{
 		showLevels2Choose = GameObject.FindGameObjectWithTag ("ShowLevels2Choose");
 		showLevels2Choose.SetActive (false);
-		showModos = GameObject.FindGameObjectWithTag ("ShowModos");
-		showModos.SetActive (false);
 		loadScene = false;
 		loading.gameObject.SetActive (false);
 		canLoad = false;
 		showLevels2Choose.SetActive (true);
 		PlayerPrefs.SetString ("MODE", "classic");
-
 	}
 
 	void Update()
@@ -62,7 +58,6 @@ public class ModosManager : MonoBehaviour
 		PlayerPrefs.SetString ("DIFFICULTY", "easy");
 		canLoad = true;
 		showLevels2Choose.SetActive (false);
-		showModos.SetActive (false);
 	}
 
 	public void SetMediumDifficulty()
@@ -71,7 +66,6 @@ public class ModosManager : MonoBehaviour
 		PlayerPrefs.SetString ("DIFFICULTY", "medium");
 		canLoad = true;
 		showLevels2Choose.SetActive (false);
-		showModos.SetActive (false);
 	}
 
 	public void SetHardDifficulty()
@@ -80,7 +74,6 @@ public class ModosManager : MonoBehaviour
 		PlayerPrefs.SetString ("DIFFICULTY", "hard");
 		canLoad = true;
 		showLevels2Choose.SetActive (false);
-		showModos.SetActive (false);
 	}
 
 	IEnumerator LoadNewScene()

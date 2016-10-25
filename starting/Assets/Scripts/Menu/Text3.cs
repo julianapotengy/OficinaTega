@@ -4,20 +4,17 @@ using UnityEngine.UI;
 
 public class Text3 : MonoBehaviour
 {
-	public float letterPause = 0.2f;
+	public float letterPause = 0.04f;
 	string message;
 	private float timer;
 	private GameObject history;
-	[SerializeField] private GameObject credits;
-	private bool showCredits;
-	
-	void Start ()
+    public GameObject historyTetxs;
+
+    void Start ()
 	{
 		message = GetComponent<Text> ().text;
 		GetComponent<Text> ().text = "";
 		history = GameObject.Find ("HistoryCredits");
-		credits.SetActive(false);
-		showCredits = false;
 	}
 	
 	void Update()
@@ -25,20 +22,12 @@ public class Text3 : MonoBehaviour
 		if(GetComponent<Text>().text == message)
 		{
 			timer += Time.deltaTime;
-			if(timer >= 1)
+			if(timer >= 2)
 			{
-				credits.SetActive(true);
-				showCredits = true;
 				GetComponent<Text>().text = "";
+                historyTetxs.SetActive(false);
 				timer = 0;
 			}
-		}
-	
-		if(showCredits)
-		{
-			timer += Time.deltaTime;
-			if(timer >= 10)
-				history.SetActive(false);
 		}
 	}
 	
