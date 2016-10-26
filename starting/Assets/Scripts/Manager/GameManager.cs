@@ -24,11 +24,11 @@ public class GameManager : MonoBehaviour
 		goToNegative = false;
 		canFade = false;
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 2; i++)
 		{
-			Instantiate (Enemies [0], new Vector3 (146,18,-11), Quaternion.Euler (0, 0, 0));
-			Instantiate (Enemies [1], new Vector3 (-40,-1,0), Quaternion.Euler (0, 0, 0));
-			Instantiate (Enemies [2], new Vector3 (216,110,0), Quaternion.Euler (0, 0, 0));
+			Instantiate (Enemies [0], new Vector3 (108.1f,-7.7f,0), Quaternion.Euler (0, 0, 0));
+			Instantiate (Enemies [1], new Vector3 (110.4f,-2.8f,0), Quaternion.Euler (0, 0, 0));
+			Instantiate (Enemies [2], new Vector3 (113.0456f,-6.216908f,0), Quaternion.Euler (0, 0, 0));
 		}
 	}
 

@@ -24,8 +24,7 @@ public class Text3 : MonoBehaviour
 			timer += Time.deltaTime;
 			if(timer >= 2)
 			{
-				GetComponent<Text>().text = "";
-                historyTetxs.SetActive(false);
+				Application.LoadLevel("Menu");
 				timer = 0;
 			}
 		}

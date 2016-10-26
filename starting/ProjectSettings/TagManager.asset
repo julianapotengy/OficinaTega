@@ -20,6 +20,7 @@ TagManager:
   - Alert
   - soundArround
   - ShowLevels2Choose
+  - PoleLight
   layers:
   - Default
   - TransparentFX

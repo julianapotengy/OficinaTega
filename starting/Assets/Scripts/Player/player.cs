@@ -53,7 +53,7 @@ public class player : MonoBehaviour
 		CanSamba = true; 
 		Canbreath = true; 
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
-		speed = 15;
+		speed = 10;
 		stamina = 1;
 		faceRight = true;
 		anim = GetComponent<Animator> ();
@@ -67,14 +67,14 @@ public class player : MonoBehaviour
 		{
 			if ((Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)) && zoomOut && stamina > 0)
 			{
-				speed = 30;
+				speed = 12;
 				activeZoom = Time.time;
 				zoomOut = false;
 				anim.speed = 1.5f;
 			}
 			else if(!(Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)) && !zoomOut)
 			{
-				speed = 15;
+				speed = 10;
 				activeZoom = Time.time;
 				zoomOut = true;
 				anim.speed = 1;

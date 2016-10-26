@@ -21,7 +21,7 @@ public class Clues : MonoBehaviour
 						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar"," pra entrar"},
 						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato"," pra entrar"},
 						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"," pra entrar"}};
-	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-30,0),new Vector3(-70,-42,0),new Vector3(93,10,0)};
+	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-15,0),new Vector3(5,-40,0),new Vector3(-30,5,0)};
 	float lerp = 0;
 	private GameObject notepad;
 	public static List<string> clues2Show = new List<string> ();

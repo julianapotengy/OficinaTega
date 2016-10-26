@@ -27,10 +27,13 @@ public class Enemy3 : MonoBehaviour
 	public Vector3[] Places;
 	public GameObject[]temp;
 	public static bool canShock;
+	Animator anim;
+	[SerializeField] float direx,direy;
 
 	void Awake()
 	{
 		field = GetComponentInChildren<FieldOfVision> ();
+		anim = GetComponent<Animator> ();
 	}
 
 	void Start ()
@@ -120,7 +123,7 @@ public class Enemy3 : MonoBehaviour
 		if (field.saw)
 		{
 			pagent.SetDestination(posiplayer);
-			pagent.maxSpeed = 20; 
+			pagent.maxSpeed = 12; 
 
 			if (!field.leaved)
 			{
@@ -133,7 +136,7 @@ public class Enemy3 : MonoBehaviour
 
 		if (!field.saw)
 		{
-			pagent.maxSpeed = 10; 
+			pagent.maxSpeed = 7; 
 			if (!arrived)
 			{
 				pagent.SetDestination (Places [rand]);
@@ -146,6 +149,14 @@ public class Enemy3 : MonoBehaviour
 				arrived = false;
 			}
 		}
+		anim.SetFloat ("DirectionX",Mathf.Abs( pagent.movingDirection.x));
+		anim.SetFloat("DirectionY",pagent.movingDirection.y);
+		direx = pagent.movingDirection.x;
+		direy = pagent.movingDirection.y;
+		if (pagent.movingDirection.x < 0) {
+			transform.localScale = new Vector3(-2.5f,transform.localScale.y,transform.localScale.z);
+		}
+		else transform.localScale = new Vector3(2.5f,transform.localScale.y,transform.localScale.z);
 	}
 	
 	void OnTriggerEnter2D(Collider2D other)

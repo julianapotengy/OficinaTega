@@ -9,7 +9,11 @@ public class Lights : MonoBehaviour
 
 	void Start ()
 	{
-		pointLights.AddRange(GetComponentsInChildren<Light>());
+		pointLights = new List<Light>();
+		foreach (GameObject Obj in GameObject.FindGameObjectsWithTag("PoleLight")) {
+			pointLights.Add(Obj.GetComponent<Light>());
+		}
+
 		timer = 1;
 	}
 
@@ -20,6 +24,7 @@ public class Lights : MonoBehaviour
 		if (timer < 0)
 		{
 			int rand = Random.Range(0, pointLights.Count);
+			Debug.Log (rand);
 			pointLights[rand].enabled = !pointLights[rand].enabled;
 
 			timer = 1;

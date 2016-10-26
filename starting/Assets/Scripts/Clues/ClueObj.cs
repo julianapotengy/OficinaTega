@@ -22,6 +22,8 @@ public class ClueObj : MonoBehaviour
 	{
 		if (deleteAlert.showClue)
 			alert.SetActive(false);
+	
+		transform.position = new Vector2 (transform.position.x, transform.position.y+ (-0.05f+ Mathf.PingPong (Time.time/4, 0.10f)));
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)

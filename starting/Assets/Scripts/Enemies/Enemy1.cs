@@ -22,10 +22,14 @@ public class Enemy1 : MonoBehaviour
 	public Vector3[] Places;
 	public GameObject[]temp;
 	public static bool canBeath;
+	Animator anim;
+	[SerializeField] float direx,direy;
+	public Vector2 direction;
 
 	void Awake()
 	{
 		field = GetComponentInChildren<FieldOfVision> ();
+		anim = GetComponent<Animator> ();
 	}
 
 	void Start ()
@@ -66,7 +70,7 @@ public class Enemy1 : MonoBehaviour
 		{
 			transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			WalkAndRun();
-			for (int i=0; i<temp.Length;i++)
+			for (int i = 0; i< temp.Length; i++)
 			{
 				Destroy(temp[i].gameObject);
 			}
@@ -77,31 +81,36 @@ public class Enemy1 : MonoBehaviour
 	{
 		Vector2 posiplayer = player.transform.position;
 		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-		if (player.GetComponent<player> ().medo >= 100)
+		if (player.GetComponent<player> ().medo >= 100) {
 			pagent.SetDestination (posiplayer);
+			direction = posiplayer;
+		}
+	
 		if (field.saw)
 		{
-			pagent.rotateTransform = false; 
-			timer += Time.deltaTime;
+			//pagent.rotateTransform = false; 
+			/*timer += Time.deltaTime;
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
-			body.rotation = angle;
-
+			body.rotation = angle;*/
+			direction = posiplayer;
 			if (timer > 1)
 			{
 				transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 				pagent.SetDestination(posiplayer);
-				pagent.maxSpeed = 25;
+				pagent.maxSpeed = 10;
+
 			}
 		}
 		
 		if (!field.saw)
 		{
-			pagent.rotateTransform = true;
-			pagent.maxSpeed = 10; 
+			//pagent.rotateTransform = true;
+			pagent.maxSpeed = 5; 
 			if (!arrived)
 			{
 				pagent.SetDestination (Places [rand]);
+				direction = Places [rand];
 				if (pagent.remainingDistance <= 0.45f)
 					arrived = true; 
 			}
@@ -111,6 +120,15 @@ public class Enemy1 : MonoBehaviour
 				arrived = false; 
 			}
 		}
+		anim.SetFloat ("DirectionX",Mathf.Abs( pagent.movingDirection.x));
+		anim.SetFloat("DirectionY",pagent.movingDirection.y);
+		direx = pagent.movingDirection.x;
+		direy = pagent.movingDirection.y;
+		if (pagent.movingDirection.x < 0) {
+			transform.localScale = new Vector3(-2.5f,transform.localScale.y,transform.localScale.z);
+		}
+		else transform.localScale = new Vector3(2.5f,transform.localScale.y,transform.localScale.z);
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

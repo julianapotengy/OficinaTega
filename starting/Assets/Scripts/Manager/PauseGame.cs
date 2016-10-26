@@ -48,7 +48,7 @@ public class PauseGame : MonoBehaviour
 	public void Modos()
 	{
 		GameManager.ButtonPaperClip ();		
-		Application.LoadLevel (4);
+		Application.LoadLevel ("Menu");
 	}
 	
 	public void showPaused()
