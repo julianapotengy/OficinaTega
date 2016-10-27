@@ -64,6 +64,9 @@ TagManager:
   - name: Personagens
     uniqueID: 266612329
     locked: 0
+  - name: Houses
+    uniqueID: 2693418983
+    locked: 0
   - name: Alert
     uniqueID: 3400222511
     locked: 0
