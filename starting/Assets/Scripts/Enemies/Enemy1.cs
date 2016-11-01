@@ -89,7 +89,8 @@ public class Enemy1 : MonoBehaviour
 		if (field.saw)
 		{
 			//pagent.rotateTransform = false; 
-			/*timer += Time.deltaTime;
+			timer += Time.deltaTime;
+			/*
 			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
 			float angle = (180 / Mathf.PI) * AngleRad;
 			body.rotation = angle;*/

@@ -38,8 +38,8 @@ public class player : MonoBehaviour
 		caught = false;
 	}
 
-	void Start(){
-
+	void Start()
+	{
 		shakeDuration = 0;
 		shakeAmount = 1f;
 		decreaseFactor = 1;
@@ -121,7 +121,7 @@ public class player : MonoBehaviour
 			if (stamina <= 0)
 			{
 				zoomOut = true;
-				speed = 15; 		
+				speed = 10 ; 		
 			}
 			
 			staminaCount = (stamina / 1f) * 1.2f;

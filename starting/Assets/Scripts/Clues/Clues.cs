@@ -15,12 +15,12 @@ public class Clues : MonoBehaviour
 	string[] possibleKeys = new string[6]{"r","t","y","u","f","g"};
 	public static string theKey;
 	string[] initialClues = new string[4]{"Procure mais dicas","Fuja dos bate bolas","Ache sua casa","Cameras"};
-	string[,] array2d = new string[6,4]{{"Sua casa não é dourada","Sua casa não é laranja","Sua casa é da cor do chocolate"," pra entrar"},
+	string[,] array2d = new string[6,4]{{"Sua casa não é amarela","Sua casa não é laranja","Sua casa é da cor do chocolate"," pra entrar"},
 						{"Sua casa não é marrom","Sua casa não é dourada","Sua casa é da cor de uma fruta","O pra entrar"},
-						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é camuflada"," pra entrar"},
-						{"Sua casa não é verde","Sua casa não é roxa","Sua casa é da cor do mar"," pra entrar"},
-						{"Sua casa não é azul", "Sua casa não é roxa","Sua casa é da cor do mato"," pra entrar"},
-						{"Sua casa não é verde","Sua casa não é azul","Sua casa é da cor de um tipo de uva"," pra entrar"}};
+						{"Sua casa não é laranja","Sua casa não é marrom","Sua casa é da cor do sol"," pra entrar"},
+						{"Sua casa não é verde","Sua casa não é vermelha","Sua casa é da cor do mar"," pra entrar"},
+						{"Sua casa não é azul", "Sua casa não é vermelha","Sua casa é da cor do mato"," pra entrar"},
+						{"Sua casa não é verde","Sua casa não é azul","Sua casa e da cor do sangue"," pra entrar"}};
 	Vector3[] InitialLocation = new Vector3[4]{new Vector3(10,0,0),new Vector3(0,-15,0),new Vector3(5,-40,0),new Vector3(-30,5,0)};
 	float lerp = 0;
 	private GameObject notepad;

@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31992b9cd9ebfea48a991d5255951b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  light: {fileID: 798783073}
   lightaudio: {fileID: 8300000, guid: 049ff9c2d9b1c49cb8cb5a98a662c8c4, type: 3}
 --- !u!1 &798783073
 GameObject:

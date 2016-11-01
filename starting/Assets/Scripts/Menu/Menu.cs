@@ -3,15 +3,12 @@ using System.Collections;
 
 public class Menu : MonoBehaviour
 {
-	GameObject light;
+	[SerializeField] GameObject light;
 	[SerializeField] AudioClip lightaudio;
 	void Start()
 	{
-		if (Application.loadedLevel == 0)
-		{
-			light = GameObject.Find ("light2");
-			StartCoroutine (lighteffect ());
-		}
+		StartCoroutine (lighteffect ());
+
 	}
 
 	public void changeScene(int i)
@@ -34,10 +31,12 @@ public class Menu : MonoBehaviour
 	IEnumerator lighteffect()
 	{
 		bool controle = true;
+
 		while (true)
 		{
+			if (light!= null){
 			controle =!controle;
-			light.SetActive(controle);
+				light.SetActive(controle);}
 			//GameManager.Playsound(lightaudio);
 			yield return new WaitForSeconds(1.2f);
 		}

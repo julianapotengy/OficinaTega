@@ -24,7 +24,7 @@ public class Lights : MonoBehaviour
 		if (timer < 0)
 		{
 			int rand = Random.Range(0, pointLights.Count);
-			Debug.Log (rand);
+			//Debug.Log (rand);
 			pointLights[rand].enabled = !pointLights[rand].enabled;
 
 			timer = 1;
