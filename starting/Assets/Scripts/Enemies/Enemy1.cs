@@ -85,8 +85,8 @@ public class Enemy1 : MonoBehaviour
 			pagent.SetDestination (posiplayer);
 			direction = posiplayer;
 		}
-	
-		if (field.saw)
+
+        if (field.saw && !player.GetComponent<player>().onPraça)
 		{
 			//pagent.rotateTransform = false; 
 			timer += Time.deltaTime;

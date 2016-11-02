@@ -120,7 +120,7 @@ public class Enemy3 : MonoBehaviour
 		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 		if (player.GetComponent<player> ().medo >= 100)
 			pagent.SetDestination (posiplayer);
-		if (field.saw)
+		if (field.saw && !player.GetComponent<player>().onPraça)
 		{
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 12; 

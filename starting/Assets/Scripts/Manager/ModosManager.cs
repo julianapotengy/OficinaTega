@@ -10,10 +10,13 @@ public class ModosManager : MonoBehaviour
 	private int scene;
 	[SerializeField]
 	private Text loading;
+    [SerializeField]
+    GameObject fundoloading;
 	private bool canLoad;
-
+    bool carreanim;
 	void Start ()
 	{
+        carreanim = false;
 		showLevels2Choose = GameObject.FindGameObjectWithTag ("ShowLevels2Choose");
 		showLevels2Choose.SetActive (false);
 		loadScene = false;
@@ -28,13 +31,15 @@ public class ModosManager : MonoBehaviour
 		if(canLoad && !loadScene)
 		{
 			loading.gameObject.SetActive (true);
+            fundoloading.SetActive(true);
 			loadScene = true;
 			loading.text = "Carregando...";
 			StartCoroutine(LoadNewScene());
 		}
 		if(loadScene)
 		{
-			loading.color = new Color(loading.color.r, loading.color.g, loading.color.b, Mathf.PingPong(Time.time, 1));
+            if (!carreanim) StartCoroutine(animcarre());
+			//loading.color = new Color(loading.color.r, loading.color.g, loading.color.b, Mathf.PingPong(Time.time, 1));
 		}
 	}
 
@@ -85,6 +90,20 @@ public class ModosManager : MonoBehaviour
 			yield return null;
 		}
 	}
+    IEnumerator animcarre()
+    {
+        carreanim = true;
+        while (true)
+        {
+            loading.text = "Carregando";
+            yield return new WaitForSeconds(0.3f);
+            loading.text = "Carregando.";
+            yield return new WaitForSeconds(0.3f);
+            loading.text = "Carregando..";
+            yield return new WaitForSeconds(0.3f);
+            loading.text = "Carregando...";
+        }
+    }
 
 	public void buttonHigh()
 	{

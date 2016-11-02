@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
 	private GameObject fadein;
 	private bool startfadin, goToNegative, canFade;
 	public Transform mainCamera;
-
+   
 	void Start ()
 	{
 		startfadin = true;
 		fadein = GameObject.Find ("FadeIn");
-		fadein.GetComponent<SpriteRenderer> ().color = new Color (0, 0, 0, 1);
+		fadein.GetComponent<Image> ().color = new Color (0, 0, 0, 1);
 		medoimg = GameObject.Find ("Medo").GetComponent<Image> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerMedo = player.GetComponent<player> ();
@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
 	{	
 		if (startfadin)
 		{
-			fadein.GetComponent<SpriteRenderer> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
-			if (fadein.GetComponent<SpriteRenderer> ().color.a <= 0)
+			fadein.GetComponent<Image> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
+			if (fadein.GetComponent<Image> ().color.a <= 0)
 				startfadin = false;
 		}
 		if(PlayerPrefs.GetString("MODE") == "classic")
@@ -70,21 +70,21 @@ public class GameManager : MonoBehaviour
 		{
 			if(!canFade)
 			{
-				fadein.GetComponent<SpriteRenderer> ().color += new Color(0, 0, 0, 2 * Time.deltaTime);
-				if(fadein.GetComponent<SpriteRenderer>().color.a >= 1)
+				fadein.GetComponent<Image> ().color += new Color(0, 0, 0, 2 * Time.deltaTime);
+				if(fadein.GetComponent<Image>().color.a >= 1)
 					canFade = true;
 			}
 			else if(canFade)
 			{
-				fadein.GetComponent<SpriteRenderer> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
-				if (fadein.GetComponent<SpriteRenderer> ().color.a <= 0)
+				fadein.GetComponent<Image> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
+				if (fadein.GetComponent<Image> ().color.a <= 0)
 					canFade = false;
 			}
 		}
 		else if(playerMedo.medo <= 74)
 		{
-			if(fadein.GetComponent<SpriteRenderer>().color.a > 0)
-				fadein.GetComponent<SpriteRenderer> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
+			if(fadein.GetComponent<Image>().color.a > 0)
+				fadein.GetComponent<Image> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
 		}
 	}
 

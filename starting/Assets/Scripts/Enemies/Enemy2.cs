@@ -93,9 +93,9 @@ public class Enemy2 : MonoBehaviour
 			player.caught = true; 
 			Debug.Log("Aqui");
 			fadeNum += 5;
-			GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
-			                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
-			                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
+			GameObject.Find("FadeIn").GetComponent<Image>().color = new Color(GameObject.Find("FadeIn").GetComponent<Image>().color.r,
+			                                                                           GameObject.Find("FadeIn").GetComponent<Image>().color.g,
+			                                                                           GameObject.Find("FadeIn").GetComponent<Image>().color.b,
 			                                                                           fadeNum/255);
 			Player.SetActive(false);
 			GetComponent<SpriteRenderer>().sortingOrder = -2;
@@ -117,9 +117,9 @@ public class Enemy2 : MonoBehaviour
 				GameObject.Find("OrangeStamina").GetComponent<Image>().enabled = true;
 				GetComponent<SpriteRenderer>().sortingOrder = 2; 
 				GetComponent<SpriteRenderer>().enabled = true; 
-				GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color = new Color(GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.r,
-				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.g,
-				                                                                           GameObject.Find("FadeIn").GetComponent<SpriteRenderer>().color.b,
+				GameObject.Find("FadeIn").GetComponent<Image>().color = new Color(GameObject.Find("FadeIn").GetComponent<Image>().color.r,
+				                                                                           GameObject.Find("FadeIn").GetComponent<Image>().color.g,
+				                                                                           GameObject.Find("FadeIn").GetComponent<Image>().color.b,
 				                                                                           fadeNum / 255);
 			}
 		}
@@ -135,7 +135,7 @@ public class Enemy2 : MonoBehaviour
 		{
 			StartCoroutine(stop());
 		}
-		if (field.saw)
+		if (field.saw&&!Player.GetComponent<player>().onPraça)
 		{
 			pagent.SetDestination(posiplayer);
 			pagent.maxSpeed = 10;

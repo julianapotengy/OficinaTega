@@ -21,6 +21,7 @@ TagManager:
   - soundArround
   - ShowLevels2Choose
   - PoleLight
+  - "Pra\xE7a"
   layers:
   - Default
   - TransparentFX

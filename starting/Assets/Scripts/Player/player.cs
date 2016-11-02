@@ -8,7 +8,7 @@ public class player : MonoBehaviour
 	public static bool caught = false;
 	private GameObject tutorial;
 	private Animator anim;
-	
+    public bool onPraça;
 	private Rigidbody2D body;
 	private float axisX, axisY, activeZoom, shakeDuration, shakeAmount, decreaseFactor;
 	private int speed;
@@ -40,6 +40,7 @@ public class player : MonoBehaviour
 
 	void Start()
 	{
+        onPraça = false;
 		shakeDuration = 0;
 		shakeAmount = 1f;
 		decreaseFactor = 1;
@@ -67,7 +68,7 @@ public class player : MonoBehaviour
 		{
 			if ((Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)) && zoomOut && stamina > 0)
 			{
-				speed = 12;
+				speed = 14;
 				activeZoom = Time.time;
 				zoomOut = false;
 				anim.speed = 1.5f;
@@ -91,6 +92,7 @@ public class player : MonoBehaviour
 	
 	void Update ()
 	{
+        Debug.Log(onPraça);
 		mainCamera.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, mainCamera.position.z);	
 		camPosition = mainCamera.position;
 		if (!isPaused.paused)
@@ -241,6 +243,10 @@ public class player : MonoBehaviour
 				CatchMap = true;
 			}
 		}
+        if (coll.gameObject.tag =="Praça")
+        {
+            onPraça = true;
+        }
 	}
 
 	void OnTriggerExit2D(Collider2D coll)
@@ -259,6 +265,10 @@ public class player : MonoBehaviour
 				GameObject.Find	("Clue").GetComponent<Text>().text= "";
 			}
 		}
+        if (coll.gameObject.tag == "Praça")
+        {
+            onPraça = false;
+        }
 	}
 
 	private void Flip()

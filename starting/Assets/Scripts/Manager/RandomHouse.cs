@@ -8,7 +8,7 @@ public class RandomHouse : MonoBehaviour
 
 	private bool specialHouse; 
 	public static int goldenHouse;
-
+    [SerializeField] GameObject grafites;
 	void Start ()
 	{
 		specialHouse = false; 
@@ -33,6 +33,13 @@ public class RandomHouse : MonoBehaviour
 				else places[i].GetComponent<SpriteRenderer> ().sprite = spHouses[rand-1];
 			}
 			else places[i].GetComponent<SpriteRenderer> ().sprite = spHouses[rand];
+
+            if (Random.Range(0,10f)<3f)
+            {                            
+                GameObject gra=  Instantiate(grafites, places[i].transform.position, Quaternion.identity) as GameObject;
+                 gra.transform.parent = places[i].transform;
+                 gra.transform.localScale = new Vector3(1, 1, 1);
+            }
 		}
 	}
 }
