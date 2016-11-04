@@ -17,7 +17,7 @@ public class PauseGame : MonoBehaviour
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		hidePaused();
 		paused = false;
-		audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
+		audio = Camera.main.GetComponent <AudioSource>();
 	}
 	
 	void Update()

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class HistoryTexts : MonoBehaviour
 {
-	private GameObject history;
 	public Image headphoneImage;
 	public Text historyText;
 	private float timer;
@@ -12,7 +11,6 @@ public class HistoryTexts : MonoBehaviour
 
 	void Start ()
 	{
-		history = GameObject.Find ("HistoryCredits");
 		timer = 0;
 		canWrite = false;
 	}

@@ -20,7 +20,8 @@ public class AudioManager : MonoBehaviour
 			Destroy(this.gameObject);
 			return;
 		} else instance = this;
-		DontDestroyOnLoad(this.gameObject);
+		if(Application.loadedLevel != 1)
+			DontDestroyOnLoad(this.gameObject);
 	}
 	
 	void Start ()
@@ -38,5 +39,7 @@ public class AudioManager : MonoBehaviour
 		{
 			audio.Play();
 		}
+		if (Application.loadedLevel == 1)
+			Destroy (this.gameObject);
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Text2 : MonoBehaviour
 {
 	public float letterPause = 0.04f;
-	string message;
+	private string message;
 	public Text text3;
 	private float timer;
 	

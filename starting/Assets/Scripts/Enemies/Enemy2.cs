@@ -181,7 +181,7 @@ public class Enemy2 : MonoBehaviour
 			if (other.gameObject.name.Equals ("Player"))
 			{
 				fadeIn = true;
-				AudioSource audio = Object.FindObjectOfType <AudioSource>() as AudioSource;
+				AudioSource audio = Camera.main.GetComponent <AudioSource>() as AudioSource;
 				audio.pitch = 1f;
 				if (canShock) StartCoroutine(sound2());
 				player.caught = true; 
@@ -203,7 +203,7 @@ public class Enemy2 : MonoBehaviour
 
 	IEnumerator sound2()
 	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && canShock)
+		if (Camera.main.GetComponent <AudioSource> ().clip.name != "respirando" && canShock)
 		{
 			GameManager.Playsound (shock);
 			canShock = false; 

@@ -7,14 +7,11 @@ public class Text3 : MonoBehaviour
 	public float letterPause = 0.04f;
 	string message;
 	private float timer;
-	private GameObject history;
-    public GameObject historyTetxs;
 
     void Start ()
 	{
 		message = GetComponent<Text> ().text;
 		GetComponent<Text> ().text = "";
-		history = GameObject.Find ("HistoryCredits");
 	}
 	
 	void Update()

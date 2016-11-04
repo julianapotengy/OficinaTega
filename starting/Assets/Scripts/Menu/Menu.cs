@@ -5,10 +5,10 @@ public class Menu : MonoBehaviour
 {
 	[SerializeField] GameObject light;
 	[SerializeField] AudioClip lightaudio;
+
 	void Start()
 	{
 		StartCoroutine (lighteffect ());
-
 	}
 
 	public void changeScene(int i)
@@ -34,9 +34,11 @@ public class Menu : MonoBehaviour
 
 		while (true)
 		{
-			if (light!= null){
+			if (light!= null)
+			{
 			controle =!controle;
-				light.SetActive(controle);}
+			light.SetActive(controle);
+			}
 			//GameManager.Playsound(lightaudio);
 			yield return new WaitForSeconds(1.2f);
 		}

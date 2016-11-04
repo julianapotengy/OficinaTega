@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class GrafiteManager : MonoBehaviour {
+public class GrafiteManager : MonoBehaviour
+{
     public List<GameObject> grafites;
-	// Use this for initialization
-	void Start () {
+
+	void Start ()
+	{
         grafites = new List<GameObject>();
         foreach (Transform t in transform)
         {
@@ -19,10 +21,5 @@ public class GrafiteManager : MonoBehaviour {
                 Destroy(grafites[i]);
             }
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

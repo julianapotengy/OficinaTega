@@ -20,7 +20,7 @@ public class player : MonoBehaviour
 	public Image staminaBar;
 	public AudioClip breathing, SambaSound;
 	public bool startsamba;
-	private bool Canbreath, CanSamba, CatchMap, faceRight, medoactive;
+	private bool Canbreath, CanSamba, CatchMap, faceRight;
 	public float medo;
 	Camera Playermap;
 	public bool medoShake;
@@ -45,7 +45,6 @@ public class player : MonoBehaviour
 		shakeAmount = 1f;
 		decreaseFactor = 1;
 		mainCamera = Camera.main.transform;
-		medoactive = false;
 		medoShake = false;
 		CatchMap = false;
 		Playermap = GameObject.Find ("CameraPlayer").GetComponent<Camera>();
@@ -92,8 +91,7 @@ public class player : MonoBehaviour
 	
 	void Update ()
 	{
-        Debug.Log(onPraça);
-		mainCamera.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, mainCamera.position.z);	
+        mainCamera.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, mainCamera.position.z);	
 		camPosition = mainCamera.position;
 		if (!isPaused.paused)
 		{	
@@ -123,7 +121,7 @@ public class player : MonoBehaviour
 			if (stamina <= 0)
 			{
 				zoomOut = true;
-				speed = 10 ; 		
+				speed = 10; 		
 			}
 			
 			staminaCount = (stamina / 1f) * 1.2f;
@@ -281,7 +279,7 @@ public class player : MonoBehaviour
 
 	IEnumerator respirar()
 	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "respirando" && Canbreath)
+		if (Camera.main.GetComponent <AudioSource> ().clip.name != "respirando" && Canbreath)
 		{
 			GameManager.Playsound (breathing);
 			Canbreath = false; 
@@ -292,7 +290,7 @@ public class player : MonoBehaviour
 
 	IEnumerator Samba()
 	{
-		if (Object.FindObjectOfType <AudioSource> ().clip.name != "BatebolaNear" && CanSamba)
+		if (Camera.main.GetComponent <AudioSource> ().clip.name != "BatebolaNear" && CanSamba)
 		{
 			GameManager.Playsound (SambaSound);
 			CanSamba = false; 
