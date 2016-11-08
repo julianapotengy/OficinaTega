@@ -69,7 +69,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: 0.25
+    heightScale: .25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -78,7 +78,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -89,23 +89,19 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: tipo1_0
+    - name: tipo1_0
       rect:
         serializedVersion: 2
         x: 33
@@ -113,12 +109,9 @@ TextureImporter:
         width: 126
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1_1
+    - name: tipo1_1
       rect:
         serializedVersion: 2
         x: 208
@@ -126,12 +119,9 @@ TextureImporter:
         width: 121
         height: 179
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1_2
+    - name: tipo1_2
       rect:
         serializedVersion: 2
         x: 346
@@ -139,12 +129,9 @@ TextureImporter:
         width: 125
         height: 179
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1_3
+    - name: tipo1_3
       rect:
         serializedVersion: 2
         x: 491
@@ -152,12 +139,9 @@ TextureImporter:
         width: 122
         height: 179
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1_4
+    - name: tipo1_4
       rect:
         serializedVersion: 2
         x: 639
@@ -165,12 +149,9 @@ TextureImporter:
         width: 126
         height: 179
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_0
+    - name: tipo1Lado_0
       rect:
         serializedVersion: 2
         x: 986
@@ -178,12 +159,9 @@ TextureImporter:
         width: 91
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_1
+    - name: tipo1Lado_1
       rect:
         serializedVersion: 2
         x: 1081
@@ -191,12 +169,9 @@ TextureImporter:
         width: 91
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_2
+    - name: tipo1Lado_2
       rect:
         serializedVersion: 2
         x: 1183
@@ -204,12 +179,9 @@ TextureImporter:
         width: 91
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_4
+    - name: tipo1Lado_4
       rect:
         serializedVersion: 2
         x: 1388
@@ -217,12 +189,9 @@ TextureImporter:
         width: 91
         height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_5
+    - name: tipo1Lado_5
       rect:
         serializedVersion: 2
         x: 1488
@@ -230,12 +199,9 @@ TextureImporter:
         width: 91
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_6
+    - name: tipo1Lado_6
       rect:
         serializedVersion: 2
         x: 1585
@@ -243,12 +209,9 @@ TextureImporter:
         width: 91
         height: 183
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_7
+    - name: tipo1Lado_7
       rect:
         serializedVersion: 2
         x: 1676
@@ -256,12 +219,9 @@ TextureImporter:
         width: 91
         height: 187
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2_0
+    - name: tipo2_0
       rect:
         serializedVersion: 2
         x: 33
@@ -269,12 +229,9 @@ TextureImporter:
         width: 126
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2_1
+    - name: tipo2_1
       rect:
         serializedVersion: 2
         x: 208
@@ -282,12 +239,9 @@ TextureImporter:
         width: 121
         height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2_2
+    - name: tipo2_2
       rect:
         serializedVersion: 2
         x: 346
@@ -295,12 +249,9 @@ TextureImporter:
         width: 125
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2_3
+    - name: tipo2_3
       rect:
         serializedVersion: 2
         x: 491
@@ -308,12 +259,9 @@ TextureImporter:
         width: 122
         height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2_4
+    - name: tipo2_4
       rect:
         serializedVersion: 2
         x: 639
@@ -321,12 +269,9 @@ TextureImporter:
         width: 126
         height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_0
+    - name: tipo2Lado_0
       rect:
         serializedVersion: 2
         x: 987
@@ -334,12 +279,9 @@ TextureImporter:
         width: 94
         height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_1
+    - name: tipo2Lado_1
       rect:
         serializedVersion: 2
         x: 1082
@@ -347,12 +289,9 @@ TextureImporter:
         width: 94
         height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_2
+    - name: tipo2Lado_2
       rect:
         serializedVersion: 2
         x: 1183
@@ -360,12 +299,9 @@ TextureImporter:
         width: 92
         height: 194
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_4
+    - name: tipo2Lado_4
       rect:
         serializedVersion: 2
         x: 1386
@@ -373,12 +309,9 @@ TextureImporter:
         width: 94
         height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_5
+    - name: tipo2Lado_5
       rect:
         serializedVersion: 2
         x: 1487
@@ -386,12 +319,9 @@ TextureImporter:
         width: 94
         height: 189
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_6
+    - name: tipo2Lado_6
       rect:
         serializedVersion: 2
         x: 1583
@@ -399,12 +329,9 @@ TextureImporter:
         width: 94
         height: 189
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_7
+    - name: tipo2Lado_7
       rect:
         serializedVersion: 2
         x: 1676
@@ -412,12 +339,9 @@ TextureImporter:
         width: 94
         height: 191
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3_0
+    - name: tipo3_0
       rect:
         serializedVersion: 2
         x: 33
@@ -425,12 +349,9 @@ TextureImporter:
         width: 126
         height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3_1
+    - name: tipo3_1
       rect:
         serializedVersion: 2
         x: 208
@@ -438,12 +359,9 @@ TextureImporter:
         width: 121
         height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3_2
+    - name: tipo3_2
       rect:
         serializedVersion: 2
         x: 346
@@ -451,12 +369,9 @@ TextureImporter:
         width: 125
         height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3_3
+    - name: tipo3_3
       rect:
         serializedVersion: 2
         x: 491
@@ -464,12 +379,9 @@ TextureImporter:
         width: 122
         height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3_4
+    - name: tipo3_4
       rect:
         serializedVersion: 2
         x: 639
@@ -477,12 +389,9 @@ TextureImporter:
         width: 125
         height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_0
+    - name: tipo3Lado_0
       rect:
         serializedVersion: 2
         x: 991
@@ -490,12 +399,9 @@ TextureImporter:
         width: 84
         height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_1
+    - name: tipo3Lado_1
       rect:
         serializedVersion: 2
         x: 1101
@@ -503,12 +409,9 @@ TextureImporter:
         width: 54
         height: 197
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_2
+    - name: tipo3Lado_2
       rect:
         serializedVersion: 2
         x: 1190
@@ -516,12 +419,9 @@ TextureImporter:
         width: 82
         height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_3
+    - name: tipo3Lado_3
       rect:
         serializedVersion: 2
         x: 1295
@@ -529,12 +429,9 @@ TextureImporter:
         width: 53
         height: 197
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_4
+    - name: tipo3Lado_4
       rect:
         serializedVersion: 2
         x: 1389
@@ -542,12 +439,9 @@ TextureImporter:
         width: 90
         height: 194
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_5
+    - name: tipo3Lado_5
       rect:
         serializedVersion: 2
         x: 1507
@@ -555,12 +449,9 @@ TextureImporter:
         width: 54
         height: 196
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_6
+    - name: tipo3Lado_6
       rect:
         serializedVersion: 2
         x: 1586
@@ -568,12 +459,9 @@ TextureImporter:
         width: 83
         height: 194
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Lado_7
+    - name: tipo3Lado_7
       rect:
         serializedVersion: 2
         x: 1695
@@ -581,12 +469,9 @@ TextureImporter:
         width: 53
         height: 199
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Costas_0
+    - name: tipo3Costas_0
       rect:
         serializedVersion: 2
         x: 0
@@ -594,12 +479,9 @@ TextureImporter:
         width: 125
         height: 195
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Costas_1
+    - name: tipo3Costas_1
       rect:
         serializedVersion: 2
         x: 151
@@ -607,12 +489,9 @@ TextureImporter:
         width: 122
         height: 195
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Costas_2
+    - name: tipo3Costas_2
       rect:
         serializedVersion: 2
         x: 292
@@ -620,12 +499,9 @@ TextureImporter:
         width: 126
         height: 195
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo3Costas_3
+    - name: tipo3Costas_3
       rect:
         serializedVersion: 2
         x: 434
@@ -633,12 +509,9 @@ TextureImporter:
         width: 122
         height: 195
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Costas_0
+    - name: tipo2Costas_0
       rect:
         serializedVersion: 2
         x: 618
@@ -646,12 +519,9 @@ TextureImporter:
         width: 126
         height: 193
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Costas_1
+    - name: tipo2Costas_1
       rect:
         serializedVersion: 2
         x: 770
@@ -659,12 +529,9 @@ TextureImporter:
         width: 122
         height: 193
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Costas_2
+    - name: tipo2Costas_2
       rect:
         serializedVersion: 2
         x: 912
@@ -672,12 +539,9 @@ TextureImporter:
         width: 125
         height: 194
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Costas_3
+    - name: tipo2Costas_3
       rect:
         serializedVersion: 2
         x: 1054
@@ -685,12 +549,9 @@ TextureImporter:
         width: 122
         height: 193
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Costas_0
+    - name: tipo1Costas_0
       rect:
         serializedVersion: 2
         x: 1238
@@ -698,12 +559,9 @@ TextureImporter:
         width: 126
         height: 184
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Costas_1
+    - name: tipo1Costas_1
       rect:
         serializedVersion: 2
         x: 1390
@@ -711,12 +569,9 @@ TextureImporter:
         width: 122
         height: 184
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Costas_2
+    - name: tipo1Costas_2
       rect:
         serializedVersion: 2
         x: 1532
@@ -724,12 +579,9 @@ TextureImporter:
         width: 125
         height: 184
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Costas_3
+    - name: tipo1Costas_3
       rect:
         serializedVersion: 2
         x: 1674
@@ -737,12 +589,9 @@ TextureImporter:
         width: 122
         height: 184
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo1Lado_3
+    - name: tipo1Lado_3
       rect:
         serializedVersion: 2
         x: 1275
@@ -750,12 +599,9 @@ TextureImporter:
         width: 90
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tipo2Lado_3
+    - name: tipo2Lado_3
       rect:
         serializedVersion: 2
         x: 1272
@@ -763,12 +609,9 @@ TextureImporter:
         width: 94
         height: 194
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: susto
+    - name: susto
       rect:
         serializedVersion: 2
         x: 48
@@ -776,11 +619,8 @@ TextureImporter:
         width: 99
         height: 94
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

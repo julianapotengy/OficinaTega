@@ -40,8 +40,7 @@ public class GameManager : MonoBehaviour
 			if (fadein.GetComponent<Image> ().color.a <= 0)
 				startfadin = false;
 		}
-		if(PlayerPrefs.GetString("MODE") == "classic")
-			medoimg.fillAmount = playerMedo.medo / 100f;
+		medoimg.fillAmount = playerMedo.medo / 100f;
 
 		if (playerMedo.medo >= 50)
 		{
