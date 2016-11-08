@@ -6,8 +6,6 @@ public class Enemy1 : MonoBehaviour
 	private FieldOfVision field;
 	private PauseGame isPaused;
 	private GameObject tutorial;
-	private Transform my;
-	private Rigidbody2D body;
 	private GameObject player;
 
 	public Transform[] places2Walk;
@@ -23,7 +21,6 @@ public class Enemy1 : MonoBehaviour
 	public GameObject[]temp;
 	public static bool canBeath;
 	Animator anim;
-	[SerializeField] float direx,direy;
 	public Vector2 direction;
 
 	void Awake()
@@ -48,9 +45,6 @@ public class Enemy1 : MonoBehaviour
 		tutorial = GameObject.Find ("Tutorial");
 		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
-
-		my = GetComponent <Transform> ();
-		body = GetComponent <Rigidbody2D> ();
 
 		places2Walk = GetComponentsInChildren<Transform> ();
 		for (int i = 0; i < goTo.Length; i++)
@@ -88,25 +82,18 @@ public class Enemy1 : MonoBehaviour
 
         if (field.saw && !player.GetComponent<player>().onPraça)
 		{
-			//pagent.rotateTransform = false; 
 			timer += Time.deltaTime;
-			/*
-			float AngleRad = Mathf.Atan2 (-posiplayer.x + my.position.x, posiplayer.y - my.position.y);
-			float angle = (180 / Mathf.PI) * AngleRad;
-			body.rotation = angle;*/
 			direction = posiplayer;
 			if (timer > 1)
 			{
 				transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 				pagent.SetDestination(posiplayer);
 				pagent.maxSpeed = 10;
-
 			}
 		}
 		
 		if (!field.saw)
 		{
-			//pagent.rotateTransform = true;
 			pagent.maxSpeed = 5; 
 			if (!arrived)
 			{
@@ -123,8 +110,6 @@ public class Enemy1 : MonoBehaviour
 		}
 		anim.SetFloat ("DirectionX",Mathf.Abs( pagent.movingDirection.x));
 		anim.SetFloat("DirectionY",pagent.movingDirection.y);
-		direx = pagent.movingDirection.x;
-		direy = pagent.movingDirection.y;
 		if (pagent.movingDirection.x < 0) {
 			transform.localScale = new Vector3(-2.5f,transform.localScale.y,transform.localScale.z);
 		}

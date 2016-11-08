@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class ClueObj : MonoBehaviour
 {
-	private PauseGame isPaused;
 	private Text clueTxt;
 	public string stringClueTxt;
 	private Clues deleteAlert;
@@ -14,7 +13,6 @@ public class ClueObj : MonoBehaviour
 
 	void Start ()
 	{
-		isPaused = GameObject.Find ("GameManager").GetComponent<PauseGame> ();
 		clueTxt = GameObject.Find ("Clue").GetComponent<Text> ();
 		alert.SetActive (false);
 		deleteAlert = GameObject.Find ("GameManager").GetComponent<Clues> ();
@@ -25,7 +23,7 @@ public class ClueObj : MonoBehaviour
 		if (deleteAlert.showClue)
 			alert.SetActive(false);
 	
-		if(!isPaused.paused)
+		if(Time.timeScale != 0)
 			transform.position = new Vector2 (transform.position.x, transform.position.y+ (-0.05f+ Mathf.PingPong (Time.time/4, 0.10f)));
 	}
 

@@ -29,7 +29,6 @@ public class Enemy2 : MonoBehaviour
 	public Vector3[] Places;
 	public GameObject[]temp;
 	Animator anim;
-	[SerializeField] float direx,direy;
 	public Vector2 direction;
 
 	void Awake()
@@ -166,8 +165,6 @@ public class Enemy2 : MonoBehaviour
 		}
 		anim.SetFloat ("DirectionX",Mathf.Abs( pagent.movingDirection.x));
 		anim.SetFloat("DirectionY",pagent.movingDirection.y);
-		direx = pagent.movingDirection.x;
-		direy = pagent.movingDirection.y;
 		if (pagent.movingDirection.x < 0) {
 			transform.localScale = new Vector3(-2.5f,transform.localScale.y,transform.localScale.z);
 		}

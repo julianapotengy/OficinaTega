@@ -28,7 +28,6 @@ public class Enemy3 : MonoBehaviour
 	public GameObject[]temp;
 	public static bool canShock;
 	Animator anim;
-	[SerializeField] float direx,direy;
 
 	void Awake()
 	{
@@ -151,9 +150,8 @@ public class Enemy3 : MonoBehaviour
 		}
 		anim.SetFloat ("DirectionX",Mathf.Abs( pagent.movingDirection.x));
 		anim.SetFloat("DirectionY",pagent.movingDirection.y);
-		direx = pagent.movingDirection.x;
-		direy = pagent.movingDirection.y;
-		if (pagent.movingDirection.x < 0) {
+		if (pagent.movingDirection.x < 0)
+		{
 			transform.localScale = new Vector3(-2.5f,transform.localScale.y,transform.localScale.z);
 		}
 		else transform.localScale = new Vector3(2.5f,transform.localScale.y,transform.localScale.z);

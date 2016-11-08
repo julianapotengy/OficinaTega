@@ -14,7 +14,6 @@ public class player : MonoBehaviour
 	private int speed;
 
 	private bool zoomOut = true;
-
 	public float stamina;
 	[HideInInspector]public float staminaCount;
 	public Image staminaBar;

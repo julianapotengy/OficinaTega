@@ -1,27 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerCheck : MonoBehaviour {
+public class PlayerCheck : MonoBehaviour
+{
 	private GameObject Player;
 	RectTransform rect;
-	float widht =0;
-	// Use this for initialization
-	void Start () {
+	float myHeight = 0;
+
+	void Start ()
+	{
 		Player = GameObject.FindGameObjectWithTag ("Player");
-
-
-
-		widht = GetComponent<SpriteRenderer>().bounds.size.x;
-
+		myHeight = GetComponent<SpriteRenderer>().bounds.size.y;
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-		if (transform.position.y - widht / 2 <Player.transform.position.y) {
-			Debug.Log ("TA ALTO");
-		} else
-			Debug.Log ("ta BAIXO");
+	void Update ()
+	{
+
+		if (transform.position.y - myHeight / 2 <=(Player.transform.position.y-Player.GetComponent<SpriteRenderer>().bounds.size.y/2))
+		{
+			GetComponent<SpriteRenderer>().sortingLayerName = "UpPlayer";
+		}
+		else
+			GetComponent<SpriteRenderer>().sortingLayerName = "DownPlayer";
 	
 	}
 }

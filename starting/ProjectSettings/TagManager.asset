@@ -62,8 +62,14 @@ TagManager:
   - name: Clues
     uniqueID: 2252492217
     locked: 0
+  - name: DownPlayer
+    uniqueID: 3309251781
+    locked: 0
   - name: Personagens
     uniqueID: 266612329
+    locked: 0
+  - name: UpPlayer
+    uniqueID: 660360159
     locked: 0
   - name: Houses
     uniqueID: 2693418983

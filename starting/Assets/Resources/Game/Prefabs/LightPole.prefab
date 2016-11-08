@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 421890}
   - 212: {fileID: 21223544}
   - 61: {fileID: 6198804}
+  - 114: {fileID: 11484972}
   m_Layer: 0
   m_Name: LightPole
   m_TagString: Untagged
@@ -103,6 +104,17 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11484972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21223544
 SpriteRenderer:
   m_ObjectHideFlags: 1

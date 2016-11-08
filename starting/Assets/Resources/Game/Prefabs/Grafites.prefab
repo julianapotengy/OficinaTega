@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 451660}
   - 212: {fileID: 21292798}
+  - 114: {fileID: 11437748}
   m_Layer: 0
   m_Name: graffiti_is_freedom__by_avn88-d4cuop4
   m_TagString: Untagged
@@ -25,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474604}
   - 212: {fileID: 21258148}
+  - 114: {fileID: 11445660}
   m_Layer: 0
   m_Name: Screen Shot 2013-03-27 at 8.00.55 PM
   m_TagString: Untagged
@@ -41,6 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450098}
   - 212: {fileID: 21251952}
+  - 114: {fileID: 11421480}
   m_Layer: 0
   m_Name: grfcrew_graffiti_tag_by_virusgrf-d8kqmj1
   m_TagString: Untagged
@@ -57,6 +60,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432264}
   - 212: {fileID: 21229868}
+  - 114: {fileID: 11471604}
   m_Layer: 0
   m_Name: graffiti (1)
   m_TagString: Untagged
@@ -73,6 +77,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474898}
   - 212: {fileID: 21282472}
+  - 114: {fileID: 11431858}
   m_Layer: 0
   m_Name: trainee_graffiti_by_fervsky-d7ja7cr
   m_TagString: Untagged
@@ -89,6 +94,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486912}
   - 212: {fileID: 21299280}
+  - 114: {fileID: 11495948}
   m_Layer: 0
   m_Name: Kaise-graffiti
   m_TagString: Untagged
@@ -121,6 +127,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446104}
   - 212: {fileID: 21215116}
+  - 114: {fileID: 11404718}
   m_Layer: 0
   m_Name: nowhere_by_madelajna-d74xu4m
   m_TagString: Untagged
@@ -137,6 +144,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 477074}
   - 212: {fileID: 21269524}
+  - 114: {fileID: 11491724}
   m_Layer: 0
   m_Name: angel-146169_640
   m_TagString: Untagged
@@ -153,6 +161,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459922}
   - 212: {fileID: 21219280}
+  - 114: {fileID: 11425134}
   m_Layer: 0
   m_Name: graffiti_cat_1
   m_TagString: Untagged
@@ -200,7 +209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06999993, y: 1.26999998, z: 0}
+  m_LocalPosition: {x: 3.06999993, y: 1.34399998, z: 0}
   m_LocalScale: {x: .148244396, y: .148244396, z: .118595518}
   m_Children: []
   m_Father: {fileID: 423490}
@@ -289,6 +298,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 423490}
   m_RootOrder: 5
+--- !u!114 &11404718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11418152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,6 +321,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grafites: []
+--- !u!114 &11421480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11425134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11431858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11437748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11445660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11471604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11491724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11495948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9978b5164a054049b8e5f349b8b60b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21215116
 SpriteRenderer:
   m_ObjectHideFlags: 1
