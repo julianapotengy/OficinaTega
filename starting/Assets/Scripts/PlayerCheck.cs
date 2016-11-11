@@ -15,13 +15,13 @@ public class PlayerCheck : MonoBehaviour
 
 	void Update ()
 	{
-
-		if (transform.position.y - myHeight / 2 <=(Player.transform.position.y-Player.GetComponent<SpriteRenderer>().bounds.size.y/2))
-		{
-			GetComponent<SpriteRenderer>().sortingLayerName = "UpPlayer";
-		}
-		else
-			GetComponent<SpriteRenderer>().sortingLayerName = "DownPlayer";
+		if (gameObject.tag != "grafite") {
+			if (transform.position.y - myHeight / 2 <= (Player.transform.position.y - Player.GetComponent<SpriteRenderer> ().bounds.size.y / 2)) {
+				GetComponent<SpriteRenderer> ().sortingLayerName = "UpPlayer";
+			} else
+				GetComponent<SpriteRenderer> ().sortingLayerName = "DownPlayer";
 	
+		} else
+			GetComponent<SpriteRenderer> ().sortingLayerName = transform.parent.parent.gameObject.GetComponent<SpriteRenderer> ().sortingLayerName;
 	}
 }

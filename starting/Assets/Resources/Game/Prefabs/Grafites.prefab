@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11437748}
   m_Layer: 0
   m_Name: graffiti_is_freedom__by_avn88-d4cuop4
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11445660}
   m_Layer: 0
   m_Name: Screen Shot 2013-03-27 at 8.00.55 PM
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 11421480}
   m_Layer: 0
   m_Name: grfcrew_graffiti_tag_by_virusgrf-d8kqmj1
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - 114: {fileID: 11471604}
   m_Layer: 0
   m_Name: graffiti (1)
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ GameObject:
   - 114: {fileID: 11431858}
   m_Layer: 0
   m_Name: trainee_graffiti_by_fervsky-d7ja7cr
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - 114: {fileID: 11495948}
   m_Layer: 0
   m_Name: Kaise-graffiti
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - 114: {fileID: 11404718}
   m_Layer: 0
   m_Name: nowhere_by_madelajna-d74xu4m
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ GameObject:
   - 114: {fileID: 11491724}
   m_Layer: 0
   m_Name: angel-146169_640
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   - 114: {fileID: 11425134}
   m_Layer: 0
   m_Name: graffiti_cat_1
-  m_TagString: Untagged
+  m_TagString: grafite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
