@@ -17,7 +17,7 @@ public class player : MonoBehaviour
 	public float stamina;
 	[HideInInspector]public float staminaCount;
 	public Image staminaBar;
-	public AudioClip breathing, SambaSound;
+	public AudioClip breathing, SambaSound, normalSong;
 	public bool startsamba;
 	private bool Canbreath, CanSamba, CatchMap, faceRight;
 	public float medo;
@@ -114,7 +114,23 @@ public class player : MonoBehaviour
 			if (startsamba)
 			{
 				if (CanSamba)
-					StartCoroutine(Samba());
+				{
+					if (Camera.main.GetComponent <AudioSource> ().clip.name != "BatebolaNear")
+					{
+						Camera.main.GetComponent <AudioSource> ().clip = SambaSound;
+						Camera.main.GetComponent <AudioSource> ().Play();
+					}
+					CanSamba = false;
+				}
+			}
+			else if(!startsamba)
+			{
+				CanSamba = true;
+				if (Camera.main.GetComponent <AudioSource> ().clip.name == "BatebolaNear")
+				{
+					Camera.main.GetComponent <AudioSource> ().clip = normalSong;
+					Camera.main.GetComponent <AudioSource> ().Play();
+				}
 			}
 			WalkAndRun ();
 			if (stamina <= 0)
@@ -139,7 +155,7 @@ public class player : MonoBehaviour
 				Camera.main.orthographicSize = Mathf.Lerp (7, 9, 5f * (Time.time - activeZoom));
 				if (stamina < 1 && !(Input.GetKey(KeyCode.Space) ||Input.GetKey(KeyCode.LeftShift)))
 				{
-					if (stamina <= 0.5f && axisX ==0 && axisY == 0)
+					if (stamina <= 0.5f && axisX == 0 && axisY == 0)
 						stamina += 0.04f * Time.deltaTime;
 					else if (stamina <= 0.5f)
 					{
@@ -287,26 +303,13 @@ public class player : MonoBehaviour
 		Canbreath = true; 
 	}
 
-	IEnumerator Samba()
-	{
-		if (Camera.main.GetComponent <AudioSource> ().clip.name != "BatebolaNear" && CanSamba)
-		{
-			GameManager.Playsound (SambaSound);
-			CanSamba = false; 
-			startsamba = false; 
-		} 
-		yield return new WaitForSeconds(SambaSound.length);
-		CanSamba = true;
-		startsamba = false; 
-	}
-
 	public void jumpTutorial ()
 	{
 		Destroy (tutorial);
 		uis.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
-
 	}
-	void faceUpdate()
+
+	private void faceUpdate()
 	{
 		if (medo > 75)
 			boyImg.sprite = reactions [3];

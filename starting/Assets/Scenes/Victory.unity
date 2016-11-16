@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31992b9cd9ebfea48a991d5255951b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  light: {fileID: 0}
   lightaudio: {fileID: 0}
 --- !u!82 &556331260
 AudioSource:
@@ -459,7 +460,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22493750, guid: 378c8fbcacd904946940a4058363ab05, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22493750, guid: 378c8fbcacd904946940a4058363ab05, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -501,14 +502,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 174624, guid: 378c8fbcacd904946940a4058363ab05, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11482210, guid: 378c8fbcacd904946940a4058363ab05, type: 2}
-      propertyPath: audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 46c80e6402940c04ea62ffb505d17a21, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 378c8fbcacd904946940a4058363ab05, type: 2}
   m_IsPrefabParent: 0
