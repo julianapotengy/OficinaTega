@@ -10,7 +10,7 @@ public class SoundArrounds : MonoBehaviour
 	private GameObject compass;
 	private float low;
 	public GameObject nearBatebola;
-	public List< float> salvartodos;
+	public List<float> salvartodos;
 	public Collider2D[] batebolasNear;
 
 	void Start ()

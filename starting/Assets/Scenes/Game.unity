@@ -915,80 +915,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generateOnUpdate: 1
   navObstacles:
-  - {fileID: 1046295315}
-  - {fileID: 1587456232}
-  - {fileID: 301860697}
-  - {fileID: 601389429}
-  - {fileID: 292411773}
-  - {fileID: 34977339}
-  - {fileID: 1010551720}
-  - {fileID: 1181507890}
-  - {fileID: 1651502845}
-  - {fileID: 493163422}
-  - {fileID: 1470365282}
-  - {fileID: 1283136764}
-  - {fileID: 640934181}
-  - {fileID: 1285839190}
-  - {fileID: 233224302}
-  - {fileID: 22995009}
-  - {fileID: 528964237}
-  - {fileID: 687916145}
-  - {fileID: 281734187}
-  - {fileID: 1631580505}
-  - {fileID: 2089561731}
-  - {fileID: 918215238}
-  - {fileID: 650025459}
-  - {fileID: 378932252}
-  - {fileID: 295513066}
-  - {fileID: 2086277431}
-  - {fileID: 1535964417}
-  - {fileID: 2120476920}
-  - {fileID: 1909199837}
-  - {fileID: 1364210934}
-  - {fileID: 1663995572}
-  - {fileID: 1737528101}
-  - {fileID: 200135091}
-  - {fileID: 1688612733}
-  - {fileID: 1340070029}
-  - {fileID: 912180525}
-  - {fileID: 491664212}
-  - {fileID: 1616265175}
-  - {fileID: 852768246}
-  - {fileID: 1701203138}
-  - {fileID: 912598995}
-  - {fileID: 2070089433}
-  - {fileID: 1026810837}
-  - {fileID: 1644790984}
-  - {fileID: 248251289}
-  - {fileID: 1806106532}
-  - {fileID: 858665089}
-  - {fileID: 1743049078}
-  - {fileID: 1901511456}
-  - {fileID: 2028805769}
-  - {fileID: 777757899}
-  - {fileID: 1684631764}
-  - {fileID: 93886972}
-  - {fileID: 563725150}
-  - {fileID: 1897249489}
-  - {fileID: 926545994}
-  - {fileID: 1096983679}
-  - {fileID: 836940741}
-  - {fileID: 1141942695}
-  - {fileID: 1723911124}
-  - {fileID: 558445987}
-  - {fileID: 1336554376}
-  - {fileID: 699856301}
-  - {fileID: 1668019692}
-  - {fileID: 31106224}
-  - {fileID: 1710238603}
-  - {fileID: 1429917276}
-  - {fileID: 798018534}
-  - {fileID: 9595396}
-  - {fileID: 1749500546}
-  - {fileID: 331682722}
-  - {fileID: 7647972}
   - {fileID: 874424351}
+  - {fileID: 9595396}
+  - {fileID: 1651502845}
+  - {fileID: 248251289}
+  - {fileID: 858665089}
+  - {fileID: 1684631764}
+  - {fileID: 31106224}
+  - {fileID: 1010551720}
+  - {fileID: 493163422}
+  - {fileID: 233224302}
+  - {fileID: 1737528101}
+  - {fileID: 918215238}
+  - {fileID: 1631580505}
+  - {fileID: 1701203138}
+  - {fileID: 1743049078}
+  - {fileID: 2070089433}
+  - {fileID: 687916145}
+  - {fileID: 912598995}
+  - {fileID: 1285839190}
+  - {fileID: 1096983679}
+  - {fileID: 378932252}
+  - {fileID: 34977339}
+  - {fileID: 798018534}
+  - {fileID: 852768246}
+  - {fileID: 836940741}
+  - {fileID: 601389429}
+  - {fileID: 640934181}
+  - {fileID: 1340070029}
+  - {fileID: 1141942695}
+  - {fileID: 1181507890}
+  - {fileID: 912180525}
+  - {fileID: 7647972}
+  - {fileID: 1806106532}
+  - {fileID: 1470365282}
+  - {fileID: 22995009}
+  - {fileID: 650025459}
+  - {fileID: 301860697}
+  - {fileID: 1897249489}
+  - {fileID: 1723911124}
+  - {fileID: 1283136764}
+  - {fileID: 295513066}
+  - {fileID: 1026810837}
+  - {fileID: 1710238603}
+  - {fileID: 1535964417}
+  - {fileID: 93886972}
+  - {fileID: 1336554376}
+  - {fileID: 491664212}
+  - {fileID: 1688612733}
+  - {fileID: 1429917276}
+  - {fileID: 281734187}
   - {fileID: 1744936732}
+  - {fileID: 926545994}
+  - {fileID: 292411773}
+  - {fileID: 1901511456}
+  - {fileID: 563725150}
+  - {fileID: 558445987}
+  - {fileID: 528964237}
+  - {fileID: 777757899}
+  - {fileID: 1587456232}
+  - {fileID: 1364210934}
+  - {fileID: 1749500546}
+  - {fileID: 1668019692}
+  - {fileID: 2028805769}
+  - {fileID: 1046295315}
+  - {fileID: 1909199837}
+  - {fileID: 2120476920}
+  - {fileID: 1644790984}
+  - {fileID: 331682722}
+  - {fileID: 2089561731}
+  - {fileID: 1616265175}
+  - {fileID: 1663995572}
+  - {fileID: 699856301}
+  - {fileID: 2086277431}
+  - {fileID: 200135091}
   inflateRadius: 0
   regenerateFlag: 1
 --- !u!4 &62581064
@@ -4553,7 +4553,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e0d556ea5222294fa2f8693193e9e10, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0

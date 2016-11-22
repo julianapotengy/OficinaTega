@@ -36,8 +36,10 @@ public class GameManager : MonoBehaviour
 	{	
 		if (startfadin)
 		{
+			AudioSource audioStart = Object.FindObjectOfType <AudioSource>() as AudioSource;
+			audioStart.volume += 0.005f;
 			fadein.GetComponent<Image> ().color -= new Color(0, 0, 0, 0.5f * Time.deltaTime);
-			if (fadein.GetComponent<Image> ().color.a <= 0)
+			if (fadein.GetComponent<Image> ().color.a <= 0 && audioStart.volume >= 1)
 				startfadin = false;
 		}
 		medoimg.fillAmount = playerMedo.medo / 100f;
