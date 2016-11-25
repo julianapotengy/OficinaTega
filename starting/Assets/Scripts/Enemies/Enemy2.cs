@@ -65,6 +65,7 @@ public class Enemy2 : MonoBehaviour
 
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
+		places2Walk[2].gameObject.transform.SetParent (transform);
 		transform.position = Places[Random.Range (0, Places.Length)];
 
 		fadeNum = 0;

@@ -29,25 +29,25 @@ public class ClueObj : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Player")
+		if (coll.gameObject.name.Equals("HandsCollider"))
 		{
 			stringClueTxt = Clues.clues2Show[0];
 			Clues.cluesColected.Add(stringClueTxt);
 			deleteAlert.showAlert = true;
-			coll.gameObject.GetComponent<player>().medo = 0; 
+			GameObject.FindGameObjectWithTag("Player").GetComponent<player>().medo = 0;
 			GameManager.Playsound(NotificationSound);
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Player")
+		if (coll.gameObject.name.Equals("HandsCollider"))
 			clueTxt.text = Clues.clues2Show[0];
 	}
 
 	void OnTriggerExit2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Player")
+		if (coll.gameObject.name.Equals("HandsCollider"))
 		{
 			clueTxt.text = "";
 			Clues.clues2Show.RemoveAt(0);

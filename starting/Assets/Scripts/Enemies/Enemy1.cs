@@ -54,6 +54,7 @@ public class Enemy1 : MonoBehaviour
 
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent (transform);
+		places2Walk[2].gameObject.transform.SetParent (transform);
 		transform.position = Places [Random.Range (0, Places.Length)];
 		timer = 0;
 	}
@@ -75,7 +76,8 @@ public class Enemy1 : MonoBehaviour
 	{
 		Vector2 posiplayer = player.transform.position;
 		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-		if (player.GetComponent<player> ().medo >= 100) {
+		if (player.GetComponent<player> ().medo >= 100)
+		{
 			pagent.SetDestination (posiplayer);
 			direction = posiplayer;
 		}

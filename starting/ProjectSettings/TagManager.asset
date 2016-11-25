@@ -23,6 +23,7 @@ TagManager:
   - PoleLight
   - "Pra\xE7a"
   - grafite
+  - Clue
   layers:
   - Default
   - TransparentFX
@@ -62,6 +63,9 @@ TagManager:
     locked: 0
   - name: Clues
     uniqueID: 2252492217
+    locked: 0
+  - name: BateBola
+    uniqueID: 3472435069
     locked: 0
   - name: DownPlayer
     uniqueID: 3309251781

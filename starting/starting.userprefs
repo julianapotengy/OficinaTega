@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\SoundArrounds.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemy3.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\SoundArrounds.cs" Line="70" Column="6" />
-      <File FileName="Assets\Scripts\Manager\AudioManager.cs" Line="22" Column="26" />
+      <File FileName="Assets\Scripts\Enemies\Enemy1.cs" Line="28" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemy2.cs" Line="213" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemy3.cs" Line="169" Column="17" />
+      <File FileName="Assets\Scripts\Enemies\FieldOfVision.cs" Line="10" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

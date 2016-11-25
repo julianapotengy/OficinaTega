@@ -7,11 +7,18 @@ public class FieldOfVision : MonoBehaviour
 	[HideInInspector] public bool leaved;
 	private Enemy3 enemy3;
 	Enemy3 enemy3scrpit;
+	private static GameObject following;
+
+	void Awake()
+	{
+		following = GameObject.Find ("Following");
+	}
 
 	void Start ()
 	{
 		saw = false;
 		leaved = false;
+		following.SetActive (false);
 		if(gameObject.transform.parent.name.Equals("Enemy3(Clone)"))
 			enemy3 = gameObject.transform.parent.GetComponent<Enemy3>();
 
@@ -27,6 +34,7 @@ public class FieldOfVision : MonoBehaviour
 		{
 			saw = true;
 			leaved = true;
+			following.SetActive(true);
 		}
 	}
 
@@ -34,7 +42,8 @@ public class FieldOfVision : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			leaved = true; 
+			leaved = true;
+			following.SetActive(true);
 		}
 	}
 
@@ -43,6 +52,7 @@ public class FieldOfVision : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			leaved = false;
+			following.SetActive(false);
 			if(gameObject.transform.parent.name.Equals("Enemy3(Clone)"))
 				enemy3.GetComponent<Enemy3>().once = false;
 		}

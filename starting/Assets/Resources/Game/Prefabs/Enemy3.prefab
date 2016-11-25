@@ -45,6 +45,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &130630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 457716}
+  - 212: {fileID: 21275052}
+  m_Layer: 0
+  m_Name: Shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &132040
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &412492
 Transform:
   m_ObjectHideFlags: 1
@@ -197,7 +213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &421054
 Transform:
   m_ObjectHideFlags: 1
@@ -209,7 +225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &430784
 Transform:
   m_ObjectHideFlags: 1
@@ -233,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!4 &457620
 Transform:
   m_ObjectHideFlags: 1
@@ -245,7 +261,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 5
+  m_RootOrder: 6
+--- !u!4 &457716
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0350000001, y: -.839999974, z: 0}
+  m_LocalScale: {x: .888594151, y: .888594151, z: .888594151}
+  m_Children: []
+  m_Father: {fileID: 462086}
+  m_RootOrder: 1
 --- !u!4 &460278
 Transform:
   m_ObjectHideFlags: 1
@@ -257,7 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &462086
 Transform:
   m_ObjectHideFlags: 1
@@ -269,6 +297,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 430784}
+  - {fileID: 457716}
   - {fileID: 474372}
   - {fileID: 412492}
   - {fileID: 421054}
@@ -291,7 +320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &489256
 Transform:
   m_ObjectHideFlags: 1
@@ -303,7 +332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &491698
 Transform:
   m_ObjectHideFlags: 1
@@ -315,7 +344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462086}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!50 &5032294
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -444,8 +473,32 @@ MonoBehaviour:
   shockSound: {fileID: 8300000, guid: 42e07ac5677774c41a40ec00324b283e, type: 3}
   Places: []
   temp: []
-  direx: 0
-  direy: 0
+--- !u!212 &21275052
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130630}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -822532227
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 0eeebe30a6b79234b843f194ddf0fc1f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: .501960814}
 --- !u!212 &21279434
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -468,7 +521,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 266612329
+  m_SortingLayerID: -822532227
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 60cb8e7f3789bb34abdd752e07c6a596, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

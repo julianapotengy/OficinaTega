@@ -63,6 +63,7 @@ public class Enemy3 : MonoBehaviour
 
 		transform.DetachChildren ();
 		places2Walk[1].gameObject.transform.SetParent(transform);
+		places2Walk[2].gameObject.transform.SetParent (transform);
 		transform.position = Places[Random.Range (0,Places.Length)];
 
 		shakeDuration = 0;
@@ -166,13 +167,12 @@ public class Enemy3 : MonoBehaviour
 				shakeDuration = 1.5f;
 				player.GetComponent<player>().stamina =(player.GetComponent<player>().stamina > 0.25f)? 0.25f:0.1f;
 				once = true;
-				if (canShock)
-					StartCoroutine(sound2());
 				field.saw = false;
 				mask = true; 
 				transform.position = originalPosition;
 				transform.rotation = Quaternion.Euler(originalPositionR);
 				other.gameObject.GetComponent<player>().medo += 20f;
+				GameManager.Playsound (shockSound);
 			}
 		}
 	}

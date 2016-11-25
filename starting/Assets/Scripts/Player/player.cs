@@ -256,7 +256,7 @@ public class player : MonoBehaviour
 				CatchMap = true;
 			}
 		}
-        if (coll.gameObject.tag =="Praça")
+        if (coll.gameObject.tag == "Praça")
         {
             onPraça = true;
         }
