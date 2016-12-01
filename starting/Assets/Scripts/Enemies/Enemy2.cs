@@ -91,7 +91,6 @@ public class Enemy2 : MonoBehaviour
 		if (fadeIn)
 		{
 			player.caught = true; 
-			Debug.Log("Aqui");
 			fadeNum += 5;
 			GameObject.Find("FadeIn").GetComponent<Image>().color = new Color(GameObject.Find("FadeIn").GetComponent<Image>().color.r,
 			                                                                           GameObject.Find("FadeIn").GetComponent<Image>().color.g,

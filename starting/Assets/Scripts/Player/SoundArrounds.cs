@@ -90,6 +90,5 @@ public class SoundArrounds : MonoBehaviour
 	void OnTriggerExit2D(Collider2D coll)
 	{
 		Player.startsamba = false;
-		//compass.SetActive (false);
 	}
 }
